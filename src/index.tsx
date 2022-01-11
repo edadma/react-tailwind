@@ -1,13 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import reportWebVitals from './reportWebVitals'
-import { Progress } from './Progress'
+import { Button, Card } from './index'
 import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
+import { HiMail } from 'react-icons/hi'
 
 const App: React.FC = () => (
   <ThemeContext.Provider value={DEFAULT_THEME}>
-    <Progress value={45} size="lg" role="success" />
+    <Card>
+      <Button role="error">
+        <HiMail className="inline" size={20} /> asdf
+      </Button>
+      <Button role="info">asdf</Button>
+    </Card>
   </ThemeContext.Provider>
 )
 
@@ -18,7 +23,6 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+export { Button } from './Button'
+export { Progress } from './Progress'
+export { Card } from './Card'
