@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Role, Size } from './types'
-import { BG, colorClass, HEIGHT, sizeClass, TEXT, TEXT1, ThemeContext } from './ThemeContext'
+import { BG, colorClass, HEIGHT, sizeClass, TEXTS, TEXTLS, ThemeContext } from './ThemeContext'
 
 interface ProgressProps {
   size?: Size
@@ -23,10 +23,10 @@ export const Progress: React.FC<ProgressProps> = ({
   return label ? (
     <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
       <div
-        className={`${colorClass(t, role, BG)} ${sizeClass(t, size, TEXT)} ${colorClass(
+        className={`${colorClass(t, role, BG)} ${sizeClass(t, size, TEXTS)} ${colorClass(
           t,
           role,
-          TEXT1
+          TEXTLS
         )} font-medium text-center p-0.5 leading-none rounded-full`}
         style={{ width: v }}
       >
