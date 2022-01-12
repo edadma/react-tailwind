@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Role, Size } from './types'
+import { Role, Size, Weight } from './types'
 import { colorClass, sizeClass, TEXTS, ThemeContext } from './ThemeContext'
 
 interface ButtonProps
@@ -11,6 +11,7 @@ interface ButtonProps
   rounded?: boolean
   role?: Role
   size?: Size
+  weight?: Weight
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -19,6 +20,7 @@ export const Button: React.FC<ButtonProps> = ({
   outlined,
   rounded,
   size,
+  weight,
   ...other
 }) => {
   const t = useContext(ThemeContext)
@@ -40,7 +42,7 @@ export const Button: React.FC<ButtonProps> = ({
             )}`) +
         ` ${sizeClass(t, size, TEXTS)} ${colorClass(t, role, 'focusRing')} ${
           rounded || t.component.button.defaults.rounded ? t.component.button.options.rounded : ''
-        } ${t.component.button.style}`
+        } ${weight ? t.weight[weight] : ''} ${t.component.button.style}`
       }
       {...other}
     >

@@ -112,6 +112,17 @@ export const DEFAULT_THEME = {
     '8xl': ['text-8xl', 'h-12'],
     '9xl': ['text-9xl', 'h-14'],
   },
+  weight: {
+    thin: 'font-thin',
+    extralight: 'font-extralight',
+    light: 'font-light',
+    normal: 'font-normal',
+    medium: 'font-medium',
+    semibold: 'font-semibold',
+    bold: 'font-bold',
+    extrabold: 'font-extrabold',
+    black: 'font-black',
+  },
   component: {
     button: {
       style: 'font-medium focus:ring-2 px-5 py-2.5 text-center mr-2 mb-2',
@@ -119,8 +130,9 @@ export const DEFAULT_THEME = {
       defaults: { rounded: false },
     },
     card: {
-      style: 'p-6',
-      options: {},
+      style: 'p-6 bg-white',
+      options: { rounded: 'rounded-lg' },
+      defaults: { rounded: false },
     },
   },
 }

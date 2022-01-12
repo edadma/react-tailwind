@@ -23,6 +23,17 @@ export type Role =
   | 'warning'
   | 'error'
 
+export type Weight =
+  | 'thin'
+  | 'extralight'
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semibold'
+  | 'bold'
+  | 'extrabold'
+  | 'black'
+
 // export type Color =
 //   | 'slate'
 //   | 'gray'
