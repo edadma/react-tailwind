@@ -1,26 +1,13 @@
 import React, { useContext } from 'react'
 import { Role, Size } from './types'
-import {
-  BG,
-  colorClass,
-  HOVERDS,
-  RING,
-  sizeClass,
-  TEXTS,
-  TEXTLS,
-  ThemeContext,
-  BORDER,
-  TEXTDS,
-  HOVERLS,
-  TEXTLSH,
-} from './ThemeContext'
+import { colorClass, sizeClass, TEXTS, ThemeContext } from './ThemeContext'
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  outline?: boolean
+  outlined?: boolean
   rounded?: boolean
   role?: Role
   size?: Size
@@ -29,7 +16,7 @@ interface ButtonProps
 export const Button: React.FC<ButtonProps> = ({
   children,
   role,
-  outline,
+  outlined,
   rounded,
   size,
   ...other
@@ -40,19 +27,19 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       type="button"
       className={
-        (outline
-          ? `${colorClass(t, role, BORDER)} ${colorClass(t, role, TEXTDS)} ${colorClass(
+        (outlined
+          ? `${colorClass(t, role, 'border')} ${colorClass(t, role, 'textOutlined')} ${colorClass(
               t,
               role,
-              TEXTLSH
-            )} ${colorClass(t, role, HOVERLS)}`
-          : `${colorClass(t, role, BG)} ${colorClass(t, role, TEXTLS)} ${colorClass(
+              'hoverBgOutlined'
+            )} ${colorClass(t, role, 'hoverTextLightShade')}`
+          : `${colorClass(t, role, 'bg')} ${colorClass(t, role, 'textLightShade')} ${colorClass(
               t,
               role,
-              HOVERDS
+              'hoverBg'
             )}`) +
-        ` ${sizeClass(t, size, TEXTS)} ${colorClass(t, role, RING)} ${
-          rounded ? t.defaults.rounded : t.component.button.defaults.rounded
+        ` ${sizeClass(t, size, TEXTS)} ${colorClass(t, role, 'focusRing')} ${
+          rounded || t.component.button.defaults.rounded ? t.component.button.options.rounded : ''
         } ${t.component.button.style}`
       }
       {...other}

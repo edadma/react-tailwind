@@ -8,7 +8,7 @@ import { HiMail } from 'react-icons/hi'
 const App: React.FC = () => (
   <ThemeContext.Provider value={DEFAULT_THEME}>
     <Card>
-      <Button outline role="info">
+      <Button outlined role="info">
         asdf
       </Button>
       <Button role="info">asdf</Button>
