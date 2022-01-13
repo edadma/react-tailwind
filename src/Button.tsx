@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Role, Size, Weight } from './types'
-import { colorClass, sizeClass, TEXTS, ThemeContext } from './ThemeContext'
+import { colorClass, optionProps, sizeClass, TEXTS, ThemeContext } from './ThemeContext'
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -40,9 +40,12 @@ export const Button: React.FC<ButtonProps> = ({
               role,
               'hoverBg'
             )}`) +
-        ` ${sizeClass(t, size, TEXTS)} ${colorClass(t, role, 'focusRing')} ${
-          rounded || t.component.button.defaults.rounded ? t.component.button.options.rounded : ''
-        } ${weight ? t.weight[weight] : ''} ${t.component.button.style}`
+        ` ${sizeClass(t, size, TEXTS)} ${colorClass(t, role, 'focusRing')} ${optionProps(
+          t,
+          other,
+          'button',
+          'rounded'
+        )} ${weight ? t.weight[weight] : ''} ${t.component.button.style}`
       }
       {...other}
     >

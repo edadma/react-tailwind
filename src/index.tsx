@@ -1,18 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card } from './index'
+import { Button, Card, Mode } from './index'
+import { Switcher } from './Switcher'
 import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
-import { HiMail } from 'react-icons/hi'
+import { LIGHT_MODE, ModeContext } from './Mode'
+// import { HiMail } from 'react-icons/hi'
 
 const App: React.FC = () => (
   <ThemeContext.Provider value={DEFAULT_THEME}>
-    <Card>
-      <Button outlined role="info">
-        asdf
-      </Button>
-      <Button role="info">asdf</Button>
-    </Card>
+    <ModeContext.Provider value={LIGHT_MODE}>
+      <Mode>
+        <Card>
+          <Switcher />
+        </Card>
+      </Mode>
+    </ModeContext.Provider>
   </ThemeContext.Provider>
 )
 
@@ -26,3 +29,4 @@ ReactDOM.render(
 export { Button } from './Button'
 export { Progress } from './Progress'
 export { Card } from './Card'
+export { Mode } from './Mode'
