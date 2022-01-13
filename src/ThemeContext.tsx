@@ -1,6 +1,6 @@
 import React from 'react'
 import { Role, Size } from './types'
-import { ModeType } from './Mode'
+import { ModeType } from './ModeProvider'
 
 export class RoleStyle {
   constructor(

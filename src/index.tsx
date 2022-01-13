@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card, Mode } from './index'
+import { Button, Card, ModeProvider } from './index'
 import { Switcher } from './Switcher'
 import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
 // import { HiMail } from 'react-icons/hi'
 
 const App: React.FC = () => (
   <ThemeContext.Provider value={DEFAULT_THEME}>
-    <Mode>
+    <ModeProvider>
       <Switcher />
       <Card>
         <button
@@ -30,7 +30,7 @@ const App: React.FC = () => (
           Messages
         </button>
       </Card>
-    </Mode>
+    </ModeProvider>
   </ThemeContext.Provider>
 )
 
@@ -44,4 +44,4 @@ ReactDOM.render(
 export { Button } from './Button'
 export { Progress } from './Progress'
 export { Card } from './Card'
-export { Mode } from './Mode'
+export { ModeProvider } from './ModeProvider'
