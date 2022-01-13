@@ -1,11 +1,29 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import { ThemeContext } from './ThemeContext'
 
-export const LIGHT_MODE = { mode: '', setMode: (newMode: string) => {} }
+export type ModeType = 'light' | 'dark'
 
-export const ModeContext = React.createContext(LIGHT_MODE)
+export const SET_MODE = {
+  mode: 'light',
+  setMode: (newMode: string) => {
+    alert('no mode state: use the <Mode> component')
+  },
+} as SetMode
+
+export interface SetMode {
+  mode: ModeType
+  setMode: React.Dispatch<React.SetStateAction<ModeType>>
+}
+
+export const ModeContext = React.createContext<SetMode>(SET_MODE)
 
 export const Mode: React.FC = ({ children }) => {
-  const { mode } = useContext(ModeContext)
+  const t = useContext(ThemeContext)
+  const [mode, setMode] = useState(t.mode)
 
-  return <div className={`${mode}`}>{children}</div>
+  return (
+    <ModeContext.Provider value={{ mode, setMode }}>
+      <div className={`${mode === 'light' ? '' : 'dark'}`}>{children}</div>
+    </ModeContext.Provider>
+  )
 }

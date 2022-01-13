@@ -1,5 +1,6 @@
 import React from 'react'
 import { Role, Size } from './types'
+import { ModeType } from './Mode'
 
 export class RoleStyle {
   constructor(
@@ -15,6 +16,7 @@ export class RoleStyle {
 }
 
 export const DEFAULT_THEME = {
+  mode: 'light' as ModeType,
   role: {
     primary: new RoleStyle(
       'text-green-600',
@@ -125,13 +127,17 @@ export const DEFAULT_THEME = {
   },
   component: {
     button: {
-      style: 'font-medium focus:ring-2 px-5 py-2.5 text-center mr-2 mb-2',
+      style: 'focus:ring-2 px-5 py-2.5 text-center mr-2 mb-2',
       options: { rounded: 'rounded-lg' },
-      defaults: { rounded: true },
+      defaults: { rounded: true, weight: 'bold' },
     },
     card: {
-      style: 'p-6 bg-white dark:bg-gray-800 dark:border-gray-700',
-      options: { rounded: 'rounded-lg', border: 'border border-gray-200', shadow: 'shadow-md' },
+      style: 'p-6 bg-white dark:bg-gray-800',
+      options: {
+        rounded: 'rounded-lg',
+        border: 'border border-gray-200 dark:border-gray-700',
+        shadow: 'shadow-md',
+      },
       defaults: { rounded: false, border: true, shadow: false },
     },
   },

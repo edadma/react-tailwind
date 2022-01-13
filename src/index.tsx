@@ -4,18 +4,15 @@ import './index.css'
 import { Button, Card, Mode } from './index'
 import { Switcher } from './Switcher'
 import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
-import { LIGHT_MODE, ModeContext } from './Mode'
 // import { HiMail } from 'react-icons/hi'
 
 const App: React.FC = () => (
   <ThemeContext.Provider value={DEFAULT_THEME}>
-    <ModeContext.Provider value={LIGHT_MODE}>
-      <Mode>
-        <Card>
-          <Switcher />
-        </Card>
-      </Mode>
-    </ModeContext.Provider>
+    <Mode>
+      <Card>
+        <Switcher />
+      </Card>
+    </Mode>
   </ThemeContext.Provider>
 )
 
