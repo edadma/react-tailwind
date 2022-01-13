@@ -128,8 +128,8 @@ export const DEFAULT_THEME = {
   component: {
     button: {
       style: 'focus:ring-2 px-5 py-2.5 text-center mr-2 mb-2',
-      options: { rounded: 'rounded-lg' },
-      defaults: { rounded: true, weight: 'bold' },
+      options: { rounded: 'rounded-lg', pill: 'rounded-full' },
+      defaults: { rounded: true, pill: false, weight: 'bold' },
     },
     card: {
       style: 'p-6 bg-white dark:bg-gray-800',

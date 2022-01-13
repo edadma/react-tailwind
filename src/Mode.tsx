@@ -3,19 +3,19 @@ import { ThemeContext } from './ThemeContext'
 
 export type ModeType = 'light' | 'dark'
 
-export const SET_MODE = {
+export const SET_MODE: SetMode = {
   mode: 'light',
-  setMode: (newMode: string) => {
+  setMode: () => {
     alert('no mode state: use the <Mode> component')
   },
-} as SetMode
+}
 
 export interface SetMode {
   mode: ModeType
   setMode: React.Dispatch<React.SetStateAction<ModeType>>
 }
 
-export const ModeContext = React.createContext<SetMode>(SET_MODE)
+export const ModeContext = React.createContext(SET_MODE)
 
 export const Mode: React.FC = ({ children }) => {
   const t = useContext(ThemeContext)
