@@ -45,9 +45,7 @@ export const Button: React.FC<ButtonProps> = ({
           other,
           'button',
           'rounded'
-        )} ${weight ? t.weight[weight] : t.weight[t.component.button.defaults.weight]} ${
-          t.component.button.style
-        }`
+        )} ${t.weight[weight || t.component.button.defaults.weight]} ${t.component.button.style}`
       }
       {...other}
     >
