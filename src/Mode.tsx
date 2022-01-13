@@ -17,6 +17,8 @@ export interface SetMode {
 
 export const ModeContext = React.createContext(SET_MODE)
 
+export const useMode = () => useContext(ModeContext)
+
 export const Mode: React.FC = ({ children }) => {
   const t = useContext(ThemeContext)
   const [mode, setMode] = useState(t.mode)

@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import { Button } from './index'
-import { ModeContext } from './Mode'
+import React from 'react'
+import { Button } from './Button'
+import { useMode } from './Mode'
 import { ToggleDark, ToggleLight } from './Icons'
 
 export const Switcher: React.FC = () => {
-  const { mode, setMode } = useContext(ModeContext)
+  const { mode, setMode } = useMode()
 
   return (
     <Button icon pill onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
