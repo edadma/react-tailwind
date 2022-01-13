@@ -127,9 +127,9 @@ export const DEFAULT_THEME = {
   },
   component: {
     button: {
-      style: 'focus:ring-2 px-5 py-2.5 text-center mr-2 mb-2',
-      options: { rounded: 'rounded-lg', pill: 'rounded-full' },
-      defaults: { rounded: true, pill: false, weight: 'bold' },
+      style: 'focus:ring-2 text-center mr-2 mb-2',
+      options: { rounded: 'rounded-lg', pill: 'rounded-full', icon: ['p-2.5', 'px-5 py-2.5'] },
+      defaults: { rounded: true, pill: false, icon: false, weight: 'bold' },
     },
     card: {
       style: 'p-6 bg-white dark:bg-gray-800',
@@ -145,11 +145,13 @@ export const DEFAULT_THEME = {
 
 export const optionProps = (context: any, props: any, component: string, ...options: string[]) =>
   options
-    .map((opt) =>
-      props[opt] || context.component[component].defaults[opt]
-        ? context.component[component].options[opt]
-        : ''
-    )
+    .map((option) => {
+      const style = context.component[component].options[option]
+      const selected =
+        props[option] !== undefined ? props[option] : context.component[component].defaults[option]
+
+      return Array.isArray(style) ? style[selected ? 0 : 1] : selected ? style : ''
+    })
     .join(' ')
 
 export const TEXTS = 0

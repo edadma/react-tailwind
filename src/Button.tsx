@@ -10,6 +10,7 @@ interface ButtonProps
   outlined?: boolean
   rounded?: boolean
   pill?: boolean
+  icon?: boolean
   role?: Role
   size?: Size
   weight?: Weight
@@ -45,7 +46,8 @@ export const Button: React.FC<ButtonProps> = ({
           other,
           'button',
           'rounded',
-          'pill'
+          'pill',
+          'icon'
         )} ${t.weight[weight || t.component.button.defaults.weight]} ${t.component.button.style}`
       }
       {...other}
