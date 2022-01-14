@@ -18,6 +18,7 @@ interface ButtonProps
 
 export const Button: React.FC<ButtonProps> = ({
   children,
+  className,
   role,
   outlined,
   size,
@@ -48,7 +49,8 @@ export const Button: React.FC<ButtonProps> = ({
           'rounded',
           'pill',
           'icon'
-        )} ${t.weight[weight || t.component.button.defaults.weight]} ${t.component.button.style}`
+        )} ${t.weight[weight || t.component.button.defaults.weight]} ${t.component.button.style}` +
+        (className ? ' ' + className : '')
       }
       {...other}
     >

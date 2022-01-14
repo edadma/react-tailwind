@@ -21,9 +21,9 @@ export const DEFAULT_THEME = {
     primary: new RoleStyle(
       'text-green-600',
       'text-green-50',
-      'bg-green-600',
+      'bg-green-600 dark:bg-green-500',
       'hover:bg-green-600',
-      'hover:bg-green-800',
+      'hover:bg-green-800 dark:hover:bg-green-700',
       'focus:ring-green-300',
       'border border-green-500',
       'hover:text-green-50'
@@ -31,9 +31,9 @@ export const DEFAULT_THEME = {
     secondary: new RoleStyle(
       'text-blue-600',
       'text-blue-50',
-      'bg-blue-600',
+      'bg-blue-600 dark:bg-blue-500',
       'hover:bg-blue-600',
-      'hover:bg-blue-800',
+      'hover:bg-blue-800 dark:hover:bg-blue-700',
       'focus:ring-blue-300',
       'border border-blue-500',
       'hover:text-blue-50'
@@ -41,9 +41,9 @@ export const DEFAULT_THEME = {
     regular: new RoleStyle(
       'text-gray-600',
       'text-gray-50',
-      'bg-gray-600',
+      'bg-gray-600 dark:bg-gray-500',
       'hover:bg-gray-600',
-      'hover:bg-gray-800',
+      'hover:bg-gray-800 dark:hover:bg-gray-700',
       'focus:ring-gray-300',
       'border border-gray-500',
       'hover:text-gray-50'
@@ -51,9 +51,9 @@ export const DEFAULT_THEME = {
     accent: new RoleStyle(
       'text-indigo-600',
       'text-indigo-50',
-      'bg-indigo-600',
+      'bg-indigo-600 dark:bg-indigo-500',
       'hover:bg-indigo-600',
-      'hover:bg-indigo-800',
+      'hover:bg-indigo-800 dark:hover:bg-indigo-700',
       'focus:ring-indigo-300',
       'border border-indigo-500',
       'hover:text-indigo-50'
@@ -61,9 +61,9 @@ export const DEFAULT_THEME = {
     info: new RoleStyle(
       'text-blue-600',
       'text-blue-50',
-      'bg-blue-600',
+      'bg-blue-600 dark:bg-blue-500',
       'hover:bg-blue-600',
-      'hover:bg-blue-800',
+      'hover:bg-blue-800 dark:hover:bg-blue-700',
       'focus:ring-blue-300',
       'border border-blue-500',
       'hover:text-blue-50'
@@ -71,9 +71,9 @@ export const DEFAULT_THEME = {
     success: new RoleStyle(
       'text-green-600',
       'text-green-50',
-      'bg-green-600',
+      'bg-green-600 dark:bg-green-500',
       'hover:bg-green-600',
-      'hover:bg-green-800',
+      'hover:bg-green-800 dark:hover:bg-green-700',
       'focus:ring-green-300',
       'border border-green-500',
       'hover:text-green-50'
@@ -81,9 +81,9 @@ export const DEFAULT_THEME = {
     warning: new RoleStyle(
       'text-yellow-600',
       'text-yellow-50',
-      'bg-yellow-600',
+      'bg-yellow-600 dark:bg-yellow-500',
       'hover:bg-yellow-600',
-      'hover:bg-yellow-800',
+      'hover:bg-yellow-800 dark:hover:bg-yellow-700',
       'focus:ring-yellow-300',
       'border border-yellow-500',
       'hover:text-yellow-50'
@@ -91,9 +91,9 @@ export const DEFAULT_THEME = {
     error: new RoleStyle(
       'text-red-600',
       'text-red-50',
-      'bg-red-600',
+      'bg-red-600 dark:bg-red-500',
       'hover:bg-red-600',
-      'hover:bg-red-800',
+      'hover:bg-red-800 dark:hover:bg-red-700',
       'focus:ring-red-300',
       'border border-red-500',
       'hover:text-red-50'
