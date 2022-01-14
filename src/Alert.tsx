@@ -1,20 +1,20 @@
 import React, { useContext } from 'react'
 import { optionProps, ThemeContext } from './ThemeContext'
 
-interface CardProps
+interface AlertProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   rounded?: boolean
   border?: boolean
   shadow?: boolean
 }
 
-export const Card: React.FC<CardProps> = ({ children, ...other }) => {
+export const Alert: React.FC<AlertProps> = ({ children, ...other }) => {
   const t = useContext(ThemeContext)
 
   return (
     <div
-      className={`${optionProps(t, other, 'card', 'rounded', 'border', 'shadow')} ${
-        t.component.card.style
+      className={`${optionProps(t, other, 'alert', 'rounded', 'border', 'shadow')} ${
+        t.component.alert.style
       }`}
       {...other}
     >

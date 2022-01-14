@@ -16,6 +16,18 @@ const App: React.FC = () => (
           <Button role="success">success</Button>
           <Button role="warning">warning</Button>
           <Button role="error">error</Button>
+          <Button outlined role="info">
+            info
+          </Button>
+          <Button outlined role="success">
+            success
+          </Button>
+          <Button outlined role="warning">
+            warning
+          </Button>
+          <Button outlined role="error">
+            error
+          </Button>
         </Card>
       </Card>
     </ModeProvider>
