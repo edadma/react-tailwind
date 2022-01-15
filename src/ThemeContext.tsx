@@ -15,8 +15,20 @@ export class RoleStyle {
   ) {}
 }
 
+export class ButtonRole {
+  constructor(
+    public textOutlined: string,
+    public textLightShade: string,
+    public bg: string,
+    public hoverBgOutlined: string,
+    public hoverBg: string,
+    public focusRing: string,
+    public border: string,
+    public hoverTextLightShade: string
+  ) {}
+}
+
 export const DEFAULT_THEME = {
-  mode: 'light' as ModeType,
   role: {
     primary: new RoleStyle(
       'text-green-600',
@@ -128,6 +140,7 @@ export const DEFAULT_THEME = {
   component: {
     button: {
       style: 'focus:ring-2 text-center mr-2 mb-2',
+      role: {},
       options: { rounded: 'rounded-lg', pill: 'rounded-full', icon: ['p-2.5', 'px-5 py-2.5'] },
       defaults: { rounded: true, pill: false, icon: false, weight: 'bold' },
     },
@@ -139,6 +152,13 @@ export const DEFAULT_THEME = {
         shadow: 'shadow-md',
       },
       defaults: { rounded: false, border: true, shadow: false },
+    },
+    alert: {
+      style: 'p-4 mb-4 text-sm text-blue-700 bg-blue-100',
+      options: {
+        rounded: 'rounded-lg',
+      },
+      defaults: { rounded: false },
     },
   },
 }

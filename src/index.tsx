@@ -8,7 +8,7 @@ import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
 
 const App: React.FC = () => (
   <ThemeContext.Provider value={DEFAULT_THEME}>
-    <ModeProvider>
+    <ModeProvider init="light">
       <Switcher />
       <Card>
         <Card rounded>

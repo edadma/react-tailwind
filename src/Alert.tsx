@@ -1,21 +1,19 @@
 import React, { useContext } from 'react'
 import { optionProps, ThemeContext } from './ThemeContext'
+import { Role } from './types'
 
 interface AlertProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   rounded?: boolean
-  border?: boolean
-  shadow?: boolean
+  role?: Role
 }
 
-export const Alert: React.FC<AlertProps> = ({ children, ...other }) => {
+export const Alert: React.FC<AlertProps> = ({ children, role, ...other }) => {
   const t = useContext(ThemeContext)
 
   return (
     <div
-      className={`${optionProps(t, other, 'alert', 'rounded', 'border', 'shadow')} ${
-        t.component.alert.style
-      }`}
+      className={`${optionProps(t, other, 'alert', 'rounded')} ${t.component.alert.style}`}
       {...other}
     >
       {children}
