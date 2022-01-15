@@ -25,6 +25,7 @@ export const Progress: React.FC<ProgressProps> = ({
       <div
         className={`${colorClass(t, 'progress', role, 'bg')} ${sizeClass(
           t,
+          'button',
           size,
           TEXTS
         )} ${colorClass(
@@ -40,10 +41,15 @@ export const Progress: React.FC<ProgressProps> = ({
     </div>
   ) : (
     <div
-      className={`${sizeClass(t, size, HEIGHT)} w-full bg-gray-200 rounded-full dark:bg-gray-700`}
+      className={`${sizeClass(
+        t,
+        'button',
+        size,
+        HEIGHT
+      )} w-full bg-gray-200 rounded-full dark:bg-gray-700`}
     >
       <div
-        className={`${sizeClass(t, size, HEIGHT)} ${colorClass(
+        className={`${sizeClass(t, 'button', size, HEIGHT)} ${colorClass(
           t,
           'progress',
           role,

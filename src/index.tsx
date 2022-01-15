@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card, ModeProvider } from './index'
+import { Button, Card, ModeProvider, Progress } from './index'
 import { Switcher } from './Switcher'
 import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
 // import { HiMail } from 'react-icons/hi'
@@ -9,15 +9,15 @@ import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
 const App: React.FC = () => (
   <ThemeContext.Provider value={DEFAULT_THEME}>
     <ModeProvider init="light">
-      <Button role="info">info</Button>
-      {/*
       <Switcher />
       <Card>
-        <Card rounded>
+        <Card>
+          <Button>regular</Button>
           <Button role="info">info</Button>
           <Button role="success">success</Button>
           <Button role="warning">warning</Button>
           <Button role="error">error</Button>
+          <Button outlined>regular</Button>
           <Button outlined role="info">
             info
           </Button>
@@ -31,8 +31,24 @@ const App: React.FC = () => (
             error
           </Button>
         </Card>
+        <Card>
+          <Progress size="lg" value={45} />
+          <div className="p-0.5" />
+          <Progress value={45} />
+          <div className="p-0.5" />
+          <Progress value={45} />
+          <div className="p-0.5" />
+          <Progress value={45} />
+          <div className="p-0.5" />
+          <Progress value={45} />
+          <div className="p-0.5" />
+          <Progress value={45} />
+          <div className="p-0.5" />
+          <Progress value={45} />
+          <div className="p-0.5" />
+          <Progress value={45} />
+        </Card>
       </Card>
-*/}
     </ModeProvider>
   </ThemeContext.Provider>
 )

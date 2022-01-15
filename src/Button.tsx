@@ -49,14 +49,14 @@ export const Button: React.FC<ButtonProps> = ({
               role,
               'filledText'
             )} ${colorClass(t, 'button', role, 'filledHoverBg')}`) +
-        ` ${sizeClass(t, size, TEXTS)} ${colorClass(t, 'button', role, 'focusRing')} ${optionProps(
+        ` ${sizeClass(t, 'button', size, TEXTS)} ${colorClass(
           t,
-          other,
           'button',
-          'rounded',
-          'pill',
-          'icon'
-        )} ${t.weight[weight || t.component.button.default.weight]} ${t.component.button.style}` +
+          role,
+          'focusRing'
+        )} ${optionProps(t, other, 'button', 'rounded', 'pill', 'icon')} ${
+          t.weight[weight || t.component.button.default.weight]
+        } ${t.component.button.style}` +
         (className ? ' ' + className : '')
       }
       {...other}
