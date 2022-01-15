@@ -1,6 +1,5 @@
 import React from 'react'
 import { Role, Size } from './types'
-import { ModeType } from './ModeProvider'
 
 export class RoleStyle {
   constructor(
@@ -17,14 +16,14 @@ export class RoleStyle {
 
 export class ButtonRole {
   constructor(
-    public textOutlined: string,
-    public textLightShade: string,
-    public bg: string,
-    public hoverBgOutlined: string,
-    public hoverBg: string,
+    public outlinedText: string,
+    public filledText: string,
+    public filledBg: string,
+    public outlinedHoverBg: string,
+    public filledHoverBg: string,
     public focusRing: string,
-    public border: string,
-    public hoverTextLightShade: string
+    public outlinedBorder: string,
+    public outlinedHoverText: string
   ) {}
 }
 
@@ -59,16 +58,6 @@ export const DEFAULT_THEME = {
       'focus:ring-gray-300 dark:focus:ring-gray-800',
       'border border-gray-500',
       'hover:text-gray-50'
-    ),
-    accent: new RoleStyle(
-      'text-indigo-600',
-      'text-indigo-50',
-      'bg-indigo-600 dark:bg-indigo-500',
-      'hover:bg-indigo-600',
-      'hover:bg-indigo-800 dark:hover:bg-indigo-700',
-      'focus:ring-indigo-300 dark:focus:ring-indigo-800',
-      'border border-indigo-500',
-      'hover:text-indigo-50'
     ),
     info: new RoleStyle(
       'text-blue-600',
@@ -140,9 +129,80 @@ export const DEFAULT_THEME = {
   component: {
     button: {
       style: 'focus:ring-2 text-center mr-2 mb-2',
-      role: {},
+      role: {
+        primary: new ButtonRole(
+          'text-green-600',
+          'text-green-50',
+          'bg-green-600 dark:bg-green-500',
+          'hover:bg-green-600',
+          'hover:bg-green-800 dark:hover:bg-green-700',
+          'focus:ring-green-300 dark:focus:ring-green-800',
+          'border border-green-500',
+          'hover:text-green-50'
+        ),
+        secondary: new ButtonRole(
+          'text-blue-600',
+          'text-blue-50',
+          'bg-blue-600 dark:bg-blue-500',
+          'hover:bg-blue-600',
+          'hover:bg-blue-800 dark:hover:bg-blue-700',
+          'focus:ring-blue-300 dark:focus:ring-blue-800',
+          'border border-blue-500',
+          'hover:text-blue-50'
+        ),
+        regular: new ButtonRole(
+          'text-gray-600',
+          'text-gray-50',
+          'bg-gray-600 dark:bg-gray-500',
+          'hover:bg-gray-600',
+          'hover:bg-gray-800 dark:hover:bg-gray-700',
+          'focus:ring-gray-300 dark:focus:ring-gray-800',
+          'border border-gray-500',
+          'hover:text-gray-50'
+        ),
+        info: new ButtonRole(
+          'text-blue-600',
+          'text-blue-50',
+          'bg-blue-600 dark:bg-blue-500',
+          'hover:bg-blue-600',
+          'hover:bg-blue-800 dark:hover:bg-blue-700',
+          'focus:ring-blue-300 dark:focus:ring-blue-800',
+          'border border-blue-500',
+          'hover:text-blue-50'
+        ),
+        success: new ButtonRole(
+          'text-green-600',
+          'text-green-50',
+          'bg-green-600 dark:bg-green-500',
+          'hover:bg-green-600',
+          'hover:bg-green-800 dark:hover:bg-green-700',
+          'focus:ring-green-300 dark:focus:ring-green-800',
+          'border border-green-500',
+          'hover:text-green-50'
+        ),
+        warning: new ButtonRole(
+          'text-yellow-600',
+          'text-yellow-50',
+          'bg-yellow-600 dark:bg-yellow-500',
+          'hover:bg-yellow-600',
+          'hover:bg-yellow-800 dark:hover:bg-yellow-700',
+          'focus:ring-yellow-300 dark:focus:ring-yellow-800',
+          'border border-yellow-500',
+          'hover:text-yellow-50'
+        ),
+        error: new ButtonRole(
+          'text-red-600',
+          'text-red-50',
+          'bg-red-600 dark:bg-red-500',
+          'hover:bg-red-600',
+          'hover:bg-red-800 dark:hover:bg-red-700',
+          'focus:ring-red-300 dark:focus:ring-red-800',
+          'border border-red-500',
+          'hover:text-red-50'
+        ),
+      },
       options: { rounded: 'rounded-lg', pill: 'rounded-full', icon: ['p-2.5', 'px-5 py-2.5'] },
-      defaults: { rounded: true, pill: false, icon: false, weight: 'bold' },
+      default: { rounded: true, pill: false, icon: false, weight: 'bold', role: 'regular' },
     },
     card: {
       style: 'p-6 bg-white dark:bg-gray-800',
@@ -151,14 +211,14 @@ export const DEFAULT_THEME = {
         border: 'border border-gray-200 dark:border-gray-700',
         shadow: 'shadow-md',
       },
-      defaults: { rounded: false, border: true, shadow: false },
+      default: { rounded: false, border: true, shadow: false },
     },
     alert: {
       style: 'p-4 mb-4 text-sm text-blue-700 bg-blue-100',
       options: {
         rounded: 'rounded-lg',
       },
-      defaults: { rounded: false },
+      default: { rounded: false },
     },
   },
 }
@@ -168,7 +228,7 @@ export const optionProps = (context: any, props: any, component: string, ...opti
     .map((option) => {
       const style = context.component[component].options[option]
       const selected =
-        props[option] !== undefined ? props[option] : context.component[component].defaults[option]
+        props[option] !== undefined ? props[option] : context.component[component].default[option]
 
       return Array.isArray(style) ? style[selected ? 0 : 1] : selected ? style : ''
     })
@@ -179,8 +239,8 @@ export const HEIGHT = 1
 
 export const ThemeContext = React.createContext<any>(DEFAULT_THEME)
 
-export const colorClass = (context: any, role: Role | undefined, elem: string) =>
-  context.role[role || 'regular'][elem]
+export const colorClass = (theme: any, component: string, role: Role | undefined, elem: string) =>
+  theme[component].role[role || theme[component].default.role][elem]
 
-export const sizeClass = (context: any, size: Size | undefined, elem: number) =>
-  context.size[size || 'base'][elem]
+export const sizeClass = (theme: any, size: Size | undefined, elem: number) =>
+  theme.size[size || 'base'][elem]

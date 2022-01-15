@@ -32,24 +32,31 @@ export const Button: React.FC<ButtonProps> = ({
       type="button"
       className={
         (outlined
-          ? `${colorClass(t, role, 'border')} ${colorClass(t, role, 'textOutlined')} ${colorClass(
+          ? `${colorClass(t, 'button', role, 'outlinedBorder')} ${colorClass(
               t,
+              'button',
               role,
-              'hoverBgOutlined'
-            )} ${colorClass(t, role, 'hoverTextLightShade')}`
-          : `${colorClass(t, role, 'bg')} ${colorClass(t, role, 'textLightShade')} ${colorClass(
+              'outlinedText'
+            )} ${colorClass(t, 'button', role, 'outlinedHoverBg')} ${colorClass(
               t,
+              'button',
               role,
-              'hoverBg'
-            )}`) +
-        ` ${sizeClass(t, size, TEXTS)} ${colorClass(t, role, 'focusRing')} ${optionProps(
+              'outlinedHoverText'
+            )}`
+          : `${colorClass(t, 'button', role, 'filledBg')} ${colorClass(
+              t,
+              'button',
+              role,
+              'filledText'
+            )} ${colorClass(t, 'button', role, 'filledHoverBg')}`) +
+        ` ${sizeClass(t, size, TEXTS)} ${colorClass(t, 'button', role, 'focusRing')} ${optionProps(
           t,
           other,
           'button',
           'rounded',
           'pill',
           'icon'
-        )} ${t.weight[weight || t.component.button.defaults.weight]} ${t.component.button.style}` +
+        )} ${t.weight[weight || t.component.button.default.weight]} ${t.component.button.style}` +
         (className ? ' ' + className : '')
       }
       {...other}

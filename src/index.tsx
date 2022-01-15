@@ -9,6 +9,8 @@ import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
 const App: React.FC = () => (
   <ThemeContext.Provider value={DEFAULT_THEME}>
     <ModeProvider init="light">
+      <Button role="info">info</Button>
+      {/*
       <Switcher />
       <Card>
         <Card rounded>
@@ -30,6 +32,7 @@ const App: React.FC = () => (
           </Button>
         </Card>
       </Card>
+*/}
     </ModeProvider>
   </ThemeContext.Provider>
 )

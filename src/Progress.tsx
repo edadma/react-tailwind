@@ -23,8 +23,13 @@ export const Progress: React.FC<ProgressProps> = ({
   return label ? (
     <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
       <div
-        className={`${colorClass(t, role, 'bg')} ${sizeClass(t, size, TEXTS)} ${colorClass(
+        className={`${colorClass(t, 'progress', role, 'bg')} ${sizeClass(
           t,
+          size,
+          TEXTS
+        )} ${colorClass(
+          t,
+          'progress',
           role,
           'textLightShade'
         )} font-medium text-center p-0.5 leading-none rounded-full`}
@@ -38,7 +43,12 @@ export const Progress: React.FC<ProgressProps> = ({
       className={`${sizeClass(t, size, HEIGHT)} w-full bg-gray-200 rounded-full dark:bg-gray-700`}
     >
       <div
-        className={`${sizeClass(t, size, HEIGHT)} ${colorClass(t, role, 'bg')} rounded-full`} // todo: had 'dark:bg-gray-300' at the end
+        className={`${sizeClass(t, size, HEIGHT)} ${colorClass(
+          t,
+          'progress',
+          role,
+          'bg'
+        )} rounded-full`} // todo: had 'dark:bg-gray-300' at the end
         style={{ width: v }}
       />
     </div>
