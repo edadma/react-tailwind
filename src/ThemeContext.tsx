@@ -28,12 +28,12 @@ export class ButtonRole {
 }
 
 export class ProgressStyle {
-  constructor(public textLightShade: string, public bg: string) {}
+  constructor(public text: string, public bg: string) {}
 }
 
 export const DEFAULT_THEME = {
   size: {
-    xs: ['text-xs', 'h-1'],
+    xs: ['text-xs', 'h-4'],
     sm: ['text-sm', 'h-1.5'],
     md: ['text-base', 'h-2.5'],
     lg: ['text-lg', 'h-4'],
@@ -145,7 +145,7 @@ export const DEFAULT_THEME = {
     },
     progress: {
       style: {
-        bar: 'w-full',
+        bar: 'w-full bg-gray-200 rounded-full dark:bg-gray-700',
         progressLabel: 'text-center p-0.5 leading-none',
       },
       role: {
@@ -158,7 +158,7 @@ export const DEFAULT_THEME = {
         error: new ProgressStyle('text-red-50', 'bg-red-600 dark:bg-red-500'),
       },
       options: { rounded: 'rounded-full' },
-      default: { rounded: true, weight: 'bold', size: 'md', role: 'regular' },
+      default: { rounded: true, weight: 'bold', size: 'xs', role: 'regular' },
     },
     card: {
       style: 'p-6 bg-white dark:bg-gray-800',

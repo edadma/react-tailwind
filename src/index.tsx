@@ -32,21 +32,25 @@ const App: React.FC = () => (
           </Button>
         </Card>
         <Card>
-          <Progress size="lg" value={45} />
-          <div className="p-0.5" />
           <Progress value={45} />
           <div className="p-0.5" />
-          <Progress value={45} />
+          <Progress role="info" value={45} />
           <div className="p-0.5" />
-          <Progress value={45} />
+          <Progress role="success" value={45} />
           <div className="p-0.5" />
-          <Progress value={45} />
+          <Progress role="warning" value={45} />
           <div className="p-0.5" />
-          <Progress value={45} />
+          <Progress role="error" value={45} />
           <div className="p-0.5" />
-          <Progress value={45} />
+          <Progress label value={45} />
           <div className="p-0.5" />
-          <Progress value={45} />
+          <Progress label role="info" value={45} />
+          <div className="p-0.5" />
+          <Progress label role="success" value={45} />
+          <div className="p-0.5" />
+          <Progress label role="warning" value={45} />
+          <div className="p-0.5" />
+          <Progress label role="error" value={45} />
         </Card>
       </Card>
     </ModeProvider>

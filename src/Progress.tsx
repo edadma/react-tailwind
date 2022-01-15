@@ -21,18 +21,18 @@ export const Progress: React.FC<ProgressProps> = ({
   const v = `${value}%`
 
   return label ? (
-    <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+    <div className={t.component.progress.style.bar}>
       <div
         className={`${colorClass(t, 'progress', role, 'bg')} ${sizeClass(
           t,
-          'button',
+          'progress',
           size,
           TEXTS
         )} ${colorClass(
           t,
           'progress',
           role,
-          'textLightShade'
+          'text'
         )} font-medium text-center p-0.5 leading-none rounded-full`}
         style={{ width: v }}
       >
@@ -40,16 +40,9 @@ export const Progress: React.FC<ProgressProps> = ({
       </div>
     </div>
   ) : (
-    <div
-      className={`${sizeClass(
-        t,
-        'button',
-        size,
-        HEIGHT
-      )} w-full bg-gray-200 rounded-full dark:bg-gray-700`}
-    >
+    <div className={`${sizeClass(t, 'progress', size, HEIGHT)} ${t.component.progress.style.bar}`}>
       <div
-        className={`${sizeClass(t, 'button', size, HEIGHT)} ${colorClass(
+        className={`${sizeClass(t, 'progress', size, HEIGHT)} ${colorClass(
           t,
           'progress',
           role,
