@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { Role, Size, Weight } from './types'
-import { ModeType } from './ModeProvider'
 
 export class ButtonRole {
   constructor(
@@ -19,10 +18,6 @@ export class ProgressRole {
   constructor(public text: string, public bg: string) {}
 }
 
-export class AlertStyle {
-  constructor(public text: string, public bg: string, public border: string) {}
-}
-
 export const optionProps = (context: any, props: any, component: string, ...options: string[]) =>
   options
     .map((option) => {
@@ -34,24 +29,24 @@ export const optionProps = (context: any, props: any, component: string, ...opti
     })
     .join(' ')
 
-export const SET_THEME: SetMode = {
+export const SET_THEME: SetTheme = {
   theme: 'DefaultTheme',
   setTheme: () => {
     alert('no theme state: use the <ThemeProvider> component')
   },
 }
 
-export interface SetMode {
+export interface SetTheme {
   theme: any
-  setTheme: React.Dispatch<React.SetStateAction<string>>
+  setTheme: React.Dispatch<React.SetStateAction<any>>
 }
 
 export const ThemeContext = React.createContext(SET_THEME)
 
 export const useTheme = () => useContext(ThemeContext)
 
-export const ThemeProvider: React.FC<{ init: any }> = ({ children, init }) => {
-  const [theme, setTheme] = useState(init)
+export const ThemeProvider: React.FC<{ value: any }> = ({ children, value }) => {
+  const [theme, setTheme] = useState(value)
 
   return (
     <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>

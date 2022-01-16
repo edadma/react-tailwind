@@ -4,11 +4,12 @@ import './index.css'
 import { Button, Card, ModeProvider, Progress, Switcher, Alert } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
+import { CB3Theme } from './themes/CB3Theme'
 // import { HiMail } from 'react-icons/hi'
 
 const App: React.FC = () => (
-  <ThemeProvider init={DefaultTheme}>
-    <ModeProvider init="light">
+  <ThemeProvider value={CB3Theme}>
+    <ModeProvider value="light">
       <Switcher />
       <Card>
         <Card>

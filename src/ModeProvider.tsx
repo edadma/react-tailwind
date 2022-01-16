@@ -18,8 +18,8 @@ export const ModeContext = React.createContext(SET_MODE)
 
 export const useMode = () => useContext(ModeContext)
 
-export const ModeProvider: React.FC<{ init: ModeType }> = ({ children, init }) => {
-  const [mode, setMode] = useState(init)
+export const ModeProvider: React.FC<{ value: ModeType }> = ({ children, value }) => {
+  const [mode, setMode] = useState(value)
 
   return (
     <ModeContext.Provider value={{ mode, setMode }}>
