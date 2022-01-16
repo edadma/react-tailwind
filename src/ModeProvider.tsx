@@ -5,7 +5,7 @@ export type ModeType = 'light' | 'dark'
 export const SET_MODE: SetMode = {
   mode: 'light',
   setMode: () => {
-    alert('no mode state: use the <Mode> component')
+    alert('no mode state: use the <ModeProvider> component')
   },
 }
 

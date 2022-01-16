@@ -36,14 +36,14 @@ export const optionProps = (context: any, props: any, component: string, ...opti
 
 export const SET_THEME: SetMode = {
   theme: 'DefaultTheme',
-  setMode: () => {
-    alert('no mode state: use the <Mode> component')
+  setTheme: () => {
+    alert('no theme state: use the <ThemeProvider> component')
   },
 }
 
 export interface SetMode {
   theme: any
-  setMode: React.Dispatch<React.SetStateAction<string>>
+  setTheme: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const ThemeContext = React.createContext(SET_THEME)
@@ -54,8 +54,8 @@ export const ThemeProvider: React.FC<{ init: any }> = ({ children, init }) => {
   const [theme, setTheme] = useState(init)
 
   return (
-    <ThemeContext.Provider value={{ theme: theme, setMode: setTheme }}>
-      <div className={`${theme === 'light' ? '' : 'dark'}`}>{children}</div>
+    <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
+      {children}
     </ThemeContext.Provider>
   )
 }
