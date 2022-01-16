@@ -1,16 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card, ModeProvider, Progress, Switcher, Alert } from './index'
+import { Button, Card, ModeProvider, Progress, ModeSwitcher, Alert } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
 import { CB3Theme } from './themes/CB3Theme'
+import { ThemeSwitcher } from './ThemeSwitcher'
 // import { HiMail } from 'react-icons/hi'
 
 const App: React.FC = () => (
-  <ThemeProvider value={CB3Theme}>
+  <ThemeProvider value={DefaultTheme}>
     <ModeProvider value="light">
-      <Switcher />
+      <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
       <Card>
         <Card>
           <Button>regular</Button>
@@ -77,4 +78,4 @@ export { Progress } from './Progress'
 export { Card } from './Card'
 export { ModeProvider } from './ModeProvider'
 export { Alert } from './Alert'
-export { Switcher } from './Switcher'
+export { ModeSwitcher } from './ModeSwitcher'

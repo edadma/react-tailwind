@@ -3,7 +3,7 @@ import { Button } from './Button'
 import { useMode } from './ModeProvider'
 import { ToggleDark, ToggleLight } from './Icons'
 
-export const Switcher: React.FC = () => {
+export const ModeSwitcher: React.FC = () => {
   const { mode, setMode } = useMode()
 
   return (
