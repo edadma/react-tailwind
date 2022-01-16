@@ -18,6 +18,10 @@ export class ProgressStyle {
   constructor(public text: string, public bg: string) {}
 }
 
+export class AlertStyle {
+  constructor(public text: string, public bg: string, public border: string) {}
+}
+
 export const DEFAULT_THEME = {
   size: {
     xs: { text: 'text-xs', height: 'h-4' },
@@ -160,11 +164,35 @@ export const DEFAULT_THEME = {
       default: { rounded: false, border: true, shadow: false },
     },
     alert: {
-      style: 'p-4 mb-4 text-sm text-blue-700 bg-blue-100',
+      style: 'p-4 mb-4',
+      role: {
+        primary: {
+          div: 'bg-green-100 border-green-500 text-green-700 dark:text-green-800 dark:bg-green-200',
+        },
+        secondary: {
+          div: 'bg-blue-100 border-blue-500 text-blue-700 dark:text-blue-800 dark:bg-blue-200',
+        },
+        regular: {
+          div: 'bg-gray-100 border-gray-500 text-gray-700 dark:text-gray-800 dark:bg-gray-200',
+        },
+        info: {
+          div: 'bg-blue-100 border-blue-500 text-blue-700 dark:text-blue-800 dark:bg-blue-200',
+        },
+        success: {
+          div: 'bg-green-100 border-green-500 text-green-700 dark:text-green-800 dark:bg-green-200',
+        },
+        warning: {
+          div: 'bg-yellow-100 border-yellow-500 text-yellow-700 dark:text-yellow-800 dark:bg-yellow-200',
+        },
+        error: {
+          div: 'bg-red-100 border-red-500 text-red-700 dark:text-red-800 dark:bg-red-200',
+        },
+      },
       options: {
         rounded: 'rounded-lg',
+        border: 'border-t-4',
       },
-      default: { rounded: false },
+      default: { rounded: true, border: true, size: 'sm', role: 'regular' },
     },
   },
 }
