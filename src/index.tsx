@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card, ModeProvider, Progress } from './index'
-import { Switcher } from './Switcher'
+import { Button, Card, ModeProvider, Progress, Switcher, Alert } from './index'
 import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
 // import { HiMail } from 'react-icons/hi'
 
@@ -52,6 +51,13 @@ const App: React.FC = () => (
           <div className="p-0.5" />
           <Progress label role="error" value={45} />
         </Card>
+        <Card>
+          <Alert>This is an alert.</Alert>
+          <Alert role="info">This is an alert.</Alert>
+          <Alert role="success">This is an alert.</Alert>
+          <Alert role="warning">This is an alert.</Alert>
+          <Alert role="error">This is an alert.</Alert>
+        </Card>
       </Card>
     </ModeProvider>
   </ThemeContext.Provider>
@@ -68,3 +74,5 @@ export { Button } from './Button'
 export { Progress } from './Progress'
 export { Card } from './Card'
 export { ModeProvider } from './ModeProvider'
+export { Alert } from './Alert'
+export { Switcher } from './Switcher'
