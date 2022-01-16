@@ -1,12 +1,22 @@
 import React, { useContext } from 'react'
-import { Role, Size } from './types'
-import { colorClass, HEIGHT, sizeClass, TEXTS, ThemeContext } from './ThemeContext'
+import { Role, Size, Weight } from './types'
+import {
+  colorClass,
+  HEIGHT,
+  optionProps,
+  sizeClass,
+  TEXTS,
+  ThemeContext,
+  weightClass,
+} from './ThemeContext'
 
 interface ProgressProps {
   size?: Size
   role?: Role
   value: number
   label?: boolean
+  rounded?: boolean
+  weight?: Weight
 }
 
 export const Progress: React.FC<ProgressProps> = ({
@@ -15,6 +25,7 @@ export const Progress: React.FC<ProgressProps> = ({
   size,
   role,
   label,
+  weight,
   ...other
 }) => {
   const t = useContext(ThemeContext)
@@ -28,12 +39,13 @@ export const Progress: React.FC<ProgressProps> = ({
           'progress',
           size,
           TEXTS
-        )} ${colorClass(
+        )} ${colorClass(t, 'progress', role, 'text')} ${weightClass(
           t,
           'progress',
-          role,
-          'text'
-        )} font-medium text-center p-0.5 leading-none rounded-full`}
+          weight
+        )} ${optionProps(t, other, 'progress', 'rounded')} ${
+          t.component.progress.style.progressLabel
+        }`}
         style={{ width: v }}
       >
         {v}
@@ -47,7 +59,7 @@ export const Progress: React.FC<ProgressProps> = ({
           'progress',
           role,
           'bg'
-        )} rounded-full`} // todo: had 'dark:bg-gray-300' at the end
+        )} ${optionProps(t, other, 'progress', 'rounded')}`}
         style={{ width: v }}
       />
     </div>

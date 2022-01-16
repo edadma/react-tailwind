@@ -1,5 +1,5 @@
 import React from 'react'
-import { Role, Size } from './types'
+import { Role, Size, Weight } from './types'
 
 export class RoleStyle {
   constructor(
@@ -34,18 +34,15 @@ export class ProgressStyle {
 export const DEFAULT_THEME = {
   size: {
     xs: ['text-xs', 'h-4'],
-    sm: ['text-sm', 'h-1.5'],
-    md: ['text-base', 'h-2.5'],
-    lg: ['text-lg', 'h-4'],
-    xl: ['text-xl', 'h-5'],
-    '2xl': ['text-2xl', 'h-6'],
-    '3xl': ['text-3xl', 'h-7'],
-    '4xl': ['text-4xl', 'h-8'],
-    '5xl': ['text-5xl', 'h-9'],
-    '6xl': ['text-6xl', 'h-10'],
-    '7xl': ['text-7xl', 'h-11'],
-    '8xl': ['text-8xl', 'h-12'],
-    '9xl': ['text-9xl', 'h-14'],
+    sm: ['text-sm', 'h-4'],
+    md: ['text-base', 'h-5'],
+    lg: ['text-lg', 'h-5'],
+    xl: ['text-xl', 'h-6'],
+    '2xl': ['text-2xl', 'h-7'],
+    '3xl': ['text-3xl', 'h-8'],
+    '4xl': ['text-4xl', 'h-10'],
+    '5xl': ['text-5xl', 'h-14'],
+    '6xl': ['text-6xl', 'h-16'],
   },
   weight: {
     thin: 'font-thin',
@@ -158,7 +155,7 @@ export const DEFAULT_THEME = {
         error: new ProgressStyle('text-red-50', 'bg-red-600 dark:bg-red-500'),
       },
       options: { rounded: 'rounded-full' },
-      default: { rounded: true, weight: 'bold', size: 'xs', role: 'regular' },
+      default: { rounded: true, weight: 'bold', size: 'sm', role: 'regular' },
     },
     card: {
       style: 'p-6 bg-white dark:bg-gray-800',
@@ -200,3 +197,6 @@ export const colorClass = (theme: any, component: string, role: Role | undefined
 
 export const sizeClass = (theme: any, component: string, size: Size | undefined, elem: number) =>
   theme.size[size || theme.component[component].default.size][elem]
+
+export const weightClass = (theme: any, component: string, weight: Weight | undefined) =>
+  theme.weight[weight || theme.component.button.default.weight]
