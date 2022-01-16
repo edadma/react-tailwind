@@ -11,6 +11,7 @@ interface ButtonProps
   rounded?: boolean
   pill?: boolean
   icon?: boolean
+  transition?: boolean
   role?: Role
   size?: Size
   weight?: Weight
@@ -54,11 +55,15 @@ export const Button: React.FC<ButtonProps> = ({
           'button',
           role,
           'focusRing'
-        )} ${optionProps(t, other, 'button', 'rounded', 'pill', 'icon')} ${weightClass(
+        )} ${optionProps(
           t,
+          other,
           'button',
-          weight
-        )} ${t.component.button.style}` +
+          'rounded',
+          'pill',
+          'icon',
+          'transition'
+        )} ${weightClass(t, 'button', weight)} ${t.component.button.style}` +
         (className ? ' ' + className : '')
       }
       {...other}

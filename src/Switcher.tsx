@@ -7,7 +7,7 @@ export const Switcher: React.FC = () => {
   const { mode, setMode } = useMode()
 
   return (
-    <Button icon pill onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
+    <Button icon pill rounded={false} onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
       {mode === 'dark' ? <ToggleLight /> : <ToggleDark />}
     </Button>
   )
