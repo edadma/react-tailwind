@@ -1,19 +1,6 @@
 import React from 'react'
 import { Role, Size, Weight } from './types'
 
-export class RoleStyle {
-  constructor(
-    public textOutlined: string,
-    public textLightShade: string,
-    public bg: string,
-    public hoverBgOutlined: string,
-    public hoverBg: string,
-    public focusRing: string,
-    public border: string,
-    public hoverTextLightShade: string
-  ) {}
-}
-
 export class ButtonRole {
   constructor(
     public outlinedText: string,
@@ -33,16 +20,16 @@ export class ProgressStyle {
 
 export const DEFAULT_THEME = {
   size: {
-    xs: ['text-xs', 'h-4'],
-    sm: ['text-sm', 'h-4'],
-    md: ['text-base', 'h-5'],
-    lg: ['text-lg', 'h-5'],
-    xl: ['text-xl', 'h-6'],
-    '2xl': ['text-2xl', 'h-7'],
-    '3xl': ['text-3xl', 'h-8'],
-    '4xl': ['text-4xl', 'h-10'],
-    '5xl': ['text-5xl', 'h-14'],
-    '6xl': ['text-6xl', 'h-16'],
+    xs: { text: 'text-xs', height: 'h-4' },
+    sm: { text: 'text-sm', height: 'h-4' },
+    md: { text: 'text-base', height: 'h-5' },
+    lg: { text: 'text-lg', height: 'h-5' },
+    xl: { text: 'text-xl', height: 'h-6' },
+    '2xl': { text: 'text-2xl', height: 'h-7' },
+    '3xl': { text: 'text-3xl', height: 'h-8' },
+    '4xl': { text: 'text-4xl', height: 'h-10' },
+    '5xl': { text: 'text-5xl', height: 'h-14' },
+    '6xl': { text: 'text-6xl', height: 'h-16' },
   },
   weight: {
     thin: 'font-thin',
@@ -142,7 +129,7 @@ export const DEFAULT_THEME = {
     },
     progress: {
       style: {
-        bar: 'w-full bg-gray-200 rounded-full dark:bg-gray-700',
+        bar: 'w-full bg-gray-400 rounded-full dark:bg-gray-700',
         progressLabel: 'text-center p-0.5 leading-none',
       },
       role: {
@@ -187,16 +174,17 @@ export const optionProps = (context: any, props: any, component: string, ...opti
     })
     .join(' ')
 
-export const TEXTS = 0
-export const HEIGHT = 1
-
 export const ThemeContext = React.createContext<any>(DEFAULT_THEME)
 
 export const colorClass = (theme: any, component: string, role: Role | undefined, elem: string) =>
   theme.component[component].role[role || theme.component[component].default.role][elem]
 
-export const sizeClass = (theme: any, component: string, size: Size | undefined, elem: number) =>
-  theme.size[size || theme.component[component].default.size][elem]
+export const sizeClass = (
+  theme: any,
+  component: string,
+  size: Size | undefined,
+  elem: 'text' | 'height'
+) => theme.size[size || theme.component[component].default.size][elem]
 
 export const weightClass = (theme: any, component: string, weight: Weight | undefined) =>
   theme.weight[weight || theme.component.button.default.weight]

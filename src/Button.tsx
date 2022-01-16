@@ -1,13 +1,6 @@
 import React, { useContext } from 'react'
 import { Role, Size, Weight } from './types'
-import {
-  colorClass,
-  optionProps,
-  sizeClass,
-  TEXTS,
-  ThemeContext,
-  weightClass,
-} from './ThemeContext'
+import { colorClass, optionProps, sizeClass, ThemeContext, weightClass } from './ThemeContext'
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -56,7 +49,7 @@ export const Button: React.FC<ButtonProps> = ({
               role,
               'filledText'
             )} ${colorClass(t, 'button', role, 'filledHoverBg')}`) +
-        ` ${sizeClass(t, 'button', size, TEXTS)} ${colorClass(
+        ` ${sizeClass(t, 'button', size, 'text')} ${colorClass(
           t,
           'button',
           role,

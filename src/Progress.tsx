@@ -1,14 +1,6 @@
 import React, { useContext } from 'react'
 import { Role, Size, Weight } from './types'
-import {
-  colorClass,
-  HEIGHT,
-  optionProps,
-  sizeClass,
-  TEXTS,
-  ThemeContext,
-  weightClass,
-} from './ThemeContext'
+import { colorClass, optionProps, sizeClass, ThemeContext, weightClass } from './ThemeContext'
 
 interface ProgressProps {
   size?: Size
@@ -38,7 +30,7 @@ export const Progress: React.FC<ProgressProps> = ({
           t,
           'progress',
           size,
-          TEXTS
+          'text'
         )} ${colorClass(t, 'progress', role, 'text')} ${weightClass(
           t,
           'progress',
@@ -52,9 +44,11 @@ export const Progress: React.FC<ProgressProps> = ({
       </div>
     </div>
   ) : (
-    <div className={`${sizeClass(t, 'progress', size, HEIGHT)} ${t.component.progress.style.bar}`}>
+    <div
+      className={`${sizeClass(t, 'progress', size, 'height')} ${t.component.progress.style.bar}`}
+    >
       <div
-        className={`${sizeClass(t, 'progress', size, HEIGHT)} ${colorClass(
+        className={`${sizeClass(t, 'progress', size, 'height')} ${colorClass(
           t,
           'progress',
           role,
