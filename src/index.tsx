@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import { Button, Card, ModeProvider, Progress, Switcher, Alert } from './index'
-import { DEFAULT_THEME, ThemeContext } from './ThemeContext'
+import { ThemeProvider } from './ThemeProvider'
+import { DefaultTheme } from './themes/DefaultTheme'
 // import { HiMail } from 'react-icons/hi'
 
 const App: React.FC = () => (
-  <ThemeContext.Provider value={DEFAULT_THEME}>
+  <ThemeProvider init={DefaultTheme}>
     <ModeProvider init="light">
       <Switcher />
       <Card>
@@ -60,7 +61,7 @@ const App: React.FC = () => (
         </Card>
       </Card>
     </ModeProvider>
-  </ThemeContext.Provider>
+  </ThemeProvider>
 )
 
 ReactDOM.render(

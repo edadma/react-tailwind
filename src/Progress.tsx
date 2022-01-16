@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Role, Size, Weight } from './types'
-import { colorClass, optionProps, sizeClass, ThemeContext, weightClass } from './ThemeContext'
+import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 
 interface ProgressProps {
   size?: Size
@@ -20,27 +20,27 @@ export const Progress: React.FC<ProgressProps> = ({
   weight,
   ...other
 }) => {
-  const t = useContext(ThemeContext)
+  const { theme } = useTheme()
   const v = `${value}%`
 
   return label ? (
     <div
-      className={`${optionProps(t, other, 'progress', 'rounded')} ${
-        t.component.progress.style.bar
+      className={`${optionProps(theme, other, 'progress', 'rounded')} ${
+        theme.component.progress.style.bar
       }`}
     >
       <div
-        className={`${colorClass(t, 'progress', role, 'bg')} ${sizeClass(
-          t,
+        className={`${colorClass(theme, 'progress', role, 'bg')} ${sizeClass(
+          theme,
           'progress',
           size,
           'text'
-        )} ${colorClass(t, 'progress', role, 'text')} ${weightClass(
-          t,
+        )} ${colorClass(theme, 'progress', role, 'text')} ${weightClass(
+          theme,
           'progress',
           weight
-        )} ${optionProps(t, other, 'progress', 'rounded')} ${
-          t.component.progress.style.progressLabel
+        )} ${optionProps(theme, other, 'progress', 'rounded')} ${
+          theme.component.progress.style.progressLabel
         }`}
         style={{ width: v }}
       >
@@ -49,20 +49,20 @@ export const Progress: React.FC<ProgressProps> = ({
     </div>
   ) : (
     <div
-      className={`${sizeClass(t, 'progress', size, 'height')} ${optionProps(
-        t,
+      className={`${sizeClass(theme, 'progress', size, 'height')} ${optionProps(
+        theme,
         other,
         'progress',
         'rounded'
-      )} ${t.component.progress.style.bar}`}
+      )} ${theme.component.progress.style.bar}`}
     >
       <div
-        className={`${sizeClass(t, 'progress', size, 'height')} ${colorClass(
-          t,
+        className={`${sizeClass(theme, 'progress', size, 'height')} ${colorClass(
+          theme,
           'progress',
           role,
           'bg'
-        )} ${optionProps(t, other, 'progress', 'rounded')}`}
+        )} ${optionProps(theme, other, 'progress', 'rounded')}`}
         style={{ width: v }}
       />
     </div>

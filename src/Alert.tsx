@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { colorClass, optionProps, sizeClass, ThemeContext } from './ThemeContext'
+import React from 'react'
+import { colorClass, optionProps, sizeClass, useTheme } from './ThemeProvider'
 import { Role, Size } from './types'
 
 interface AlertProps
@@ -11,16 +11,16 @@ interface AlertProps
 }
 
 export const Alert: React.FC<AlertProps> = ({ children, role, size, ...other }) => {
-  const t = useContext(ThemeContext)
+  const { theme } = useTheme()
 
   return (
     <div
-      className={`${sizeClass(t, 'alert', size, 'text')} ${colorClass(
-        t,
+      className={`${sizeClass(theme, 'alert', size, 'text')} ${colorClass(
+        theme,
         'alert',
         role,
         'div'
-      )} ${optionProps(t, other, 'alert', 'rounded', 'border')} ${t.component.alert.style}`}
+      )} ${optionProps(theme, other, 'alert', 'rounded', 'border')} ${theme.component.alert.style}`}
       {...other}
     >
       {children}

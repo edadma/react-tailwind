@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { optionProps, ThemeContext } from './ThemeContext'
+import React from 'react'
+import { optionProps, useTheme } from './ThemeProvider'
 
 interface CardProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -9,12 +9,12 @@ interface CardProps
 }
 
 export const Card: React.FC<CardProps> = ({ children, ...other }) => {
-  const t = useContext(ThemeContext)
+  const { theme } = useTheme()
 
   return (
     <div
-      className={`${optionProps(t, other, 'card', 'rounded', 'border', 'shadow')} ${
-        t.component.card.style
+      className={`${optionProps(theme, other, 'card', 'rounded', 'border', 'shadow')} ${
+        theme.component.card.style
       }`}
       {...other}
     >

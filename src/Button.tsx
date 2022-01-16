@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Role, Size, Weight } from './types'
-import { colorClass, optionProps, sizeClass, ThemeContext, weightClass } from './ThemeContext'
+import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -26,44 +26,44 @@ export const Button: React.FC<ButtonProps> = ({
   weight,
   ...other
 }) => {
-  const t = useContext(ThemeContext)
+  const { theme } = useTheme()
 
   return (
     <button
       type="button"
       className={
         (outlined
-          ? `${colorClass(t, 'button', role, 'outlinedBorder')} ${colorClass(
-              t,
+          ? `${colorClass(theme, 'button', role, 'outlinedBorder')} ${colorClass(
+              theme,
               'button',
               role,
               'outlinedText'
-            )} ${colorClass(t, 'button', role, 'outlinedHoverBg')} ${colorClass(
-              t,
+            )} ${colorClass(theme, 'button', role, 'outlinedHoverBg')} ${colorClass(
+              theme,
               'button',
               role,
               'outlinedHoverText'
             )}`
-          : `${colorClass(t, 'button', role, 'filledBg')} ${colorClass(
-              t,
+          : `${colorClass(theme, 'button', role, 'filledBg')} ${colorClass(
+              theme,
               'button',
               role,
               'filledText'
-            )} ${colorClass(t, 'button', role, 'filledHoverBg')}`) +
-        ` ${sizeClass(t, 'button', size, 'text')} ${colorClass(
-          t,
+            )} ${colorClass(theme, 'button', role, 'filledHoverBg')}`) +
+        ` ${sizeClass(theme, 'button', size, 'text')} ${colorClass(
+          theme,
           'button',
           role,
           'focusRing'
         )} ${optionProps(
-          t,
+          theme,
           other,
           'button',
           'rounded',
           'pill',
           'icon',
           'transition'
-        )} ${weightClass(t, 'button', weight)} ${t.component.button.style}` +
+        )} ${weightClass(theme, 'button', weight)} ${theme.component.button.style}` +
         (className ? ' ' + className : '')
       }
       {...other}

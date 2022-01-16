@@ -1,28 +1,8 @@
-import React from 'react'
-import { Role, Size, Weight } from './types'
+import { ButtonRole, ProgressRole } from '../ThemeProvider'
 
-export class ButtonRole {
-  constructor(
-    public outlinedText: string,
-    public filledText: string,
-    public filledBg: string,
-    public outlinedHoverBg: string,
-    public filledHoverBg: string,
-    public focusRing: string,
-    public outlinedBorder: string,
-    public outlinedHoverText: string
-  ) {}
-}
-
-export class ProgressStyle {
-  constructor(public text: string, public bg: string) {}
-}
-
-export class AlertStyle {
-  constructor(public text: string, public bg: string, public border: string) {}
-}
-
-export const DEFAULT_THEME = {
+export const DefaultTheme = {
+  name: 'Default Theme',
+  description: 'Basic theme with support for both light and dark modes',
   size: {
     xs: { text: 'text-xs', height: 'h-4' },
     sm: { text: 'text-sm', height: 'h-4' },
@@ -143,13 +123,13 @@ export const DEFAULT_THEME = {
         progressLabel: 'text-center p-0.5 leading-none',
       },
       role: {
-        primary: new ProgressStyle('text-green-50', 'bg-green-600 dark:bg-green-500'),
-        secondary: new ProgressStyle('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
-        regular: new ProgressStyle('text-gray-50', 'bg-gray-600 dark:bg-gray-500'),
-        info: new ProgressStyle('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
-        success: new ProgressStyle('text-green-50', 'bg-green-600 dark:bg-green-500'),
-        warning: new ProgressStyle('text-yellow-50', 'bg-yellow-600 dark:bg-yellow-500'),
-        error: new ProgressStyle('text-red-50', 'bg-red-600 dark:bg-red-500'),
+        primary: new ProgressRole('text-green-50', 'bg-green-600 dark:bg-green-500'),
+        secondary: new ProgressRole('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
+        regular: new ProgressRole('text-gray-50', 'bg-gray-600 dark:bg-gray-500'),
+        info: new ProgressRole('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
+        success: new ProgressRole('text-green-50', 'bg-green-600 dark:bg-green-500'),
+        warning: new ProgressRole('text-yellow-50', 'bg-yellow-600 dark:bg-yellow-500'),
+        error: new ProgressRole('text-red-50', 'bg-red-600 dark:bg-red-500'),
       },
       options: { rounded: 'rounded-full' },
       default: { rounded: true, weight: 'bold', size: 'sm', role: 'regular' },
@@ -196,29 +176,3 @@ export const DEFAULT_THEME = {
     },
   },
 }
-
-export const optionProps = (context: any, props: any, component: string, ...options: string[]) =>
-  options
-    .map((option) => {
-      const style = context.component[component].options[option]
-      const selected =
-        props[option] !== undefined ? props[option] : context.component[component].default[option]
-
-      return Array.isArray(style) ? style[selected ? 0 : 1] : selected ? style : ''
-    })
-    .join(' ')
-
-export const ThemeContext = React.createContext<any>(DEFAULT_THEME)
-
-export const colorClass = (theme: any, component: string, role: Role | undefined, elem: string) =>
-  theme.component[component].role[role || theme.component[component].default.role][elem]
-
-export const sizeClass = (
-  theme: any,
-  component: string,
-  size: Size | undefined,
-  elem: 'text' | 'height'
-) => theme.size[size || theme.component[component].default.size][elem]
-
-export const weightClass = (theme: any, component: string, weight: Weight | undefined) =>
-  theme.weight[weight || theme.component.button.default.weight]

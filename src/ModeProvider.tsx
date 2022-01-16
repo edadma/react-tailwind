@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import { ThemeContext } from './ThemeContext'
 
 export type ModeType = 'light' | 'dark'
 
