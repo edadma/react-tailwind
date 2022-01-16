@@ -24,7 +24,11 @@ export const Progress: React.FC<ProgressProps> = ({
   const v = `${value}%`
 
   return label ? (
-    <div className={t.component.progress.style.bar}>
+    <div
+      className={`${optionProps(t, other, 'progress', 'rounded')} ${
+        t.component.progress.style.bar
+      }`}
+    >
       <div
         className={`${colorClass(t, 'progress', role, 'bg')} ${sizeClass(
           t,
@@ -45,7 +49,12 @@ export const Progress: React.FC<ProgressProps> = ({
     </div>
   ) : (
     <div
-      className={`${sizeClass(t, 'progress', size, 'height')} ${t.component.progress.style.bar}`}
+      className={`${sizeClass(t, 'progress', size, 'height')} ${optionProps(
+        t,
+        other,
+        'progress',
+        'rounded'
+      )} ${t.component.progress.style.bar}`}
     >
       <div
         className={`${sizeClass(t, 'progress', size, 'height')} ${colorClass(

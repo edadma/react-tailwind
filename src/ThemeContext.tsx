@@ -129,7 +129,7 @@ export const DEFAULT_THEME = {
     },
     progress: {
       style: {
-        bar: 'w-full bg-gray-400 rounded-full dark:bg-gray-700',
+        bar: 'w-full bg-gray-400 dark:bg-gray-700',
         progressLabel: 'text-center p-0.5 leading-none',
       },
       role: {
