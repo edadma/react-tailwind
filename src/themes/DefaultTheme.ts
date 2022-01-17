@@ -34,7 +34,7 @@ export const DefaultTheme = {
   },
   component: {
     button: {
-      style: 'focus:ring-2 text-center mr-2 mb-2',
+      style: 'focus:ring-2 text-center', // todo:  mr-2 mb-2
       color: {
         primary: new ButtonColor(
           'text-green-600',

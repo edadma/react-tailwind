@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card, ModeProvider, Progress, ModeSwitcher, Alert, Text } from './index'
+import { Button, Card, ModeProvider, Progress, ModeSwitcher, Alert, Text, Row } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
 import { CB3Theme } from './themes/CB3Theme'
@@ -14,53 +14,49 @@ const App: React.FC = () => (
       <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
       <Card>
         <Card>
-          <Text role="primary">Buttons</Text>
-          <Button>regular</Button>
-          <Button role="info">info</Button>
-          <Button role="success">success</Button>
-          <Button role="warning">warning</Button>
-          <Button role="error">error</Button>
-          <Button outlined>regular</Button>
-          <Button outlined role="info">
-            info
-          </Button>
-          <Button outlined role="success">
-            success
-          </Button>
-          <Button outlined role="warning">
-            warning
-          </Button>
-          <Button outlined role="error">
-            error
-          </Button>
+          <Row cols={5} gap={0}>
+            <Button>regular</Button>
+            <Button role="info">info</Button>
+            <Button role="success">success</Button>
+            <Button role="warning">warning</Button>
+            <Button role="error">error</Button>
+            <Button outlined>regular</Button>
+            <Button outlined role="info">
+              info
+            </Button>
+            <Button outlined role="success">
+              success
+            </Button>
+            <Button outlined role="warning">
+              warning
+            </Button>
+            <Button outlined role="error">
+              error
+            </Button>
+          </Row>
         </Card>
         <Card>
-          <Progress value={45} />
-          <div className="p-0.5" />
-          <Progress role="info" value={45} />
-          <div className="p-0.5" />
-          <Progress role="success" value={45} />
-          <div className="p-0.5" />
-          <Progress role="warning" value={45} />
-          <div className="p-0.5" />
-          <Progress role="error" value={45} />
-          <div className="p-0.5" />
-          <Progress label value={45} />
-          <div className="p-0.5" />
-          <Progress label role="info" value={45} />
-          <div className="p-0.5" />
-          <Progress label role="success" value={45} />
-          <div className="p-0.5" />
-          <Progress label role="warning" value={45} />
-          <div className="p-0.5" />
-          <Progress label role="error" value={45} />
+          <Row cols={5}>
+            <Progress value={45} />
+            <Progress role="info" value={45} />
+            <Progress role="success" value={45} />
+            <Progress role="warning" value={45} />
+            <Progress role="error" value={45} />
+            <Progress label value={45} />
+            <Progress label role="info" value={45} />
+            <Progress label role="success" value={45} />
+            <Progress label role="warning" value={45} />
+            <Progress label role="error" value={45} />
+          </Row>
         </Card>
         <Card>
-          <Alert>This is an alert.</Alert>
-          <Alert role="info">This is an alert.</Alert>
-          <Alert role="success">This is an alert.</Alert>
-          <Alert role="warning">This is an alert.</Alert>
-          <Alert role="error">This is an alert.</Alert>
+          <Row cols={5}>
+            <Alert>This is an alert.</Alert>
+            <Alert role="info">This is an alert.</Alert>
+            <Alert role="success">This is an alert.</Alert>
+            <Alert role="warning">This is an alert.</Alert>
+            <Alert role="error">This is an alert.</Alert>
+          </Row>
         </Card>
       </Card>
     </ModeProvider>
@@ -81,3 +77,4 @@ export { ModeProvider } from './ModeProvider'
 export { Alert } from './Alert'
 export { ModeSwitcher } from './ModeSwitcher'
 export { Text } from './Text'
+export { Row, Col } from './Grid'

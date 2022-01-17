@@ -1,7 +1,7 @@
 import { ButtonColor, ProgressColor } from '../ThemeProvider'
 
 export const CB3Theme = {
-  name: 'Color Blind 3 Theme',
+  name: 'Inclusive 3 Theme',
   description:
     'Theme catering to the 6% who see things differently with support for both light and dark modes',
   size: {
