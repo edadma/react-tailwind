@@ -1,5 +1,5 @@
 import React from 'react'
-import { Role, Size, Weight } from './types'
+import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 
 interface ButtonProps
@@ -12,7 +12,7 @@ interface ButtonProps
   pill?: boolean
   icon?: boolean
   transition?: boolean
-  role?: Role
+  role?: Color
   size?: Size
   weight?: Weight
 }

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Role, Size, Weight } from './types'
+import { Color, Size, Weight } from './types'
 
 export class ButtonRole {
   constructor(
@@ -55,7 +55,7 @@ export const ThemeProvider: React.FC<{ value: any }> = ({ children, value }) => 
   )
 }
 
-export const colorClass = (theme: any, component: string, role: Role | undefined, elem: string) =>
+export const colorClass = (theme: any, component: string, role: Color | undefined, elem: string) =>
   theme.component[component].role[role || theme.component[component].default.role][elem]
 
 export const sizeClass = (

@@ -1,12 +1,12 @@
 import React from 'react'
 import { colorClass, optionProps, sizeClass, useTheme } from './ThemeProvider'
-import { Role, Size } from './types'
+import { Color, Size } from './types'
 
 interface AlertProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   rounded?: boolean
   border?: boolean
-  role?: Role
+  role?: Color
   size?: Size
 }
 

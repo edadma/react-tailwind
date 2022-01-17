@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card, ModeProvider, Progress, ModeSwitcher, Alert } from './index'
+import { Button, Card, ModeProvider, Progress, ModeSwitcher, Alert, Text } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
 import { CB3Theme } from './themes/CB3Theme'
@@ -14,6 +14,7 @@ const App: React.FC = () => (
       <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
       <Card>
         <Card>
+          <Text>Buttons</Text>
           <Button>regular</Button>
           <Button role="info">info</Button>
           <Button role="success">success</Button>
@@ -79,3 +80,4 @@ export { Card } from './Card'
 export { ModeProvider } from './ModeProvider'
 export { Alert } from './Alert'
 export { ModeSwitcher } from './ModeSwitcher'
+export { Text } from './Text'

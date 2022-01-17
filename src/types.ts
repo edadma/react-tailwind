@@ -13,7 +13,7 @@ export type Size =
   | '8xl'
   | '9xl'
 
-export type Role =
+export type Color =
   | 'primary'
   | 'secondary'
   | 'regular'

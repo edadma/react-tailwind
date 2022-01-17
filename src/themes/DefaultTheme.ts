@@ -174,5 +174,35 @@ export const DefaultTheme = {
       },
       default: { rounded: true, border: true, size: 'sm', role: 'regular' },
     },
+    text: {
+      role: {
+        primary: {
+          text: 'text-green-700 dark:text-green-800',
+        },
+        secondary: {
+          text: 'text-blue-700 dark:text-blue-800',
+        },
+        regular: {
+          text: 'text-gray-700 dark:text-gray-800',
+        },
+        info: {
+          text: 'text-blue-700 dark:text-blue-800',
+        },
+        success: {
+          text: 'text-green-700 dark:text-green-800',
+        },
+        warning: {
+          text: 'text-yellow-700 dark:text-yellow-800',
+        },
+        error: {
+          text: 'text-red-700 dark:text-red-800',
+        },
+      },
+      options: {
+        rounded: 'rounded-lg',
+        border: 'border-t-4',
+      },
+      default: { rounded: true, border: true, size: 'sm', role: 'regular' },
+    },
   },
 }

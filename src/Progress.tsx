@@ -1,10 +1,10 @@
 import React from 'react'
-import { Role, Size, Weight } from './types'
+import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 
 interface ProgressProps {
   size?: Size
-  role?: Role
+  role?: Color
   value: number
   label?: boolean
   rounded?: boolean
