@@ -1,4 +1,4 @@
-import { ButtonRole, ProgressRole } from '../ThemeProvider'
+import { ButtonColor, ProgressColor } from '../ThemeProvider'
 
 export const DefaultTheme = {
   name: 'Default Theme',
@@ -26,11 +26,17 @@ export const DefaultTheme = {
     extrabold: 'font-extrabold',
     black: 'font-black',
   },
+  align: {
+    left: 'text-left',
+    center: 'text-center',
+    right: 'text-right',
+    justify: 'text-justify',
+  },
   component: {
     button: {
       style: 'focus:ring-2 text-center mr-2 mb-2',
-      role: {
-        primary: new ButtonRole(
+      color: {
+        primary: new ButtonColor(
           'text-green-600',
           'text-green-50',
           'bg-green-600 dark:bg-green-500',
@@ -40,7 +46,7 @@ export const DefaultTheme = {
           'border border-green-500',
           'hover:text-green-50'
         ),
-        secondary: new ButtonRole(
+        secondary: new ButtonColor(
           'text-blue-600',
           'text-blue-50',
           'bg-blue-600 dark:bg-blue-500',
@@ -50,7 +56,7 @@ export const DefaultTheme = {
           'border border-blue-500',
           'hover:text-blue-50'
         ),
-        regular: new ButtonRole(
+        regular: new ButtonColor(
           'text-gray-600',
           'text-gray-50',
           'bg-gray-600 dark:bg-gray-500',
@@ -60,7 +66,7 @@ export const DefaultTheme = {
           'border border-gray-500',
           'hover:text-gray-50'
         ),
-        info: new ButtonRole(
+        info: new ButtonColor(
           'text-blue-600',
           'text-blue-50',
           'bg-blue-600 dark:bg-blue-500',
@@ -70,7 +76,7 @@ export const DefaultTheme = {
           'border border-blue-500',
           'hover:text-blue-50'
         ),
-        success: new ButtonRole(
+        success: new ButtonColor(
           'text-green-600',
           'text-green-50',
           'bg-green-600 dark:bg-green-500',
@@ -80,7 +86,7 @@ export const DefaultTheme = {
           'border border-green-500',
           'hover:text-green-50'
         ),
-        warning: new ButtonRole(
+        warning: new ButtonColor(
           'text-yellow-600',
           'text-yellow-50',
           'bg-yellow-600 dark:bg-yellow-500',
@@ -90,7 +96,7 @@ export const DefaultTheme = {
           'border border-yellow-500',
           'hover:text-yellow-50'
         ),
-        error: new ButtonRole(
+        error: new ButtonColor(
           'text-red-600',
           'text-red-50',
           'bg-red-600 dark:bg-red-500',
@@ -114,7 +120,7 @@ export const DefaultTheme = {
         transition: true,
         weight: 'bold',
         size: 'md',
-        role: 'regular',
+        color: 'regular',
       },
     },
     progress: {
@@ -122,17 +128,17 @@ export const DefaultTheme = {
         bar: 'w-full bg-gray-400 dark:bg-gray-700',
         progressLabel: 'text-center p-0.5 leading-none',
       },
-      role: {
-        primary: new ProgressRole('text-green-50', 'bg-green-600 dark:bg-green-500'),
-        secondary: new ProgressRole('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
-        regular: new ProgressRole('text-gray-50', 'bg-gray-600 dark:bg-gray-500'),
-        info: new ProgressRole('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
-        success: new ProgressRole('text-green-50', 'bg-green-600 dark:bg-green-500'),
-        warning: new ProgressRole('text-yellow-50', 'bg-yellow-600 dark:bg-yellow-500'),
-        error: new ProgressRole('text-red-50', 'bg-red-600 dark:bg-red-500'),
+      color: {
+        primary: new ProgressColor('text-green-50', 'bg-green-600 dark:bg-green-500'),
+        secondary: new ProgressColor('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
+        regular: new ProgressColor('text-gray-50', 'bg-gray-600 dark:bg-gray-500'),
+        info: new ProgressColor('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
+        success: new ProgressColor('text-green-50', 'bg-green-600 dark:bg-green-500'),
+        warning: new ProgressColor('text-yellow-50', 'bg-yellow-600 dark:bg-yellow-500'),
+        error: new ProgressColor('text-red-50', 'bg-red-600 dark:bg-red-500'),
       },
       options: { rounded: 'rounded-full' },
-      default: { rounded: true, weight: 'bold', size: 'sm', role: 'regular' },
+      default: { rounded: true, weight: 'bold', size: 'sm', color: 'regular' },
     },
     card: {
       style: 'p-6 bg-white dark:bg-gray-800',
@@ -145,7 +151,7 @@ export const DefaultTheme = {
     },
     alert: {
       style: 'p-4 mb-4',
-      role: {
+      color: {
         primary: {
           div: 'bg-green-100 border-green-500 text-green-700 dark:text-green-800 dark:bg-green-200',
         },
@@ -172,10 +178,10 @@ export const DefaultTheme = {
         rounded: 'rounded-lg',
         border: 'border-t-4',
       },
-      default: { rounded: true, border: true, size: 'sm', role: 'regular' },
+      default: { rounded: true, border: true, size: 'sm', color: 'regular' },
     },
     text: {
-      role: {
+      color: {
         primary: {
           text: 'text-green-700 dark:text-green-800',
         },
@@ -199,10 +205,18 @@ export const DefaultTheme = {
         },
       },
       options: {
-        rounded: 'rounded-lg',
-        border: 'border-t-4',
+        underline: 'underline',
+        overline: 'overline',
+        strikethrough: 'line-through',
       },
-      default: { rounded: true, border: true, size: 'sm', role: 'regular' },
+      default: {
+        underline: false,
+        overline: false,
+        strikethrough: false,
+        size: 'sm',
+        color: 'regular',
+        align: 'left',
+      },
     },
   },
 }

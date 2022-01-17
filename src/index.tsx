@@ -14,7 +14,7 @@ const App: React.FC = () => (
       <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
       <Card>
         <Card>
-          <Text>Buttons</Text>
+          <Text role="primary">Buttons</Text>
           <Button>regular</Button>
           <Button role="info">info</Button>
           <Button role="success">success</Button>

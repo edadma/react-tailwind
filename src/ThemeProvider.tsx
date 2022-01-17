@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
-import { Color, Size, Weight } from './types'
+import { Align, Color, Size, Weight } from './types'
 
-export class ButtonRole {
+export class ButtonColor {
   constructor(
     public outlinedText: string,
     public filledText: string,
@@ -14,7 +14,7 @@ export class ButtonRole {
   ) {}
 }
 
-export class ProgressRole {
+export class ProgressColor {
   constructor(public text: string, public bg: string) {}
 }
 
@@ -48,22 +48,17 @@ export const useTheme = () => useContext(ThemeContext)
 export const ThemeProvider: React.FC<{ value: any }> = ({ children, value }) => {
   const [theme, setTheme] = useState(value)
 
-  return (
-    <ThemeContext.Provider value={{ theme: theme, setTheme: setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>
 }
 
-export const colorClass = (theme: any, component: string, role: Color | undefined, elem: string) =>
-  theme.component[component].role[role || theme.component[component].default.role][elem]
+export const colorClass = (theme: any, component: string, color: Color | undefined, elem: string) =>
+  theme.component[component].color[color || theme.component[component].default.color][elem]
 
-export const sizeClass = (
-  theme: any,
-  component: string,
-  size: Size | undefined,
-  elem: 'text' | 'height'
-) => theme.size[size || theme.component[component].default.size][elem]
+export const sizeClass = (theme: any, component: string, size: Size | undefined, elem: string) =>
+  theme.size[size || theme.component[component].default.size][elem]
+
+export const alignClass = (theme: any, component: string, align: Align | undefined) =>
+  theme.align[align || theme.component[component].default.align]
 
 export const weightClass = (theme: any, component: string, weight: Weight | undefined) =>
   theme.weight[weight || theme.component.button.default.weight]

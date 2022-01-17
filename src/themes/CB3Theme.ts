@@ -1,4 +1,4 @@
-import { ButtonRole, ProgressRole } from '../ThemeProvider'
+import { ButtonColor, ProgressColor } from '../ThemeProvider'
 
 export const CB3Theme = {
   name: 'Color Blind 3 Theme',
@@ -31,7 +31,7 @@ export const CB3Theme = {
     button: {
       style: 'focus:ring-2 text-center mr-2 mb-2',
       role: {
-        primary: new ButtonRole(
+        primary: new ButtonColor(
           'text-cb3success-600',
           'text-cb3success-50',
           'bg-cb3success-600 dark:bg-cb3success-500',
@@ -41,7 +41,7 @@ export const CB3Theme = {
           'border border-cb3success-500',
           'hover:text-cb3success-50'
         ),
-        secondary: new ButtonRole(
+        secondary: new ButtonColor(
           'text-blue-600',
           'text-blue-50',
           'bg-blue-600 dark:bg-blue-500',
@@ -51,7 +51,7 @@ export const CB3Theme = {
           'border border-blue-500',
           'hover:text-blue-50'
         ),
-        regular: new ButtonRole(
+        regular: new ButtonColor(
           'text-gray-600',
           'text-gray-50',
           'bg-gray-600 dark:bg-gray-500',
@@ -61,7 +61,7 @@ export const CB3Theme = {
           'border border-gray-500',
           'hover:text-gray-50'
         ),
-        info: new ButtonRole(
+        info: new ButtonColor(
           'text-blue-600',
           'text-blue-50',
           'bg-blue-600 dark:bg-blue-500',
@@ -71,7 +71,7 @@ export const CB3Theme = {
           'border border-blue-500',
           'hover:text-blue-50'
         ),
-        success: new ButtonRole(
+        success: new ButtonColor(
           'text-cb3success-600',
           'text-cb3success-50',
           'bg-cb3success-600 dark:bg-cb3success-500',
@@ -81,7 +81,7 @@ export const CB3Theme = {
           'border border-cb3success-500',
           'hover:text-cb3success-50'
         ),
-        warning: new ButtonRole(
+        warning: new ButtonColor(
           'text-cb3warning-600',
           'text-cb3warning-50',
           'bg-cb3warning-600 dark:bg-cb3warning-500',
@@ -91,7 +91,7 @@ export const CB3Theme = {
           'border border-cb3warning-500',
           'hover:text-cb3warning-50'
         ),
-        error: new ButtonRole(
+        error: new ButtonColor(
           'text-red-600',
           'text-red-50',
           'bg-red-600 dark:bg-red-500',
@@ -124,13 +124,22 @@ export const CB3Theme = {
         progressLabel: 'text-center p-0.5 leading-none',
       },
       role: {
-        primary: new ProgressRole('text-cb3success-50', 'bg-cb3success-600 dark:bg-cb3success-500'),
-        secondary: new ProgressRole('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
-        regular: new ProgressRole('text-gray-50', 'bg-gray-600 dark:bg-gray-500'),
-        info: new ProgressRole('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
-        success: new ProgressRole('text-cb3success-50', 'bg-cb3success-600 dark:bg-cb3success-500'),
-        warning: new ProgressRole('text-cb3warning-50', 'bg-cb3warning-600 dark:bg-cb3warning-500'),
-        error: new ProgressRole('text-red-50', 'bg-red-600 dark:bg-red-500'),
+        primary: new ProgressColor(
+          'text-cb3success-50',
+          'bg-cb3success-600 dark:bg-cb3success-500'
+        ),
+        secondary: new ProgressColor('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
+        regular: new ProgressColor('text-gray-50', 'bg-gray-600 dark:bg-gray-500'),
+        info: new ProgressColor('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
+        success: new ProgressColor(
+          'text-cb3success-50',
+          'bg-cb3success-600 dark:bg-cb3success-500'
+        ),
+        warning: new ProgressColor(
+          'text-cb3warning-50',
+          'bg-cb3warning-600 dark:bg-cb3warning-500'
+        ),
+        error: new ProgressColor('text-red-50', 'bg-red-600 dark:bg-red-500'),
       },
       options: { rounded: 'rounded-full' },
       default: { rounded: true, weight: 'bold', size: 'sm', role: 'regular' },
