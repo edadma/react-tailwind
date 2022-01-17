@@ -218,5 +218,12 @@ export const DefaultTheme = {
         align: 'left',
       },
     },
+    row: {
+      style: 'grid',
+      default: {
+        cols: 12,
+        gap: 4,
+      },
+    },
   },
 }
