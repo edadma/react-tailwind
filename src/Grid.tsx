@@ -79,6 +79,10 @@ const rowsClass: any = {
   12: 'grid-rows-12',
 }
 
+const flowClass = {
+  row:
+}
+
 interface RowProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   cols?: number
@@ -86,6 +90,7 @@ interface RowProps
   gap?: number
   gapx?: number
   gapy?: number
+  flow?: 'row' | 'col' | 'row-dense' | 'col-dense'
 }
 
 export const Row: React.FC<RowProps> = ({
@@ -96,6 +101,7 @@ export const Row: React.FC<RowProps> = ({
   gap,
   gapx,
   gapy,
+  flow,
   ...other
 }) => {
   const { theme } = useTheme()
