@@ -115,7 +115,7 @@ export const Grid: React.FC<GridProps> = ({
   return (
     <div
       className={
-        `${colsClass[cols !== undefined ? cols : theme.component.grid.default.cols]} ${
+        `${colsClass[cols || theme.component.grid.default.cols]} ${
           rows !== undefined ? rowsClass[rows] : ''
         } ${gapClass[gap !== undefined ? gap : theme.component.grid.default.gap]} ${
           gapx !== undefined ? gapxClass[gapx] : ''
