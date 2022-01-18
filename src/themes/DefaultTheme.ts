@@ -218,11 +218,36 @@ export const DefaultTheme = {
         align: 'left',
       },
     },
-    row: {
+    grid: {
       style: 'grid',
+      color: {
+        primary: {
+          div: 'bg-green-200 dark:bg-green-300',
+        },
+        secondary: {
+          div: 'bg-blue-200 dark:bg-blue-300',
+        },
+        regular: {
+          div: 'bg-gray-200 dark:bg-gray-300',
+        },
+        info: {
+          div: 'bg-blue-200 dark:bg-blue-300',
+        },
+        success: {
+          div: 'bg-green-200 dark:bg-green-300',
+        },
+        warning: {
+          div: 'bg-yellow-200 dark:bg-yellow-300',
+        },
+        error: {
+          div: 'bg-red-200 dark:bg-red-300',
+        },
+        none: { div: '' },
+      },
       default: {
         cols: 12,
         gap: 4,
+        color: 'none',
       },
     },
   },

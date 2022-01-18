@@ -1,5 +1,6 @@
 import React from 'react'
-import { optionProps, useTheme } from './ThemeProvider'
+import { colorClass, optionProps, useTheme } from './ThemeProvider'
+import { Color } from './types'
 
 const gapClass: any = {
   0: 'gap-0',
@@ -80,10 +81,13 @@ const rowsClass: any = {
 }
 
 const flowClass = {
-  row:
+  row: 'grid-flow-row',
+  col: 'grid-flow-col',
+  'row-dense': 'grid-flow-row-dense',
+  'col-dense': 'grid-flow-col-dense',
 }
 
-interface RowProps
+interface GridProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   cols?: number
   rows?: number
@@ -91,9 +95,10 @@ interface RowProps
   gapx?: number
   gapy?: number
   flow?: 'row' | 'col' | 'row-dense' | 'col-dense'
+  bg?: Color
 }
 
-export const Row: React.FC<RowProps> = ({
+export const Grid: React.FC<GridProps> = ({
   children,
   className,
   cols,
@@ -102,6 +107,7 @@ export const Row: React.FC<RowProps> = ({
   gapx,
   gapy,
   flow,
+  bg,
   ...other
 }) => {
   const { theme } = useTheme()
@@ -109,11 +115,13 @@ export const Row: React.FC<RowProps> = ({
   return (
     <div
       className={
-        `${colsClass[cols !== undefined ? cols : theme.component.row.default.cols]} ${
+        `${colsClass[cols !== undefined ? cols : theme.component.grid.default.cols]} ${
           rows !== undefined ? rowsClass[rows] : ''
-        } ${gapClass[gap !== undefined ? gap : theme.component.row.default.gap]} ${
+        } ${gapClass[gap !== undefined ? gap : theme.component.grid.default.gap]} ${
           gapx !== undefined ? gapxClass[gapx] : ''
-        } ${gapy !== undefined ? gapyClass[gapy] : ''} ${theme.component.row.style}` +
+        } ${gapy !== undefined ? gapyClass[gapy] : ''} ${
+          flow !== undefined ? flowClass[flow] : ''
+        } ${colorClass(theme, 'grid', bg, 'div')} ${theme.component.grid.style}` +
         (className ? ' ' + className : '')
       }
       {...other}
@@ -123,14 +131,79 @@ export const Row: React.FC<RowProps> = ({
   )
 }
 
-interface ColProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+const colSpanClass: any = {
+  '1': 'col-span-1',
+  '2': 'col-span-2',
+  '3': 'col-span-3',
+  '4': 'col-span-4',
+  '5': 'col-span-5',
+  '6': 'col-span-6',
+  '7': 'col-span-7',
+  '8': 'col-span-8',
+  '9': 'col-span-9',
+  '10': 'col-span-10',
+  '11': 'col-span-11',
+  '12': 'col-span-12',
+  auto: 'col-auto',
+  full: 'col-span-full',
+}
 
-export const Col: React.FC<ColProps> = ({ children, ...other }) => {
-  const { theme } = useTheme()
+const colStartClass: any = {
+  '1': 'col-start-1',
+  '2': 'col-start-2',
+  '3': 'col-start-3',
+  '4': 'col-start-4',
+  '5': 'col-start-5',
+  '6': 'col-start-6',
+  '7': 'col-start-7',
+  '8': 'col-start-8',
+  '9': 'col-start-9',
+  '10': 'col-start-10',
+  '11': 'col-start-11',
+  '12': 'col-start-12',
+  auto: 'col-start-auto',
+}
 
+const colEndClass: any = {
+  '1': 'col-end-1',
+  '2': 'col-end-2',
+  '3': 'col-end-3',
+  '4': 'col-end-4',
+  '5': 'col-end-5',
+  '6': 'col-end-6',
+  '7': 'col-end-7',
+  '8': 'col-end-8',
+  '9': 'col-end-9',
+  '10': 'col-end-10',
+  '11': 'col-end-11',
+  '12': 'col-end-12',
+  auto: 'col-end-auto',
+}
+
+interface ElemProps
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  colSpan?: string
+  colStart?: string
+  colEnd?: string
+}
+
+export const Elem: React.FC<ElemProps> = ({
+  children,
+  className,
+  colSpan,
+  colStart,
+  colEnd,
+  ...other
+}) => {
   return (
-    <div className={`${theme.component.col.style}`} {...other}>
+    <div
+      className={
+        `${colSpan !== undefined ? colSpanClass[colSpan] : ''} ${
+          colStart !== undefined ? colStartClass[colStart] : ''
+        } ${colEnd !== undefined ? colEndClass[colEnd] : ''}` + (className ? ' ' + className : '')
+      }
+      {...other}
+    >
       {children}
     </div>
   )

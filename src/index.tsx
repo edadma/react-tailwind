@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card, ModeProvider, Progress, ModeSwitcher, Alert, Text, Row } from './index'
+import { Button, Card, ModeProvider, Progress, ModeSwitcher, Alert, Grid } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
 import { CB3Theme } from './themes/CB3Theme'
@@ -14,7 +14,7 @@ const App: React.FC = () => (
       <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
       <Card>
         <Card>
-          <Row cols={5} gap={0}>
+          <Grid cols={5} bg="primary">
             <Button>regular</Button>
             <Button role="info">info</Button>
             <Button role="success">success</Button>
@@ -33,10 +33,10 @@ const App: React.FC = () => (
             <Button outlined role="error">
               error
             </Button>
-          </Row>
+          </Grid>
         </Card>
         <Card>
-          <Row cols={5}>
+          <Grid cols={5}>
             <Progress value={45} />
             <Progress role="info" value={45} />
             <Progress role="success" value={45} />
@@ -47,16 +47,16 @@ const App: React.FC = () => (
             <Progress label role="success" value={45} />
             <Progress label role="warning" value={45} />
             <Progress label role="error" value={45} />
-          </Row>
+          </Grid>
         </Card>
         <Card>
-          <Row cols={5}>
+          <Grid cols={5}>
             <Alert>This is an alert.</Alert>
             <Alert role="info">This is an alert.</Alert>
             <Alert role="success">This is an alert.</Alert>
             <Alert role="warning">This is an alert.</Alert>
             <Alert role="error">This is an alert.</Alert>
-          </Row>
+          </Grid>
         </Card>
       </Card>
     </ModeProvider>
@@ -77,4 +77,4 @@ export { ModeProvider } from './ModeProvider'
 export { Alert } from './Alert'
 export { ModeSwitcher } from './ModeSwitcher'
 export { Text } from './Text'
-export { Row, Col } from './Grid'
+export { Grid, Elem } from './Grid'

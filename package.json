@@ -1,7 +1,7 @@
 {
-  "name": "react-tailwind",
-  "version": "0.1.0",
-  "description": "React.js components library based for use with Tailwind CSS",
+  "name": "@edadma/react-tailwind",
+  "version": "0.1.0-pre1",
+  "description": "React.js components library styled using with Tailwind CSS",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
@@ -11,9 +11,6 @@
     "./dist/*": "./dist/*.js"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
@@ -24,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepublish": "tsc"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +43,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.0",
     "@types/node": "^16.11.19",
     "@types/react": "^17.0.38",
