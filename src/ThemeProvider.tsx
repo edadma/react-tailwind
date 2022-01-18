@@ -1,22 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Align, Color, Size, Weight } from './types'
-
-export class ButtonColor {
-  constructor(
-    public outlinedText: string,
-    public filledText: string,
-    public filledBg: string,
-    public outlinedHoverBg: string,
-    public filledHoverBg: string,
-    public focusRing: string,
-    public outlinedBorder: string,
-    public outlinedHoverText: string
-  ) {}
-}
-
-export class ProgressColor {
-  constructor(public text: string, public bg: string) {}
-}
+import { DefaultTheme } from './themes/DefaultTheme'
 
 export const optionProps = (context: any, props: any, component: string, ...options: string[]) =>
   options
@@ -30,7 +14,7 @@ export const optionProps = (context: any, props: any, component: string, ...opti
     .join(' ')
 
 export const SET_THEME: SetTheme = {
-  theme: 'DefaultTheme',
+  theme: DefaultTheme,
   setTheme: () => {
     alert('no theme state: use the <ThemeProvider> component')
   },
@@ -45,8 +29,8 @@ export const ThemeContext = React.createContext(SET_THEME)
 
 export const useTheme = () => useContext(ThemeContext)
 
-export const ThemeProvider: React.FC<{ value: any }> = ({ children, value }) => {
-  const [theme, setTheme] = useState(value)
+export const ThemeProvider: React.FC<{ value?: any }> = ({ children, value }) => {
+  const [theme, setTheme] = useState(value || DefaultTheme)
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>
 }
@@ -61,4 +45,26 @@ export const alignClass = (theme: any, component: string, align: Align | undefin
   theme.align[align || theme.component[component].default.align]
 
 export const weightClass = (theme: any, component: string, weight: Weight | undefined) =>
-  theme.weight[weight || theme.component.button.default.weight]
+  theme.weight[weight || theme.component[component].default.weight]
+
+const padClasses: any = {
+  0: 'p-0',
+  1: 'p-1',
+  2: 'p-2',
+  3: 'p-3',
+  4: 'p-4',
+  5: 'p-5',
+  6: 'p-6',
+  7: 'p-7',
+  8: 'p-8',
+  9: 'p-9',
+  10: 'p-10',
+  11: 'p-11',
+  12: 'p-12',
+  13: 'p-13',
+  14: 'p-14',
+  15: 'p-15',
+}
+
+export const padClass = (theme: any, component: string, pad: number | undefined) =>
+  padClasses[pad || theme.component[component].default.pad]

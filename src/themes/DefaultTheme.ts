@@ -1,4 +1,21 @@
-import { ButtonColor, ProgressColor } from '../ThemeProvider'
+// import { ButtonColor, ProgressColor } from '../ThemeProvider'
+
+class ButtonColor {
+  constructor(
+    public outlinedText: string,
+    public filledText: string,
+    public filledBg: string,
+    public outlinedHoverBg: string,
+    public filledHoverBg: string,
+    public focusRing: string,
+    public outlinedBorder: string,
+    public outlinedHoverText: string
+  ) {}
+}
+
+class ProgressColor {
+  constructor(public text: string, public bg: string) {}
+}
 
 export const DefaultTheme = {
   name: 'Default Theme',
@@ -141,13 +158,37 @@ export const DefaultTheme = {
       default: { rounded: true, weight: 'bold', size: 'sm', color: 'regular' },
     },
     card: {
-      style: 'p-6 bg-white dark:bg-gray-800',
+      style: '',
+      color: {
+        primary: {
+          div: 'bg-green-200 dark:bg-green-300',
+        },
+        secondary: {
+          div: 'bg-blue-200 dark:bg-blue-300',
+        },
+        regular: {
+          div: 'bg-gray-200 dark:bg-gray-300',
+        },
+        info: {
+          div: 'bg-blue-200 dark:bg-blue-300',
+        },
+        success: {
+          div: 'bg-green-200 dark:bg-green-300',
+        },
+        warning: {
+          div: 'bg-yellow-200 dark:bg-yellow-300',
+        },
+        error: {
+          div: 'bg-red-200 dark:bg-red-300',
+        },
+        none: { div: 'bg-white dark:bg-gray-800' },
+      },
       options: {
         rounded: 'rounded-lg',
         border: 'border border-gray-200 dark:border-gray-700',
         shadow: 'shadow-md',
       },
-      default: { rounded: false, border: true, shadow: false },
+      default: { rounded: false, border: true, shadow: false, color: 'none', pad: 6 },
     },
     alert: {
       style: 'p-4 mb-4',

@@ -1,4 +1,21 @@
-import { ButtonColor, ProgressColor } from '../ThemeProvider'
+// import { ButtonColor, ProgressColor } from '../ThemeProvider'
+
+class ButtonColor {
+  constructor(
+    public outlinedText: string,
+    public filledText: string,
+    public filledBg: string,
+    public outlinedHoverBg: string,
+    public filledHoverBg: string,
+    public focusRing: string,
+    public outlinedBorder: string,
+    public outlinedHoverText: string
+  ) {}
+}
+
+class ProgressColor {
+  constructor(public text: string, public bg: string) {}
+}
 
 export const CB3Theme = {
   name: 'Inclusive 3 Theme',
