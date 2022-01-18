@@ -1,5 +1,5 @@
 import React from 'react'
-import { colorClass, optionProps, useTheme } from './ThemeProvider'
+import { colorClass, useTheme } from './ThemeProvider'
 import { Color } from './types'
 
 const gapClass: any = {

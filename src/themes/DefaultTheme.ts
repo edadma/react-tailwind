@@ -1,5 +1,3 @@
-// import { ButtonColor, ProgressColor } from '../ThemeProvider'
-
 class ButtonColor {
   constructor(
     public outlinedText: string,

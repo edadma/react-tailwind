@@ -1,6 +1,6 @@
 {
   "name": "@edadma/react-tailwind",
-  "version": "0.1.0-pre.3",
+  "version": "0.1.0-pre.4",
   "description": "React.js components library styled using with Tailwind CSS",
   "types": "dist/index.d.ts",
   "files": [

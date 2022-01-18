@@ -16,15 +16,12 @@ export const Card: React.FC<CardProps> = ({ children, className, bg, pad, ...oth
 
   return (
     <div
-      className={
-        `${optionProps(theme, other, 'card', 'rounded', 'border', 'shadow')} ${colorClass(
-          theme,
-          'card',
-          bg,
-          'div'
-        )} ${padClass(theme, 'card', pad)} ${theme.component.card.style}` +
-        (className ? ' ' + className : '')
-      }
+      className={`${optionProps(theme, other, 'card', 'rounded', 'border', 'shadow')} ${colorClass(
+        theme,
+        'card',
+        bg,
+        'div'
+      )} ${padClass(theme, 'card', pad)} ${theme.component.card.style} ${className || ''}`}
       {...other}
     >
       {children}
