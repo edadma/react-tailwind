@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react'
+import { useTheme } from './ThemeProvider'
 
 export type ModeType = 'light' | 'dark'
+
+const DEFAULT_MODE = 'dark'
 
 export const SET_MODE: SetMode = {
   mode: 'light',
@@ -19,11 +22,22 @@ export const ModeContext = React.createContext(SET_MODE)
 export const useMode = () => useContext(ModeContext)
 
 export const ModeProvider: React.FC<{ value?: ModeType }> = ({ children, value }) => {
-  const [mode, setMode] = useState(value || 'light')
+  const [mode, setMode] = useState(value || DEFAULT_MODE) // dark mode by default
+  const { theme } = useTheme()
+
+  const html = document.querySelector('html')
+
+  if (mode === 'dark') html?.classList.add('dark')
+  else html?.classList.remove('dark')
+
+  const body = document.querySelector('body')
+
+  body?.classList.add('dark:' + theme.dark)
 
   return (
     <ModeContext.Provider value={{ mode, setMode }}>
-      <div className={`${mode === 'light' ? '' : 'dark'}`}>{children}</div>
+      {children}
+      {/*<div className={`${mode === 'light' ? '' : 'dark'}`}>{children}</div>*/}
     </ModeContext.Provider>
   )
 }

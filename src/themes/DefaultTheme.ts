@@ -18,6 +18,7 @@ class ProgressColor {
 export const DefaultTheme = {
   name: 'Default Theme',
   description: 'Basic theme with support for both light and dark modes',
+  dark: 'bg-gray-800',
   size: {
     xs: { text: 'text-xs', height: 'h-4' },
     sm: { text: 'text-sm', height: 'h-4' },
