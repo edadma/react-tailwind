@@ -49,7 +49,7 @@ export const DefaultTheme = {
   },
   component: {
     button: {
-      style: 'focus:ring-2 text-center', // todo:  mr-2 mb-2
+      style: 'inline-block focus:ring-2 text-center shadow-md hover:shadow-lg', // todo:  mr-2 mb-2
       color: {
         primary: new ButtonColor(
           'text-green-600',
@@ -156,7 +156,7 @@ export const DefaultTheme = {
       default: { rounded: true, weight: 'bold', size: 'sm', color: 'regular' },
     },
     card: {
-      style: '',
+      style: 'block',
       color: {
         primary: {
           div: 'bg-green-200 dark:bg-green-300',
@@ -288,6 +288,33 @@ export const DefaultTheme = {
         gap: 4,
         color: 'none',
       },
+    },
+    spinner: {
+      style: 'inline-block w-8 h-8 border-4 border-solid rounded-full animate-spin',
+      color: {
+        primary: {
+          div: 'border-green-700',
+        },
+        secondary: {
+          div: 'border-blue-500',
+        },
+        regular: {
+          div: 'border-gray-500',
+        },
+        info: {
+          div: 'border-blue-500',
+        },
+        success: {
+          div: 'border-green-500',
+        },
+        warning: {
+          div: 'border-yellow-500',
+        },
+        error: {
+          div: 'border-red-500',
+        },
+      },
+      default: { size: 'sm', color: 'regular' },
     },
   },
 }

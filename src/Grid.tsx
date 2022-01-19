@@ -180,11 +180,63 @@ const colEndClass: any = {
   auto: 'col-end-auto',
 }
 
+const rowSpanClass: any = {
+  '1': 'row-span-1',
+  '2': 'row-span-2',
+  '3': 'row-span-3',
+  '4': 'row-span-4',
+  '5': 'row-span-5',
+  '6': 'row-span-6',
+  '7': 'row-span-7',
+  '8': 'row-span-8',
+  '9': 'row-span-9',
+  '10': 'row-span-10',
+  '11': 'row-span-11',
+  '12': 'row-span-12',
+  auto: 'row-auto',
+  full: 'row-span-full',
+}
+
+const rowStartClass: any = {
+  '1': 'row-start-1',
+  '2': 'row-start-2',
+  '3': 'row-start-3',
+  '4': 'row-start-4',
+  '5': 'row-start-5',
+  '6': 'row-start-6',
+  '7': 'row-start-7',
+  '8': 'row-start-8',
+  '9': 'row-start-9',
+  '10': 'row-start-10',
+  '11': 'row-start-11',
+  '12': 'row-start-12',
+  auto: 'row-start-auto',
+}
+
+const rowEndClass: any = {
+  '1': 'row-end-1',
+  '2': 'row-end-2',
+  '3': 'row-end-3',
+  '4': 'row-end-4',
+  '5': 'row-end-5',
+  '6': 'row-end-6',
+  '7': 'row-end-7',
+  '8': 'row-end-8',
+  '9': 'row-end-9',
+  '10': 'row-end-10',
+  '11': 'row-end-11',
+  '12': 'row-end-12',
+  auto: 'row-end-auto',
+}
+
 interface ElemProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   colSpan?: string
   colStart?: string
   colEnd?: string
+  rowSpan?: string
+  rowStart?: string
+  rowEnd?: string
 }
 
 export const Elem: React.FC<ElemProps> = ({
@@ -193,15 +245,20 @@ export const Elem: React.FC<ElemProps> = ({
   colSpan,
   colStart,
   colEnd,
+  rowSpan,
+  rowStart,
+  rowEnd,
   ...other
 }) => {
   return (
     <div
-      className={
-        `${colSpan !== undefined ? colSpanClass[colSpan] : ''} ${
-          colStart !== undefined ? colStartClass[colStart] : ''
-        } ${colEnd !== undefined ? colEndClass[colEnd] : ''}` + (className ? ' ' + className : '')
-      }
+      className={`${colSpan !== undefined ? colSpanClass[colSpan] : ''} ${
+        colStart !== undefined ? colStartClass[colStart] : ''
+      } ${colEnd !== undefined ? colEndClass[colEnd] : ''} ${
+        rowSpan !== undefined ? rowSpanClass[rowSpan] : ''
+      } ${rowStart !== undefined ? rowStartClass[rowStart] : ''} ${
+        rowEnd !== undefined ? rowEndClass[rowEnd] : ''
+      } ${className || ''}`}
       {...other}
     >
       {children}

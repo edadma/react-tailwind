@@ -63,8 +63,9 @@ export const Button: React.FC<ButtonProps> = ({
           'pill',
           'icon',
           'transition'
-        )} ${weightClass(theme, 'button', weight)} ${theme.component.button.style}` +
-        (className ? ' ' + className : '')
+        )} ${weightClass(theme, 'button', weight)} ${theme.component.button.style} ${
+          className || ''
+        }`
       }
       {...other}
     >
