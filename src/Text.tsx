@@ -35,22 +35,20 @@ export const Text: React.FC<TextProps> = ({
 
   return (
     <span
-      className={
-        `${alignClass(theme, 'text', align)} ${colorClass(theme, 'text', role, 'text')} ${sizeClass(
-          theme,
-          'text',
-          size,
-          'text'
-        )} ${optionProps(
-          theme,
-          other,
-          'text',
-          'underline',
-          'overline',
-          'strikethrough',
-          'italic'
-        )} ${weightClass(theme, 'text', weight)}` + (className ? ' ' + className : '')
-      }
+      className={`${alignClass(theme, 'text', align)} ${colorClass(
+        theme,
+        'text',
+        role,
+        'text'
+      )} ${sizeClass(theme, 'text', size, 'text')} ${optionProps(
+        theme,
+        other,
+        'text',
+        'underline',
+        'overline',
+        'strikethrough',
+        'italic'
+      )} ${weightClass(theme, 'text', weight)} ${className || ''}`}
       {...other}
     >
       {children}

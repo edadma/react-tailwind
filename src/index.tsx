@@ -1,7 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import { Button, Card, ModeProvider, Progress, ModeSwitcher, Alert, Grid, Spinner } from './index'
+import {
+  Button,
+  Card,
+  ModeProvider,
+  Progress,
+  ModeSwitcher,
+  Alert,
+  Grid,
+  Spinner,
+  Badge,
+  Elem,
+} from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
 import { CB3Theme } from './themes/CB3Theme'
@@ -67,6 +78,25 @@ const App: React.FC = () => (
             <Spinner role="error" />
           </Grid>
         </Card>
+        <Card>
+          <Grid cols={5}>
+            <Elem>
+              <Badge>Badge</Badge>
+            </Elem>
+            <Elem>
+              <Badge role="info">Badge</Badge>
+            </Elem>
+            <Elem>
+              <Badge role="success">Badge</Badge>
+            </Elem>
+            <Elem>
+              <Badge role="warning">Badge</Badge>
+            </Elem>
+            <Elem>
+              <Badge role="error">Badge</Badge>
+            </Elem>
+          </Grid>
+        </Card>
       </Card>
     </ModeProvider>
   </ThemeProvider>
@@ -88,4 +118,5 @@ export { ModeSwitcher } from './ModeSwitcher'
 export { Text } from './Text'
 export { Grid, Elem } from './Grid'
 export { ThemeProvider } from './ThemeProvider'
+export { Badge } from './Badge'
 export { Spinner } from './Spinner'

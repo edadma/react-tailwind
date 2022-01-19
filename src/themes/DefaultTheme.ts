@@ -316,5 +316,39 @@ export const DefaultTheme = {
       },
       default: { size: 'sm', color: 'regular' },
     },
+    badge: {
+      style: 'mr-2 px-2.5 py-0.5',
+      color: {
+        primary: {
+          span: 'bg-green-100 dark:bg-green-200 text-green-800 dark:text-green-800',
+        },
+        secondary: {
+          span: 'bg-blue-100 dark:bg-blue-200 text-blue-800 dark:text-blue-800',
+        },
+        regular: {
+          span: 'bg-gray-100 dark:bg-gray-200 text-gray-800 dark:text-gray-800',
+        },
+        info: {
+          span: 'bg-blue-100 dark:bg-blue-200 text-blue-800 dark:text-blue-800',
+        },
+        success: {
+          span: 'bg-green-100 dark:bg-green-200 text-green-800 dark:text-green-800',
+        },
+        warning: {
+          span: 'bg-yellow-100 dark:bg-yellow-200 text-yellow-800 dark:text-yellow-800',
+        },
+        error: {
+          span: 'bg-red-100 dark:bg-red-200 text-red-800 dark:text-red-800',
+        },
+      },
+      options: {
+        rounded: 'rounded',
+      },
+      default: {
+        rounded: true,
+        size: 'sm',
+        color: 'regular',
+      },
+    },
   },
 }
