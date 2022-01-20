@@ -10,7 +10,6 @@ export const ModeSwitcher: React.FC = () => {
     <Button
       icon
       onClick={() => {
-        console.log(mode)
         setMode(mode === 'light' ? 'dark' : 'light')
       }}
     >

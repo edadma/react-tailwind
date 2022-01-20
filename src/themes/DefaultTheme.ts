@@ -223,25 +223,25 @@ export const DefaultTheme = {
     text: {
       color: {
         primary: {
-          text: 'text-green-700 dark:text-green-800',
+          text: 'text-green-700 dark:text-green-300',
         },
         secondary: {
-          text: 'text-blue-700 dark:text-blue-800',
+          text: 'text-blue-700 dark:text-blue-300',
         },
         regular: {
-          text: 'text-gray-700 dark:text-gray-800',
+          text: 'text-gray-700 dark:text-gray-300',
         },
         info: {
-          text: 'text-blue-700 dark:text-blue-800',
+          text: 'text-blue-700 dark:text-blue-300',
         },
         success: {
-          text: 'text-green-700 dark:text-green-800',
+          text: 'text-green-700 dark:text-green-300',
         },
         warning: {
-          text: 'text-yellow-700 dark:text-yellow-800',
+          text: 'text-yellow-700 dark:text-yellow-300',
         },
         error: {
-          text: 'text-red-700 dark:text-red-800',
+          text: 'text-red-700 dark:text-red-300',
         },
       },
       options: {
@@ -338,20 +338,32 @@ export const DefaultTheme = {
       },
     },
     tabs: {
+      style: {
+        div: 'border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
+        ul: 'flex flex-wrap -mb-px',
+        li: 'mr-2',
+        a: 'inline-block py-4 px-4 text-center rounded-t-lg border-b-2',
+      },
       color: {
-        primary: { div: 'text-green-700 dark:text-green-800' },
-        secondary: { div: 'text-blue-700 dark:text-blue-800' },
-        regular: { div: 'text-gray-700 dark:text-gray-800' },
-        info: { div: 'text-blue-700 dark:text-blue-800' },
-        success: { div: 'text-green-700 dark:text-green-800' },
-        warning: { div: 'text-yellow-700 dark:text-yellow-800' },
-        error: { div: 'text-red-700 dark:text-red-800' },
+        primary: {
+          a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
+        },
+        secondary: { a: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500' },
+        regular: { a: 'text-gray-600 border-gray-600 dark:text-gray-500 dark:border-gray-500' },
+        info: { a: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500' },
+        success: {
+          a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
+        },
+        warning: {
+          a: 'text-yellow-600 border-yellow-600 dark:text-yellow-500 dark:border-yellow-500',
+        },
+        error: { a: 'text-red-600 border-red-600 dark:text-red-500 dark:border-red-500' },
       },
       options: {},
       default: {
         size: 'md',
         color: 'regular',
-        weight: 'md',
+        weight: 'medium',
         align: 'left',
       },
     },

@@ -14,7 +14,7 @@ export const Spinner: React.FC<SpinnerProps> = ({ children, role, size, ...other
   return (
     <div
       style={{ borderTopColor: 'transparent' }}
-      className={`${sizeClass(theme, 'spinner', size, 'div')} ${colorClass(
+      className={`${sizeClass(theme, 'spinner', size, 'text')} ${colorClass(
         theme,
         'spinner',
         role,
