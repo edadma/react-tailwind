@@ -339,8 +339,7 @@ export const DefaultTheme = {
     },
     tabs: {
       style: {
-        div: 'border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
-        ul: 'flex flex-wrap -mb-px',
+        ul: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
         li: 'mr-2',
         a: 'inline-block py-4 px-4 text-center rounded-t-lg border-b-2',
       },
