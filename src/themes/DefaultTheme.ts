@@ -296,7 +296,7 @@ export const DefaultTheme = {
     tabs: {
       style: {
         tab: {
-          ul: 'flex flex-wrap border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
+          ul: 'flex flex-wrap my-3 border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800',
           li: 'mr-2',
           a: 'inline-block py-4 px-4 text-center rounded-t-lg',
         },
@@ -305,17 +305,41 @@ export const DefaultTheme = {
           li: 'mr-2',
           a: 'inline-block py-4 px-4 text-center border-b-2',
         },
+        pill: {
+          ul: 'flex flex-wrap m-3',
+          li: 'mr-2',
+          a: 'inline-block py-3 px-4 text-center rounded-lg',
+        },
       },
       color: {
-        primary: { a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500' },
-        secondary: { a: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500' },
-        regular: { a: 'text-gray-600 border-gray-600 dark:text-gray-500 dark:border-gray-500' },
-        info: { a: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500' },
-        success: { a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500' },
+        primary: {
+          a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
+          pill: 'text-green-50 bg-green-600 dark:bg-green-500',
+        },
+        secondary: {
+          a: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500',
+          pill: 'text-blue-50 bg-blue-600 dark:bg-blue-500',
+        },
+        regular: {
+          a: 'text-gray-600 border-gray-600 dark:text-gray-500 dark:border-gray-500',
+          pill: 'text-gray-50 bg-gray-600 dark:bg-gray-500',
+        },
+        info: {
+          a: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500',
+          pill: 'text-blue-50 bg-blue-600 dark:bg-blue-500',
+        },
+        success: {
+          a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
+          pill: 'text-green-50 bg-green-600 dark:bg-green-500',
+        },
         warning: {
           a: 'text-yellow-600 border-yellow-600 dark:text-yellow-500 dark:border-yellow-500',
+          pill: 'text-yellow-50 bg-yellow-600 dark:bg-yellow-500',
         },
-        error: { a: 'text-red-600 border-red-600 dark:text-red-500 dark:border-red-500' },
+        error: {
+          a: 'text-red-600 border-red-600 dark:text-red-500 dark:border-red-500',
+          pill: 'text-red-50 bg-red-600 dark:bg-red-500',
+        },
       },
       options: {},
       default: {

@@ -25,6 +25,28 @@ const App: React.FC = () => (
   <ThemeProvider>
     <ModeProvider>
       <Tabs
+        type="pill"
+        role="info"
+        panes={[
+          {
+            tab: 'One',
+            pane: (
+              <Card>
+                <Text>One</Text>
+              </Card>
+            ),
+          },
+          {
+            tab: 'Two',
+            pane: (
+              <Card>
+                <Text>Two</Text>
+              </Card>
+            ),
+          },
+        ]}
+      />
+      <Tabs
         role="info"
         panes={[
           {
