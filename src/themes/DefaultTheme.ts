@@ -210,9 +210,7 @@ export const DefaultTheme = {
         warning: {
           div: 'bg-yellow-100 border-yellow-500 text-yellow-700 dark:text-yellow-800 dark:bg-yellow-200',
         },
-        error: {
-          div: 'bg-red-100 border-red-500 text-red-700 dark:text-red-800 dark:bg-red-200',
-        },
+        error: { div: 'bg-red-100 border-red-500 text-red-700 dark:text-red-800 dark:bg-red-200' },
       },
       options: {
         rounded: 'rounded-lg',
@@ -222,27 +220,13 @@ export const DefaultTheme = {
     },
     text: {
       color: {
-        primary: {
-          text: 'text-green-700 dark:text-green-300',
-        },
-        secondary: {
-          text: 'text-blue-700 dark:text-blue-300',
-        },
-        regular: {
-          text: 'text-gray-700 dark:text-gray-300',
-        },
-        info: {
-          text: 'text-blue-700 dark:text-blue-300',
-        },
-        success: {
-          text: 'text-green-700 dark:text-green-300',
-        },
-        warning: {
-          text: 'text-yellow-700 dark:text-yellow-300',
-        },
-        error: {
-          text: 'text-red-700 dark:text-red-300',
-        },
+        primary: { text: 'text-green-700 dark:text-green-300' },
+        secondary: { text: 'text-blue-700 dark:text-blue-300' },
+        regular: { text: 'text-gray-700 dark:text-gray-300' },
+        info: { text: 'text-blue-700 dark:text-blue-300' },
+        success: { text: 'text-green-700 dark:text-green-300' },
+        warning: { text: 'text-yellow-700 dark:text-yellow-300' },
+        error: { text: 'text-red-700 dark:text-red-300' },
       },
       options: {
         underline: 'underline',
@@ -261,27 +245,13 @@ export const DefaultTheme = {
     grid: {
       style: 'grid',
       color: {
-        primary: {
-          div: 'bg-green-200 dark:bg-green-300',
-        },
-        secondary: {
-          div: 'bg-blue-200 dark:bg-blue-300',
-        },
-        regular: {
-          div: 'bg-gray-200 dark:bg-gray-300',
-        },
-        info: {
-          div: 'bg-blue-200 dark:bg-blue-300',
-        },
-        success: {
-          div: 'bg-green-200 dark:bg-green-300',
-        },
-        warning: {
-          div: 'bg-yellow-200 dark:bg-yellow-300',
-        },
-        error: {
-          div: 'bg-red-200 dark:bg-red-300',
-        },
+        primary: { div: 'bg-green-200 dark:bg-green-300' },
+        secondary: { div: 'bg-blue-200 dark:bg-blue-300' },
+        regular: { div: 'bg-gray-200 dark:bg-gray-300' },
+        info: { div: 'bg-blue-200 dark:bg-blue-300' },
+        success: { div: 'bg-green-200 dark:bg-green-300' },
+        warning: { div: 'bg-yellow-200 dark:bg-yellow-300' },
+        error: { div: 'bg-red-200 dark:bg-red-300' },
         none: { div: '' },
       },
       default: {
@@ -293,27 +263,13 @@ export const DefaultTheme = {
     spinner: {
       style: 'inline-block w-8 h-8 border-4 border-solid rounded-full animate-spin',
       color: {
-        primary: {
-          div: 'border-green-700',
-        },
-        secondary: {
-          div: 'border-blue-500',
-        },
-        regular: {
-          div: 'border-gray-500',
-        },
-        info: {
-          div: 'border-blue-500',
-        },
-        success: {
-          div: 'border-green-500',
-        },
-        warning: {
-          div: 'border-yellow-500',
-        },
-        error: {
-          div: 'border-red-500',
-        },
+        primary: { div: 'border-green-700' },
+        secondary: { div: 'border-blue-500' },
+        regular: { div: 'border-gray-500' },
+        info: { div: 'border-blue-500' },
+        success: { div: 'border-green-500' },
+        warning: { div: 'border-yellow-500' },
+        error: { div: 'border-red-500' },
       },
       default: { size: 'sm', color: 'regular' },
     },
@@ -339,20 +295,23 @@ export const DefaultTheme = {
     },
     tabs: {
       style: {
-        ul: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
-        li: 'mr-2',
-        a: 'inline-block py-4 px-4 text-center rounded-t-lg border-b-2',
+        tab: {
+          ul: 'flex flex-wrap border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
+          li: 'mr-2',
+          a: 'inline-block py-4 px-4 text-center rounded-t-lg border-b-2',
+        },
+        underline: {
+          ul: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
+          li: 'mr-2',
+          a: 'inline-block py-4 px-4 text-center border-b-2',
+        },
       },
       color: {
-        primary: {
-          a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
-        },
+        primary: { a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500' },
         secondary: { a: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500' },
         regular: { a: 'text-gray-600 border-gray-600 dark:text-gray-500 dark:border-gray-500' },
         info: { a: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500' },
-        success: {
-          a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
-        },
+        success: { a: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500' },
         warning: {
           a: 'text-yellow-600 border-yellow-600 dark:text-yellow-500 dark:border-yellow-500',
         },

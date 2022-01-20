@@ -26,16 +26,16 @@ export const Tabs: React.FC<TabsProps> = ({
 
   return (
     <>
-      <ul className={theme.component.tabs.style.ul}>
+      <ul className={theme.component.tabs.style[type].ul}>
         {panes.map(({ tab }, index) => (
-          <li className={theme.component.tabs.style.li}>
+          <li className={theme.component.tabs.style[type].li}>
             <a
               className={`${
                 index === active
                   ? `active ${colorClass(theme, 'tabs', role, 'a')}`
                   : 'text-gray-500 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
               } ${sizeClass(theme, 'tabs', size, 'text')} ${weightClass(theme, 'tabs', weight)} ${
-                theme.component.tabs.style.a
+                theme.component.tabs.style[type].a
               }`}
               onClick={() => setActive(index)}
             >
