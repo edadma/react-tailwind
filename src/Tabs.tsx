@@ -8,7 +8,7 @@ interface TabsProps
   align?: Align
   weight?: Weight
   role?: Color
-  type?: 'tab' | 'underline'
+  type?: 'tab' | 'underline' | 'pill'
   panes: { tab: string; pane: ReactNode }[]
 }
 
@@ -31,9 +31,20 @@ export const Tabs: React.FC<TabsProps> = ({
           <li className={theme.component.tabs.style[type].li}>
             <a
               className={`${
-                index === active
-                  ? `active ${colorClass(theme, 'tabs', role, 'a')}`
-                  : 'text-gray-500 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
+                type === 'underline'
+                  ? index === active
+                    ? `active ${colorClass(theme, 'tabs', role, 'a')}`
+                    : 'text-gray-500 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
+                  : type === 'tab'
+                  ? index === active
+                    ? `bg-gray-200 rounded-t-lg active dark:bg-gray-700 ${colorClass(
+                        theme,
+                        'tabs',
+                        role,
+                        'a'
+                      )}`
+                    : 'text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
+                  : ''
               } ${sizeClass(theme, 'tabs', size, 'text')} ${weightClass(theme, 'tabs', weight)} ${
                 theme.component.tabs.style[type].a
               }`}

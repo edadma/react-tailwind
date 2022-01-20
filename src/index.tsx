@@ -24,47 +24,29 @@ import { ThemeSwitcher } from './ThemeSwitcher'
 const App: React.FC = () => (
   <ThemeProvider>
     <ModeProvider>
-      <ul className="flex flex-wrap border-b border-gray-200 dark:border-gray-700">
-        <li className="mr-2">
-          <a
-            href="#"
-            aria-current="page"
-            className="inline-block py-4 px-4 text-sm font-medium text-center text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-700 dark:text-blue-500"
-          >
-            Profile
-          </a>
-        </li>
-        <li className="mr-2">
-          <a
-            href="#"
-            className="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-          >
-            Dashboard
-          </a>
-        </li>
-        <li className="mr-2">
-          <a
-            href="#"
-            className="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-          >
-            Settings
-          </a>
-        </li>
-        <li className="mr-2">
-          <a
-            href="#"
-            className="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-          >
-            Contacts
-          </a>
-        </li>
-        <li>
-          <a className="inline-block py-4 px-4 text-sm font-medium text-center text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500">
-            Disabled
-          </a>
-        </li>
-      </ul>
       <Tabs
+        role="info"
+        panes={[
+          {
+            tab: 'One',
+            pane: (
+              <Card>
+                <Text>One</Text>
+              </Card>
+            ),
+          },
+          {
+            tab: 'Two',
+            pane: (
+              <Card>
+                <Text>Two</Text>
+              </Card>
+            ),
+          },
+        ]}
+      />
+      <Tabs
+        type="tab"
         role="info"
         panes={[
           {

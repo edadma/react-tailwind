@@ -26,7 +26,7 @@ export const Badge: React.FC<BadgeProps> = ({
         theme,
         'badge',
         size,
-        'span'
+        'text'
       )} ${optionProps(theme, other, 'badge', 'rounded')} ${
         theme.component.badge.style
       } ${weightClass(theme, 'badge', weight)} ${className || ''}`}
