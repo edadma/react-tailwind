@@ -8,6 +8,7 @@ interface BadgeProps
   size?: Size
   weight?: Weight
   rounded?: boolean
+  border?: boolean
 }
 
 export const Badge: React.FC<BadgeProps> = ({
@@ -22,14 +23,18 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <span
-      className={`${colorClass(theme, 'badge', role, 'span')} ${sizeClass(
+      className={`${colorClass(theme, 'badge', role, 'span')} ${colorClass(
         theme,
         'badge',
-        size,
-        'text'
-      )} ${optionProps(theme, other, 'badge', 'rounded')} ${
-        theme.component.badge.style
-      } ${weightClass(theme, 'badge', weight)} ${className || ''}`}
+        role,
+        'border'
+      )} ${sizeClass(theme, 'badge', size, 'text')} ${optionProps(
+        theme,
+        other,
+        'badge',
+        'rounded',
+        'border'
+      )} ${theme.component.badge.style} ${weightClass(theme, 'badge', weight)} ${className || ''}`}
       {...other}
     >
       {children}

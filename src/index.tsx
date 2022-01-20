@@ -24,28 +24,130 @@ import { ThemeSwitcher } from './ThemeSwitcher'
 const App: React.FC = () => (
   <ThemeProvider>
     <ModeProvider>
-      <Tabs
-        type="pill"
-        role="info"
-        panes={[
-          {
-            tab: 'One',
-            pane: (
-              <Card>
-                <Text>One</Text>
-              </Card>
-            ),
-          },
-          {
-            tab: 'Two',
-            pane: (
-              <Card>
-                <Text>Two</Text>
-              </Card>
-            ),
-          },
-        ]}
-      />
+      <Card>
+        <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
+      </Card>
+      <Grid cols={5}>
+        <Elem>
+          <Tabs
+            type="pill"
+            panes={[
+              {
+                tab: 'One',
+                pane: (
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                ),
+              },
+              {
+                tab: 'Two',
+                pane: (
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                ),
+              },
+            ]}
+          />
+        </Elem>
+        <Elem>
+          <Tabs
+            type="pill"
+            role="info"
+            panes={[
+              {
+                tab: 'One',
+                pane: (
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                ),
+              },
+              {
+                tab: 'Two',
+                pane: (
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                ),
+              },
+            ]}
+          />
+        </Elem>
+        <Elem>
+          <Tabs
+            type="pill"
+            role="success"
+            panes={[
+              {
+                tab: 'One',
+                pane: (
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                ),
+              },
+              {
+                tab: 'Two',
+                pane: (
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                ),
+              },
+            ]}
+          />
+        </Elem>
+        <Elem>
+          <Tabs
+            type="pill"
+            role="warning"
+            panes={[
+              {
+                tab: 'One',
+                pane: (
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                ),
+              },
+              {
+                tab: 'Two',
+                pane: (
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                ),
+              },
+            ]}
+          />
+        </Elem>
+        <Elem>
+          <Tabs
+            type="pill"
+            role="error"
+            panes={[
+              {
+                tab: 'One',
+                pane: (
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                ),
+              },
+              {
+                tab: 'Two',
+                pane: (
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                ),
+              },
+            ]}
+          />
+        </Elem>
+      </Grid>
       <Tabs
         role="info"
         panes={[
@@ -90,10 +192,7 @@ const App: React.FC = () => (
         ]}
       />
       <Card>
-        <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
-      </Card>
-      <Card>
-        <Card pad={4} bg="info">
+        <Card>
           <Grid cols={5}>
             <Button>regular</Button>
             <Button role="info">info</Button>
@@ -164,6 +263,42 @@ const App: React.FC = () => (
             <Elem>
               <Badge role="error">Badge</Badge>
             </Elem>
+            <Elem>
+              <Badge border>Badge</Badge>
+            </Elem>
+            <Elem>
+              <Badge border role="info">
+                Badge
+              </Badge>
+            </Elem>
+            <Elem>
+              <Badge border role="success">
+                Badge
+              </Badge>
+            </Elem>
+            <Elem>
+              <Badge border role="warning">
+                Badge
+              </Badge>
+            </Elem>
+            <Elem>
+              <Badge border role="error">
+                Badge
+              </Badge>
+            </Elem>
+          </Grid>
+        </Card>
+        <Card>
+          <Grid cols={3}>
+            <Elem>
+              <Badge>Badge</Badge>
+            </Elem>
+            <Elem>
+              <Badge role="info">Badge</Badge>
+            </Elem>
+            <Elem>
+              <Badge role="success">Badge</Badge>
+            </Elem>
           </Grid>
         </Card>
       </Card>
@@ -190,3 +325,4 @@ export { ThemeProvider } from './ThemeProvider'
 export { Badge } from './Badge'
 export { Spinner } from './Spinner'
 export { Tabs } from './Tabs'
+export { Form } from './Form'

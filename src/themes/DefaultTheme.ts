@@ -276,19 +276,42 @@ export const DefaultTheme = {
     badge: {
       style: 'mr-2 px-2.5 py-0.5',
       color: {
-        primary: { span: 'bg-green-100 dark:bg-green-200 text-green-800 dark:text-green-800' },
-        secondary: { span: 'bg-blue-100 dark:bg-blue-200 text-blue-800 dark:text-blue-800' },
-        regular: { span: 'bg-gray-100 dark:bg-gray-200 text-gray-800 dark:text-gray-800' },
-        info: { span: 'bg-blue-100 dark:bg-blue-200 text-blue-800 dark:text-blue-800' },
-        success: { span: 'bg-green-100 dark:bg-green-200 text-green-800 dark:text-green-800' },
-        warning: { span: 'bg-yellow-100 dark:bg-yellow-200 text-yellow-800 dark:text-yellow-800' },
-        error: { span: 'bg-red-100 dark:bg-red-200 text-red-800 dark:text-red-800' },
+        primary: {
+          span: 'bg-green-100 dark:bg-green-200 text-green-800 dark:text-green-800',
+          border: 'border-green-300 dark:border-green-400',
+        },
+        secondary: {
+          span: 'bg-blue-100 dark:bg-blue-200 text-blue-800 dark:text-blue-800',
+          border: 'border-blue-300 dark:border-blue-400',
+        },
+        regular: {
+          span: 'bg-gray-100 dark:bg-gray-200 text-gray-800 dark:text-gray-800',
+          border: 'border-gray-300 dark:border-gray-400',
+        },
+        info: {
+          span: 'bg-blue-100 dark:bg-blue-200 text-blue-800 dark:text-blue-800',
+          border: 'border-blue-300 dark:border-blue-400',
+        },
+        success: {
+          span: 'bg-green-100 dark:bg-green-200 text-green-800 dark:text-green-800',
+          border: 'border-green-300 dark:border-green-400',
+        },
+        warning: {
+          span: 'bg-yellow-100 dark:bg-yellow-200 text-yellow-800 dark:text-yellow-800',
+          border: 'border-yellow-300 dark:border-yellow-400',
+        },
+        error: {
+          span: 'bg-red-100 dark:bg-red-200 text-red-800 dark:text-red-800',
+          border: 'border-red-300 dark:border-red-400',
+        },
       },
       options: {
         rounded: 'rounded',
+        border: 'border-2',
       },
       default: {
         rounded: true,
+        border: false,
         size: 'sm',
         color: 'regular',
       },

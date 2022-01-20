@@ -1,6 +1,30 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
+
+interface FormProps {
+  onSubmit: (data: any) => void
+}
+
+export const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
+  const form = useRef<HTMLFormElement>(null)
+
+  return (
+    <form
+      ref={form}
+      onSubmit={(e) => {
+        e.preventDefault()
+
+        const data = new FormData(e.target as HTMLFormElement)
+
+        onSubmit(Object.fromEntries(data.entries()))
+        form.current?.reset()
+      }}
+    >
+      {children}
+    </form>
+  )
+}
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
