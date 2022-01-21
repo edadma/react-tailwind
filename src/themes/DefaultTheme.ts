@@ -274,7 +274,7 @@ export const DefaultTheme = {
       default: { size: 'sm', color: 'regular' },
     },
     badge: {
-      style: 'mr-2 px-2.5 py-0.5',
+      style: 'mr-2 px-2.5 py-1',
       color: {
         primary: {
           span: 'bg-green-100 dark:bg-green-200 text-green-800 dark:text-green-800',
@@ -307,10 +307,10 @@ export const DefaultTheme = {
       },
       options: {
         rounded: 'rounded',
-        border: 'border-2',
+        border: 'border',
       },
       default: {
-        rounded: true,
+        rounded: false,
         border: false,
         size: 'sm',
         color: 'regular',
