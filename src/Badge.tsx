@@ -17,6 +17,8 @@ export const Badge: React.FC<BadgeProps> = ({
   role,
   size,
   weight,
+  rounded,
+  border,
   ...other
 }) => {
   const { theme } = useTheme()

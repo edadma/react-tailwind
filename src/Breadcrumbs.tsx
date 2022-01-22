@@ -1,7 +1,8 @@
 import React, { Children, ReactNode } from 'react'
 import { useTheme } from './ThemeProvider'
 import { Next } from './Icons'
-import componentPropType, { childrenOf } from './util'
+import componentPropType from './util'
+import PropTypes from 'prop-types'
 
 interface BreadcrumbsProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
@@ -48,6 +49,10 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ children, href, isLast }
   )
 }
 
-// Breadcrumbs.propTypes = {
-//   children: componentPropType(Breadcrumb),
-// }
+Breadcrumb.propTypes = {
+  isLast: PropTypes.bool,
+}
+
+Breadcrumbs.propTypes = {
+  children: componentPropType(Breadcrumb),
+}

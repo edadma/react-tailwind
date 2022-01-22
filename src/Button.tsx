@@ -10,7 +10,7 @@ interface ButtonProps
   outlined?: boolean
   rounded?: boolean
   pill?: boolean
-  icon?: boolean
+  hasIcon?: boolean
   transition?: boolean
   role?: Color
   size?: Size
@@ -24,6 +24,7 @@ export const Button: React.FC<ButtonProps> = ({
   outlined,
   size,
   weight,
+  hasIcon,
   ...other
 }) => {
   const { theme } = useTheme()
@@ -61,7 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
           'button',
           'rounded',
           'pill',
-          'icon',
+          'hasIcon',
           'transition'
         )} ${weightClass(theme, 'button', weight)} ${theme.component.button.style} ${
           className || ''

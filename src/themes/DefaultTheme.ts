@@ -126,13 +126,13 @@ export const DefaultTheme = {
       options: {
         rounded: 'rounded-lg',
         pill: 'rounded-full',
-        icon: ['p-2.5', 'px-5 py-2.5'],
+        hasIcon: ['p-2.5', 'px-5 py-2.5'],
         transition: 'transition ease-in-out duration-300',
       },
       default: {
         rounded: true,
         pill: false,
-        icon: false,
+        hasIcon: false,
         transition: true,
         weight: 'bold',
         size: 'md',
