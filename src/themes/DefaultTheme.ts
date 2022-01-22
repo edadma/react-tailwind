@@ -324,6 +324,13 @@ export const DefaultTheme = {
         underline: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700',
         pill: 'flex flex-wrap m-3',
       },
+    },
+    tab: {
+      style: {
+        tab: 'mr-2 inline-block py-4 px-4 text-center rounded-t-lg',
+        underline: 'mr-2 inline-block py-4 px-4 text-center border-b-2',
+        pill: 'mr-2 inline-block py-3 px-4 text-center rounded-lg',
+      },
       default: {
         size: 'md',
         color: 'regular',
@@ -358,13 +365,6 @@ export const DefaultTheme = {
           a: 'text-red-600 border-red-600 dark:text-red-500 dark:border-red-500',
           pill: 'text-red-50 bg-red-600 dark:bg-red-500',
         },
-      },
-    },
-    tab: {
-      style: {
-        tab: 'mr-2 inline-block py-4 px-4 text-center rounded-t-lg',
-        underline: 'mr-2 inline-block py-4 px-4 text-center border-b-2',
-        pill: 'mr-2 inline-block py-3 px-4 text-center rounded-lg',
       },
     },
     breadcrumbs: {

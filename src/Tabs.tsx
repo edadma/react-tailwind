@@ -25,10 +25,10 @@ export const Tabs: React.FC<TabsProps> = ({
 
   return (
     <>
-      <ul className={theme.component.tabs.style[type]}>
+      <ul className={theme.component.tabs.style[type]} {...other}>
         {Children.map(tabs, (child, index) =>
           React.cloneElement(child as React.ReactElement, {
-            active,
+            active: index === active,
             setActive,
             index,
             size,
@@ -74,23 +74,23 @@ export const Tab: React.FC<TabProps> = ({
       className={`${theme.component.tab.style[type].li} ${
         type === 'underline'
           ? active
-            ? `active ${colorClass(theme, 'tabs', role, 'a')}`
+            ? `active ${colorClass(theme, 'tab', role, 'a')}`
             : 'text-gray-500 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
           : type === 'tab'
           ? active
             ? `bg-gray-200 rounded-t-lg active dark:bg-gray-700 ${colorClass(
                 theme,
-                'tabs',
+                'tab',
                 role,
                 'a'
               )}`
             : 'text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
           : type === 'pill'
           ? active
-            ? `active ${colorClass(theme, 'tabs', role, 'pill')}`
+            ? `active ${colorClass(theme, 'tab', role, 'pill')}`
             : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
           : '' // todo: fullWidth type https://flowbite.com/docs/components/tabs/#full-width-tabs
-      } ${sizeClass(theme, 'tabs', size, 'text')} ${weightClass(theme, 'tabs', weight)} ${
+      } ${sizeClass(theme, 'tab', size, 'text')} ${weightClass(theme, 'tab', weight)} ${
         theme.component.tab.style[type].a
       }`}
       onClick={() => setActive?.(index!)}
