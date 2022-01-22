@@ -1,21 +1,18 @@
-import React, { ReactNode, useState } from 'react'
-import { Size, Align, Weight, Color } from './types'
+import React, { Children, FunctionComponent, useState } from 'react'
+import { Size, Weight, Color } from './types'
 import { colorClass, sizeClass, useTheme, weightClass } from './ThemeProvider'
 
 interface TabsProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
   size?: Size
-  align?: Align
   weight?: Weight
   role?: Color
   type?: 'tab' | 'underline' | 'pill'
-  panes: { tab: string; pane: ReactNode }[]
 }
 
 export const Tabs: React.FC<TabsProps> = ({
-  panes,
+  children,
   size,
-  align,
   weight,
   role,
   type = 'underline',
@@ -23,43 +20,69 @@ export const Tabs: React.FC<TabsProps> = ({
 }) => {
   const [active, setActive] = useState(0)
   const { theme } = useTheme()
+  const tabs = Children.toArray(children)
 
   return (
     <>
-      <ul className={theme.component.tabs.style[type].ul}>
-        {panes.map(({ tab }, index) => (
-          <li className={theme.component.tabs.style[type].li}>
-            <a
-              className={`${
-                type === 'underline'
-                  ? index === active
-                    ? `active ${colorClass(theme, 'tabs', role, 'a')}`
-                    : 'text-gray-500 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
-                  : type === 'tab'
-                  ? index === active
-                    ? `bg-gray-200 rounded-t-lg active dark:bg-gray-700 ${colorClass(
-                        theme,
-                        'tabs',
-                        role,
-                        'a'
-                      )}`
-                    : 'text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
-                  : type === 'pill'
-                  ? index === active
-                    ? `active ${colorClass(theme, 'tabs', role, 'pill')}`
-                    : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
-                  : '' // todo: fullWidth type https://flowbite.com/docs/components/tabs/#full-width-tabs
-              } ${sizeClass(theme, 'tabs', size, 'text')} ${weightClass(theme, 'tabs', weight)} ${
-                theme.component.tabs.style[type].a
-              }`}
-              onClick={() => setActive(index)}
-            >
-              {tab}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <div>{panes[active].pane}</div>
+      <ul className={theme.component.tabs.style[type]}>{tabs.map((child, index) => null)}</ul>
+      <div>{tabs[active] as FunctionComponent}</div>
     </>
+  )
+}
+
+interface TabProps
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLLIElement>, HTMLLIElement> {
+  active: boolean
+  setActive: React.Dispatch<React.SetStateAction<number>>
+  index: number
+  label: string
+  size?: Size
+  weight?: Weight
+  role?: Color
+  type?: 'tab' | 'underline' | 'pill'
+}
+
+export const Tab: React.FC<TabProps> = ({
+  active,
+  setActive,
+  index,
+  label,
+
+  size,
+  weight,
+  role,
+  type = 'underline',
+  ...other
+}) => {
+  const { theme } = useTheme()
+
+  return (
+    <li
+      className={`${theme.component.tab.style[type].li} ${
+        type === 'underline'
+          ? active
+            ? `active ${colorClass(theme, 'tabs', role, 'a')}`
+            : 'text-gray-500 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
+          : type === 'tab'
+          ? active
+            ? `bg-gray-200 rounded-t-lg active dark:bg-gray-700 ${colorClass(
+                theme,
+                'tabs',
+                role,
+                'a'
+              )}`
+            : 'text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
+          : type === 'pill'
+          ? active
+            ? `active ${colorClass(theme, 'tabs', role, 'pill')}`
+            : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
+          : '' // todo: fullWidth type https://flowbite.com/docs/components/tabs/#full-width-tabs
+      } ${sizeClass(theme, 'tabs', size, 'text')} ${weightClass(theme, 'tabs', weight)} ${
+        theme.component.tab.style[type].a
+      }`}
+      onClick={() => setActive(index)}
+    >
+      {label}
+    </li>
   )
 }

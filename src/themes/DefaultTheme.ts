@@ -320,21 +320,15 @@ export const DefaultTheme = {
     },
     tabs: {
       style: {
-        tab: {
-          ul: 'flex flex-wrap my-3 border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800',
-          li: 'mr-2',
-          a: 'inline-block py-4 px-4 text-center rounded-t-lg',
-        },
-        underline: {
-          ul: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
-          li: 'mr-2',
-          a: 'inline-block py-4 px-4 text-center border-b-2',
-        },
-        pill: {
-          ul: 'flex flex-wrap m-3',
-          li: 'mr-2',
-          a: 'inline-block py-3 px-4 text-center rounded-lg',
-        },
+        tab: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
+        underline:
+          'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
+        pill: 'flex flex-wrap m-3',
+      },
+      default: {
+        size: 'md',
+        color: 'regular',
+        weight: 'medium',
       },
       color: {
         primary: {
@@ -366,11 +360,12 @@ export const DefaultTheme = {
           pill: 'text-red-50 bg-red-600 dark:bg-red-500',
         },
       },
-      default: {
-        size: 'md',
-        color: 'regular',
-        weight: 'medium',
-        align: 'left',
+    },
+    tab: {
+      style: {
+        tab: 'mr-2 inline-block py-4 px-4 text-center rounded-t-lg',
+        underline: 'mr-2 inline-block py-4 px-4 text-center border-b-2',
+        pill: 'mr-2 inline-block py-3 px-4 text-center rounded-lg',
       },
     },
     breadcrumbs: {
