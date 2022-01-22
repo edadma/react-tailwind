@@ -13,6 +13,7 @@ import {
   Badge,
   Elem,
   Tabs,
+  Tab,
   Text,
   Breadcrumbs,
   Breadcrumb,
@@ -181,28 +182,18 @@ const App: React.FC = () => (
       {/*    },*/}
       {/*  ]}*/}
       {/*/>*/}
-      <Tabs
-        type="tab"
-        role="info"
-        panes={[
-          {
-            tab: 'One',
-            pane: (
-              <Card>
-                <Text>One</Text>
-              </Card>
-            ),
-          },
-          {
-            tab: 'Two',
-            pane: (
-              <Card>
-                <Text>Two</Text>
-              </Card>
-            ),
-          },
-        ]}
-      />
+      <Tabs type="tab" role="info">
+        <Tab label="One">
+          <Card>
+            <Text>One</Text>
+          </Card>
+        </Tab>
+        <Tab label="Two">
+          <Card>
+            <Text>Two</Text>
+          </Card>
+        </Tab>
+      </Tabs>
       <Card>
         <Card>
           <Grid cols={5}>
@@ -336,6 +327,6 @@ export { Grid, Elem } from './Grid'
 export { ThemeProvider } from './ThemeProvider'
 export { Badge } from './Badge'
 export { Spinner } from './Spinner'
-export { Tabs } from './Tabs'
+export { Tabs, Tab } from './Tabs'
 export { Form } from './Form'
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs'

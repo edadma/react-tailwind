@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent, useState } from 'react'
+import React, { Children, useState } from 'react'
 import { Size, Weight, Color } from './types'
 import { colorClass, sizeClass, useTheme, weightClass } from './ThemeProvider'
 
@@ -24,17 +24,29 @@ export const Tabs: React.FC<TabsProps> = ({
 
   return (
     <>
-      <ul className={theme.component.tabs.style[type]}>{tabs.map((child, index) => null)}</ul>
-      <div>{tabs[active] as FunctionComponent}</div>
+      <ul className={theme.component.tabs.style[type]}>
+        {Children.map(tabs, (child, index) => {
+          React.cloneElement(child as React.ReactElement, {
+            active,
+            setActive,
+            index,
+            size,
+            weight,
+            role,
+            type,
+          })
+        })}
+      </ul>
+      <div>{(tabs[active] as React.ReactElement).props.children}</div>
     </>
   )
 }
 
 interface TabProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLLIElement>, HTMLLIElement> {
-  active: boolean
-  setActive: React.Dispatch<React.SetStateAction<number>>
-  index: number
+  active?: boolean
+  setActive?: React.Dispatch<React.SetStateAction<number>>
+  index?: number
   label: string
   size?: Size
   weight?: Weight
@@ -80,7 +92,7 @@ export const Tab: React.FC<TabProps> = ({
       } ${sizeClass(theme, 'tabs', size, 'text')} ${weightClass(theme, 'tabs', weight)} ${
         theme.component.tab.style[type].a
       }`}
-      onClick={() => setActive(index)}
+      onClick={() => setActive?.(index!)}
     >
       {label}
     </li>

@@ -32,7 +32,7 @@ export const ModeProvider: React.FC<{ value?: ModeType }> = ({ children, value }
 
   const body = document.querySelector('body')
 
-  body?.classList.add('dark:' + theme.dark)
+  body?.classList.add(theme.dark)
 
   return (
     <ModeContext.Provider value={{ mode, setMode }}>
