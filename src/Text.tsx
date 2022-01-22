@@ -48,7 +48,7 @@ export const Text: React.FC<TextProps> = ({
         'overline',
         'strikethrough',
         'italic'
-      )} ${weightClass(theme, 'text', weight)} ${className || ''}`}
+      )} ${weightClass(theme, 'text', weight)} ${theme.component.text.style} ${className || ''}`}
       {...other}
     >
       {children}

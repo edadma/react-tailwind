@@ -219,14 +219,15 @@ export const DefaultTheme = {
       default: { rounded: true, border: true, size: 'sm', color: 'regular' },
     },
     text: {
+      style: 'inline-flex items-center',
       color: {
-        primary: { text: 'text-green-700 dark:text-green-300' },
-        secondary: { text: 'text-blue-700 dark:text-blue-300' },
-        regular: { text: 'text-gray-700 dark:text-gray-300' },
-        info: { text: 'text-blue-700 dark:text-blue-300' },
-        success: { text: 'text-green-700 dark:text-green-300' },
-        warning: { text: 'text-yellow-700 dark:text-yellow-300' },
-        error: { text: 'text-red-700 dark:text-red-300' },
+        primary: { text: 'text-green-700 dark:text-green-400' },
+        secondary: { text: 'text-blue-700 dark:text-blue-400' },
+        regular: { text: 'text-gray-700 dark:text-gray-400' },
+        info: { text: 'text-blue-700 dark:text-blue-400' },
+        success: { text: 'text-green-700 dark:text-green-400' },
+        warning: { text: 'text-yellow-700 dark:text-yellow-400' },
+        error: { text: 'text-red-700 dark:text-red-400' },
       },
       options: {
         underline: 'underline',
@@ -240,6 +241,7 @@ export const DefaultTheme = {
         size: 'sm',
         color: 'regular',
         align: 'left',
+        weight: 'medium',
       },
     },
     grid: {
@@ -364,12 +366,24 @@ export const DefaultTheme = {
           pill: 'text-red-50 bg-red-600 dark:bg-red-500',
         },
       },
-      options: {},
       default: {
         size: 'md',
         color: 'regular',
         weight: 'medium',
         align: 'left',
+      },
+    },
+    breadcrumbs: {
+      style: {
+        nav: 'flex',
+        ol: 'inline-flex items-center space-x-2 md:space-x-3',
+        li: 'inline-flex items-center',
+      },
+    },
+    breadcrumb: {
+      style: {
+        a: 'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
+        span: 'ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500',
       },
     },
   },

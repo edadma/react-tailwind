@@ -14,11 +14,14 @@ import {
   Elem,
   Tabs,
   Text,
+  Breadcrumbs,
+  Breadcrumb,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
 import { CB3Theme } from './themes/CB3Theme'
 import { ThemeSwitcher } from './ThemeSwitcher'
+import { Home } from './Icons'
 // import { HiMail } from 'react-icons/hi'
 
 const App: React.FC = () => (
@@ -27,148 +30,158 @@ const App: React.FC = () => (
       <Card>
         <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
       </Card>
-      <Grid cols={5}>
-        <Elem>
-          <Tabs
-            type="pill"
-            panes={[
-              {
-                tab: 'One',
-                pane: (
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                ),
-              },
-              {
-                tab: 'Two',
-                pane: (
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                ),
-              },
-            ]}
-          />
-        </Elem>
-        <Elem>
-          <Tabs
-            type="pill"
-            role="info"
-            panes={[
-              {
-                tab: 'One',
-                pane: (
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                ),
-              },
-              {
-                tab: 'Two',
-                pane: (
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                ),
-              },
-            ]}
-          />
-        </Elem>
-        <Elem>
-          <Tabs
-            type="pill"
-            role="success"
-            panes={[
-              {
-                tab: 'One',
-                pane: (
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                ),
-              },
-              {
-                tab: 'Two',
-                pane: (
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                ),
-              },
-            ]}
-          />
-        </Elem>
-        <Elem>
-          <Tabs
-            type="pill"
-            role="warning"
-            panes={[
-              {
-                tab: 'One',
-                pane: (
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                ),
-              },
-              {
-                tab: 'Two',
-                pane: (
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                ),
-              },
-            ]}
-          />
-        </Elem>
-        <Elem>
-          <Tabs
-            type="pill"
-            role="error"
-            panes={[
-              {
-                tab: 'One',
-                pane: (
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                ),
-              },
-              {
-                tab: 'Two',
-                pane: (
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                ),
-              },
-            ]}
-          />
-        </Elem>
-      </Grid>
-      <Tabs
-        role="info"
-        panes={[
-          {
-            tab: 'One',
-            pane: (
-              <Card>
-                <Text>One</Text>
-              </Card>
-            ),
-          },
-          {
-            tab: 'Two',
-            pane: (
-              <Card>
-                <Text>Two</Text>
-              </Card>
-            ),
-          },
-        ]}
-      />
+      <Card>
+        <Breadcrumbs>
+          <p>asdf</p>
+          <Breadcrumb>
+            <Home /> Home
+          </Breadcrumb>
+          <Breadcrumb>Projects</Breadcrumb>
+          <Breadcrumb>react-tailwind</Breadcrumb>
+        </Breadcrumbs>
+      </Card>
+      {/*<Grid cols={5}>*/}
+      {/*  <Elem>*/}
+      {/*    <Tabs*/}
+      {/*      type="pill"*/}
+      {/*      panes={[*/}
+      {/*        {*/}
+      {/*          tab: 'One',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>One</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*        {*/}
+      {/*          tab: 'Two',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>Two</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*      ]}*/}
+      {/*    />*/}
+      {/*  </Elem>*/}
+      {/*  <Elem>*/}
+      {/*    <Tabs*/}
+      {/*      type="pill"*/}
+      {/*      role="info"*/}
+      {/*      panes={[*/}
+      {/*        {*/}
+      {/*          tab: 'One',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>One</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*        {*/}
+      {/*          tab: 'Two',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>Two</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*      ]}*/}
+      {/*    />*/}
+      {/*  </Elem>*/}
+      {/*  <Elem>*/}
+      {/*    <Tabs*/}
+      {/*      type="pill"*/}
+      {/*      role="success"*/}
+      {/*      panes={[*/}
+      {/*        {*/}
+      {/*          tab: 'One',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>One</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*        {*/}
+      {/*          tab: 'Two',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>Two</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*      ]}*/}
+      {/*    />*/}
+      {/*  </Elem>*/}
+      {/*  <Elem>*/}
+      {/*    <Tabs*/}
+      {/*      type="pill"*/}
+      {/*      role="warning"*/}
+      {/*      panes={[*/}
+      {/*        {*/}
+      {/*          tab: 'One',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>One</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*        {*/}
+      {/*          tab: 'Two',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>Two</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*      ]}*/}
+      {/*    />*/}
+      {/*  </Elem>*/}
+      {/*  <Elem>*/}
+      {/*    <Tabs*/}
+      {/*      type="pill"*/}
+      {/*      role="error"*/}
+      {/*      panes={[*/}
+      {/*        {*/}
+      {/*          tab: 'One',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>One</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*        {*/}
+      {/*          tab: 'Two',*/}
+      {/*          pane: (*/}
+      {/*            <Card>*/}
+      {/*              <Text>Two</Text>*/}
+      {/*            </Card>*/}
+      {/*          ),*/}
+      {/*        },*/}
+      {/*      ]}*/}
+      {/*    />*/}
+      {/*  </Elem>*/}
+      {/*</Grid>*/}
+      {/*<Tabs*/}
+      {/*  role="info"*/}
+      {/*  panes={[*/}
+      {/*    {*/}
+      {/*      tab: 'One',*/}
+      {/*      pane: (*/}
+      {/*        <Card>*/}
+      {/*          <Text>One</Text>*/}
+      {/*        </Card>*/}
+      {/*      ),*/}
+      {/*    },*/}
+      {/*    {*/}
+      {/*      tab: 'Two',*/}
+      {/*      pane: (*/}
+      {/*        <Card>*/}
+      {/*          <Text>Two</Text>*/}
+      {/*        </Card>*/}
+      {/*      ),*/}
+      {/*    },*/}
+      {/*  ]}*/}
+      {/*/>*/}
       <Tabs
         type="tab"
         role="info"
@@ -326,3 +339,4 @@ export { Badge } from './Badge'
 export { Spinner } from './Spinner'
 export { Tabs } from './Tabs'
 export { Form } from './Form'
+export { Breadcrumbs, Breadcrumb } from './Breadcrumbs'
