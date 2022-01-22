@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
+import _ from 'lodash'
 
 /**
  * Generates the correct PropType when trying to ensure a specific Component
@@ -18,4 +19,9 @@ export default function componentPropType(component: FunctionComponent) {
 
     PropTypes.arrayOf(PropTypes.oneOfType([componentShape, PropTypes.oneOf([false])])),
   ])
+}
+
+export const childType = (child: ReactNode, name: string, parent: string) => {
+  if (_.matchesProperty('type.name', name)(child))
+    throw new Error(`child component '${name}' must be used with component '${parent}'`)
 }

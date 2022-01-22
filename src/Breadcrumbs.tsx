@@ -1,4 +1,4 @@
-import React, { Children, ReactNode } from 'react'
+import React, { Children, FunctionComponent, ReactNode } from 'react'
 import { useTheme } from './ThemeProvider'
 import { Next } from './Icons'
 import componentPropType from './util'
@@ -23,7 +23,10 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
       <ol className={theme.component.breadcrumbs.style.ol}>
         {Children.map(children, (child, index) => (
           <>
-            {React.cloneElement(child as React.ReactElement, { isLast: index === last })}
+            {/*{childType(child, 'Breadcrumb', 'Breadcrumbs')}*/}
+            {React.cloneElement(child as React.ReactElement, {
+              isLast: index === last,
+            })}
             {index !== last && separator}
           </>
         ))}
