@@ -32,7 +32,6 @@ const App: React.FC = () => (
       </Card>
       <Card>
         <Breadcrumbs>
-          <p>asdf</p>
           <Breadcrumb>
             <Home /> Home
           </Breadcrumb>
