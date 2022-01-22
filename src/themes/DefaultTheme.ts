@@ -320,9 +320,8 @@ export const DefaultTheme = {
     },
     tabs: {
       style: {
-        tab: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
-        underline:
-          'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800',
+        tab: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700',
+        underline: 'flex flex-wrap -mb-px border-b border-gray-200 dark:border-gray-700',
         pill: 'flex flex-wrap m-3',
       },
       default: {

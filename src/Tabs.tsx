@@ -21,11 +21,12 @@ export const Tabs: React.FC<TabsProps> = ({
   const [active, setActive] = useState(0)
   const { theme } = useTheme()
   const tabs = Children.toArray(children)
+  console.log(tabs)
 
   return (
     <>
       <ul className={theme.component.tabs.style[type]}>
-        {Children.map(tabs, (child, index) => {
+        {Children.map(tabs, (child, index) =>
           React.cloneElement(child as React.ReactElement, {
             active,
             setActive,
@@ -35,7 +36,7 @@ export const Tabs: React.FC<TabsProps> = ({
             role,
             type,
           })
-        })}
+        )}
       </ul>
       <div>{(tabs[active] as React.ReactElement).props.children}</div>
     </>
@@ -59,7 +60,6 @@ export const Tab: React.FC<TabProps> = ({
   setActive,
   index,
   label,
-
   size,
   weight,
   role,
@@ -67,6 +67,7 @@ export const Tab: React.FC<TabProps> = ({
   ...other
 }) => {
   const { theme } = useTheme()
+  console.log(active, setActive, index, label, size, weight, role)
 
   return (
     <li
