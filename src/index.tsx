@@ -29,7 +29,7 @@ import { Home } from './Icons'
 const App: React.FC = () => (
   <ThemeProvider>
     <ModeProvider>
-      <Card>
+      <Card className="max-w-fit">
         <Space>
           <ModeSwitcher />
           <ThemeSwitcher value={DefaultTheme} />

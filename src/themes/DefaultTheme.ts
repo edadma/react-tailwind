@@ -186,8 +186,9 @@ export const DefaultTheme = {
         rounded: 'rounded-lg',
         border: 'border border-gray-200 dark:border-gray-700',
         shadow: 'shadow-md',
+        fit: 'max-w-fit',
       },
-      default: { rounded: false, border: true, shadow: false, color: 'none', pad: 6 },
+      default: { rounded: false, border: true, shadow: false, fit: false, color: 'none', pad: 6 },
     },
     alert: {
       style: 'p-4 mb-4',
@@ -327,9 +328,9 @@ export const DefaultTheme = {
     },
     tab: {
       style: {
-        tab: 'mr-2 inline-block py-4 px-4 text-center rounded-t-lg',
-        underline: 'mr-2 inline-block py-4 px-4 text-center border-b-2',
-        pill: 'mr-2 inline-block py-3 px-4 text-center rounded-lg',
+        tab: 'mr-2 inline-block py-4 px-4 text-center rounded-t-lg transition',
+        underline: 'mr-2 inline-block py-4 px-4 text-center border-b-2 transition',
+        pill: 'mr-2 inline-block py-3 px-4 text-center rounded-lg transition',
       },
       default: {
         size: 'md',

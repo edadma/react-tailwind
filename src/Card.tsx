@@ -7,21 +7,37 @@ interface CardProps
   rounded?: boolean
   border?: boolean
   shadow?: boolean
+  fit?: boolean
   bg?: Color
   pad?: number
 }
 
-export const Card: React.FC<CardProps> = ({ children, className, bg, pad, ...other }) => {
+export const Card: React.FC<CardProps> = ({
+  children,
+  className,
+  rounded,
+  border,
+  shadow,
+  fit,
+  bg,
+  pad,
+  ...other
+}) => {
   const { theme } = useTheme()
 
   return (
     <div
-      className={`${optionProps(theme, other, 'card', 'rounded', 'border', 'shadow')} ${colorClass(
+      className={`${optionProps(
         theme,
+        other,
         'card',
-        bg,
-        'div'
-      )} ${padClass(theme, 'card', pad)} ${theme.component.card.style} ${className || ''}`}
+        'rounded',
+        'border',
+        'shadow',
+        'fit'
+      )} ${colorClass(theme, 'card', bg, 'div')} ${padClass(theme, 'card', pad)} ${
+        theme.component.card.style
+      } ${className || ''}`}
       {...other}
     >
       {children}
