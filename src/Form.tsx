@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 import { useFormik } from 'formik'
@@ -8,10 +8,18 @@ interface FormProps {
   initialValues: any
 }
 
+export const FormContext = React.createContext<any>(null)
+
+export const useForm = () => useContext(FormContext)
+
 export const Form: React.FC<FormProps> = ({ children, onSubmit, initialValues }) => {
   const formik = useFormik({ onSubmit, initialValues })
 
-  return <form onSubmit={formik.handleSubmit}>{children}</form>
+  return (
+    <FormContext.Provider value={formik}>
+      <form onSubmit={formik.handleSubmit}>{children}</form>
+    </FormContext.Provider>
+  )
 }
 
 interface InputProps
@@ -32,10 +40,10 @@ export const Input: React.FC<InputProps> = ({
   inputSize,
   weight,
   label,
-  type,
   ...other
 }) => {
   const { theme } = useTheme()
+  const formik = useForm()
 
   return (
     <div className="mb-6">
@@ -48,17 +56,19 @@ export const Input: React.FC<InputProps> = ({
         </label>
       )}
       <input
-        type={type}
         className={`${colorClass(theme, 'input', role, 'input')} ${colorClass(
           theme,
           'input',
           role,
           'focus'
-        )} ${optionProps(theme, other, 'input', 'rounded', 'pill')} ${weightClass(
+        )} ${optionProps(theme, other, 'input', 'rounded', 'pill')} ${sizeClass(
           theme,
           'input',
-          weight
-        )} ${theme.component.input.style} ${className || ''}`}
+          inputSize,
+          'input'
+        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style} ${
+          className || ''
+        }`}
         {...other}
       >
         {children}
