@@ -17,16 +17,20 @@ interface ButtonProps
   weight?: Weight
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  className,
-  role,
-  outlined,
-  size,
-  weight,
-  hasIcon,
-  ...other
-}) => {
+export const Button: React.FC<ButtonProps> = (props) => {
+  const {
+    children,
+    className,
+    role,
+    outlined,
+    rounded,
+    pill,
+    size,
+    weight,
+    hasIcon,
+    transition,
+    ...other
+  } = props
   const { theme } = useTheme()
 
   return (
@@ -58,7 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
           'focusRing'
         )} ${optionProps(
           theme,
-          other,
+          props,
           'button',
           'rounded',
           'pill',
