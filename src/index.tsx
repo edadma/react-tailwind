@@ -18,6 +18,7 @@ import {
   Breadcrumbs,
   Breadcrumb,
   Space,
+  Input,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -29,7 +30,10 @@ import { Home } from './Icons'
 const App: React.FC = () => (
   <ThemeProvider>
     <ModeProvider>
-      <Card className="max-w-fit">
+      <Card>
+        <Input placeholder="this is the placeholder" />
+      </Card>
+      <Card>
         <Space>
           <ModeSwitcher />
           <ThemeSwitcher value={DefaultTheme} />
@@ -399,6 +403,6 @@ export { ThemeProvider } from './ThemeProvider'
 export { Badge } from './Badge'
 export { Spinner } from './Spinner'
 export { Tabs, Tab } from './Tabs'
-export { Form } from './Form'
+export { Form, Input } from './Form'
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs'
 export { Space } from './Space'

@@ -381,5 +381,40 @@ export const DefaultTheme = {
         span: 'ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500',
       },
     },
+    input: {
+      style: '',
+      options: {
+        rounded: 'rounded',
+        border: 'border',
+      },
+      default: {
+        size: 'md',
+        color: 'info',
+        weight: 'medium',
+      },
+      color: {
+        primary: {
+          input: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
+        },
+        secondary: {
+          input: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500',
+        },
+        regular: {
+          input: 'text-gray-600 border-gray-600 dark:text-gray-500 dark:border-gray-500',
+        },
+        info: {
+          input: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500',
+        },
+        success: {
+          input: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
+        },
+        warning: {
+          input: 'text-yellow-600 border-yellow-600 dark:text-yellow-500 dark:border-yellow-500',
+        },
+        error: {
+          input: 'text-red-600 border-red-600 dark:text-red-500 dark:border-red-500',
+        },
+      },
+    },
   },
 }

@@ -18,12 +18,11 @@ interface InputProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   rounded?: boolean
   pill?: boolean
-  icon?: boolean
-  transition?: boolean
   role?: Color
   inputSize?: Size
   weight?: Weight
   label?: string
+  placeholder?: string
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -50,27 +49,16 @@ export const Input: React.FC<InputProps> = ({
       )}
       <input
         type={type}
-        className={`${colorClass(theme, 'input', role, 'filledBg')} ${colorClass(
+        className={`${colorClass(theme, 'input', role, 'input')} ${colorClass(
           theme,
           'input',
           role,
-          'filledText'
-        )} ${colorClass(theme, 'input', role, 'filledHoverBg')} ${sizeClass(
+          'focus'
+        )} ${optionProps(theme, other, 'input', 'rounded', 'pill')} ${weightClass(
           theme,
           'input',
-          inputSize,
-          'text'
-        )} ${colorClass(theme, 'input', role, 'focusRing')} ${optionProps(
-          theme,
-          other,
-          'input',
-          'rounded',
-          'pill',
-          'icon',
-          'transition'
-        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style} ${
-          className || ''
-        }`}
+          weight
+        )} ${theme.component.input.style} ${className || ''}`}
         {...other}
       >
         {children}
