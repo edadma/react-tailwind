@@ -56,6 +56,8 @@ export const Input: React.FC<InputProps> = ({
         </label>
       )}
       <input
+        onChange={formik.handleChange}
+        value={formik.values[other['name']!]}
         className={`${colorClass(theme, 'input', role, 'input')} ${colorClass(
           theme,
           'input',
