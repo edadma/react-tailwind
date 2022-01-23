@@ -7,7 +7,7 @@ import _ from 'lodash'
  * @param {Class} component the React component you expect the children to be
  * @returns {PropType}
  */
-export default function componentPropType(component: FunctionComponent) {
+export default function componentPropType<P>(component: FunctionComponent<P>) {
   const componentShape = PropTypes.shape({
     type: PropTypes.oneOf([component]),
   })

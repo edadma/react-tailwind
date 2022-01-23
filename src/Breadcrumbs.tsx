@@ -52,10 +52,6 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ children, href, isLast }
   )
 }
 
-Breadcrumb.propTypes = {
-  isLast: PropTypes.bool,
-}
-
 Breadcrumbs.propTypes = {
   children: componentPropType(Breadcrumb),
 }

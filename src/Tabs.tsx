@@ -1,6 +1,7 @@
 import React, { Children, useState } from 'react'
 import { Size, Weight, Color } from './types'
 import { colorClass, sizeClass, useTheme, weightClass } from './ThemeProvider'
+import componentPropType from './util'
 
 interface TabsProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
@@ -21,7 +22,6 @@ export const Tabs: React.FC<TabsProps> = ({
   const [active, setActive] = useState(0)
   const { theme } = useTheme()
   const tabs = Children.toArray(children)
-  console.log(tabs)
 
   return (
     <>
@@ -67,7 +67,6 @@ export const Tab: React.FC<TabProps> = ({
   ...other
 }) => {
   const { theme } = useTheme()
-  console.log(active, setActive, index, label, size, weight, role)
 
   return (
     <li
@@ -98,4 +97,8 @@ export const Tab: React.FC<TabProps> = ({
       {label}
     </li>
   )
+}
+
+Tabs.propTypes = {
+  children: componentPropType(Tab),
 }
