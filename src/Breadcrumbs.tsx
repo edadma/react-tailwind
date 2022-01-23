@@ -1,8 +1,7 @@
-import React, { Children, FunctionComponent, ReactNode } from 'react'
+import React, { Children, ReactNode } from 'react'
 import { useTheme } from './ThemeProvider'
 import { Next } from './Icons'
 import componentPropType from './util'
-import PropTypes from 'prop-types'
 
 interface BreadcrumbsProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
