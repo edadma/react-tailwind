@@ -71,7 +71,7 @@ export const Tab: React.FC<TabProps> = ({
 
   return (
     <li
-      className={`${theme.component.tab.style[type].li} ${
+      className={`${theme.component.tab.style[type]} ${
         type === 'underline'
           ? active
             ? `active ${colorClass(theme, 'tab', role, 'a')}`
@@ -91,7 +91,7 @@ export const Tab: React.FC<TabProps> = ({
             : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
           : '' // todo: fullWidth type https://flowbite.com/docs/components/tabs/#full-width-tabs
       } ${sizeClass(theme, 'tab', size, 'text')} ${weightClass(theme, 'tab', weight)} ${
-        theme.component.tab.style[type].a
+        theme.component.tab.style[type]
       }`}
       onClick={() => setActive?.(index!)}
     >

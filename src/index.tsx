@@ -40,270 +40,336 @@ const App: React.FC = () => (
           <Breadcrumb>react-tailwind</Breadcrumb>
         </Breadcrumbs>
       </Card>
-      {/*<Grid cols={5}>*/}
-      {/*  <Elem>*/}
-      {/*    <Tabs*/}
-      {/*      type="pill"*/}
-      {/*      panes={[*/}
-      {/*        {*/}
-      {/*          tab: 'One',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>One</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*        {*/}
-      {/*          tab: 'Two',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>Two</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*      ]}*/}
-      {/*    />*/}
-      {/*  </Elem>*/}
-      {/*  <Elem>*/}
-      {/*    <Tabs*/}
-      {/*      type="pill"*/}
-      {/*      role="info"*/}
-      {/*      panes={[*/}
-      {/*        {*/}
-      {/*          tab: 'One',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>One</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*        {*/}
-      {/*          tab: 'Two',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>Two</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*      ]}*/}
-      {/*    />*/}
-      {/*  </Elem>*/}
-      {/*  <Elem>*/}
-      {/*    <Tabs*/}
-      {/*      type="pill"*/}
-      {/*      role="success"*/}
-      {/*      panes={[*/}
-      {/*        {*/}
-      {/*          tab: 'One',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>One</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*        {*/}
-      {/*          tab: 'Two',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>Two</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*      ]}*/}
-      {/*    />*/}
-      {/*  </Elem>*/}
-      {/*  <Elem>*/}
-      {/*    <Tabs*/}
-      {/*      type="pill"*/}
-      {/*      role="warning"*/}
-      {/*      panes={[*/}
-      {/*        {*/}
-      {/*          tab: 'One',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>One</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*        {*/}
-      {/*          tab: 'Two',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>Two</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*      ]}*/}
-      {/*    />*/}
-      {/*  </Elem>*/}
-      {/*  <Elem>*/}
-      {/*    <Tabs*/}
-      {/*      type="pill"*/}
-      {/*      role="error"*/}
-      {/*      panes={[*/}
-      {/*        {*/}
-      {/*          tab: 'One',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>One</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*        {*/}
-      {/*          tab: 'Two',*/}
-      {/*          pane: (*/}
-      {/*            <Card>*/}
-      {/*              <Text>Two</Text>*/}
-      {/*            </Card>*/}
-      {/*          ),*/}
-      {/*        },*/}
-      {/*      ]}*/}
-      {/*    />*/}
-      {/*  </Elem>*/}
-      {/*</Grid>*/}
-      {/*<Tabs*/}
-      {/*  role="info"*/}
-      {/*  panes={[*/}
-      {/*    {*/}
-      {/*      tab: 'One',*/}
-      {/*      pane: (*/}
-      {/*        <Card>*/}
-      {/*          <Text>One</Text>*/}
-      {/*        </Card>*/}
-      {/*      ),*/}
-      {/*    },*/}
-      {/*    {*/}
-      {/*      tab: 'Two',*/}
-      {/*      pane: (*/}
-      {/*        <Card>*/}
-      {/*          <Text>Two</Text>*/}
-      {/*        </Card>*/}
-      {/*      ),*/}
-      {/*    },*/}
-      {/*  ]}*/}
-      {/*/>*/}
-      <Tabs type="tab" role="info">
-        <Tab label="One">
-          <Card>
-            <Text>One</Text>
-          </Card>
-        </Tab>
-        <Tab label="Two">
-          <Card>
-            <Text>Two</Text>
-          </Card>
-        </Tab>
-      </Tabs>
       <Card>
-        <Card>
-          <Grid cols={5}>
-            <Button>regular</Button>
-            <Button role="info">info</Button>
-            <Button role="success">success</Button>
-            <Button role="warning">warning</Button>
-            <Button role="error">error</Button>
-            <Button outlined>regular</Button>
-            <Button outlined role="info">
-              info
-            </Button>
-            <Button outlined role="success">
-              success
-            </Button>
-            <Button outlined role="warning">
-              warning
-            </Button>
-            <Button outlined role="error">
-              error
-            </Button>
-          </Grid>
-        </Card>
-        <Card>
-          <Grid cols={5}>
-            <Progress value={45} />
-            <Progress role="info" value={45} />
-            <Progress role="success" value={45} />
-            <Progress role="warning" value={45} />
-            <Progress role="error" value={45} />
-            <Progress label value={45} />
-            <Progress label role="info" value={45} />
-            <Progress label role="success" value={45} />
-            <Progress label role="warning" value={45} />
-            <Progress label role="error" value={45} />
-          </Grid>
-        </Card>
-        <Card>
-          <Grid cols={5}>
-            <Alert>This is an alert.</Alert>
-            <Alert role="info">This is an alert.</Alert>
-            <Alert role="success">This is an alert.</Alert>
-            <Alert role="warning">This is an alert.</Alert>
-            <Alert role="error">This is an alert.</Alert>
-          </Grid>
-        </Card>
-        <Card>
-          <Grid cols={5}>
-            <Spinner />
-            <Spinner role="info" />
-            <Spinner role="success" />
-            <Spinner role="warning" />
-            <Spinner role="error" />
-          </Grid>
-        </Card>
-        <Card>
-          <Grid cols={5}>
-            <Elem>
-              <Badge>Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge role="info">Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge role="success">Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge role="warning">Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge role="error">Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge border>Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge border role="info">
-                Badge
-              </Badge>
-            </Elem>
-            <Elem>
-              <Badge border role="success">
-                Badge
-              </Badge>
-            </Elem>
-            <Elem>
-              <Badge border role="warning">
-                Badge
-              </Badge>
-            </Elem>
-            <Elem>
-              <Badge border role="error">
-                Badge
-              </Badge>
-            </Elem>
-          </Grid>
-        </Card>
-        <Card>
-          <Grid cols={3}>
-            <Elem>
-              <Badge>Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge role="info">Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge role="success">Badge</Badge>
-            </Elem>
-          </Grid>
-        </Card>
+        <Grid cols={5}>
+          <Elem>
+            <Tabs type="tab" role="regular">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="tab" role="info">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="tab" role="success">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="tab" role="warning">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="tab" role="error">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+        </Grid>
+      </Card>
+      <Card>
+        <Grid cols={5}>
+          <Elem>
+            <Tabs type="underline" role="regular">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="underline" role="info">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="underline" role="success">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="underline" role="warning">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="underline" role="error">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+        </Grid>
+      </Card>
+      <Card>
+        <Grid cols={5}>
+          <Elem>
+            <Tabs type="pill" role="regular">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="pill" role="info">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="pill" role="success">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="pill" role="warning">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+          <Elem>
+            <Tabs type="pill" role="error">
+              <Tab label="One">
+                <Card>
+                  <Text>One</Text>
+                </Card>
+              </Tab>
+              <Tab label="Two">
+                <Card>
+                  <Text>Two</Text>
+                </Card>
+              </Tab>
+            </Tabs>
+          </Elem>
+        </Grid>
+      </Card>
+      <Card>
+        <Grid cols={5}>
+          <Button>regular</Button>
+          <Button role="info">info</Button>
+          <Button role="success">success</Button>
+          <Button role="warning">warning</Button>
+          <Button role="error">error</Button>
+          <Button outlined>regular</Button>
+          <Button outlined role="info">
+            info
+          </Button>
+          <Button outlined role="success">
+            success
+          </Button>
+          <Button outlined role="warning">
+            warning
+          </Button>
+          <Button outlined role="error">
+            error
+          </Button>
+        </Grid>
+      </Card>
+      <Card>
+        <Grid cols={5}>
+          <Progress value={45} />
+          <Progress role="info" value={45} />
+          <Progress role="success" value={45} />
+          <Progress role="warning" value={45} />
+          <Progress role="error" value={45} />
+          <Progress label value={45} />
+          <Progress label role="info" value={45} />
+          <Progress label role="success" value={45} />
+          <Progress label role="warning" value={45} />
+          <Progress label role="error" value={45} />
+        </Grid>
+      </Card>
+      <Card>
+        <Grid cols={5}>
+          <Alert>This is an alert.</Alert>
+          <Alert role="info">This is an alert.</Alert>
+          <Alert role="success">This is an alert.</Alert>
+          <Alert role="warning">This is an alert.</Alert>
+          <Alert role="error">This is an alert.</Alert>
+        </Grid>
+      </Card>
+      <Card>
+        <Grid cols={5}>
+          <Spinner />
+          <Spinner role="info" />
+          <Spinner role="success" />
+          <Spinner role="warning" />
+          <Spinner role="error" />
+        </Grid>
+      </Card>
+      <Card>
+        <Grid cols={5}>
+          <Elem>
+            <Badge>Badge</Badge>
+          </Elem>
+          <Elem>
+            <Badge role="info">Badge</Badge>
+          </Elem>
+          <Elem>
+            <Badge role="success">Badge</Badge>
+          </Elem>
+          <Elem>
+            <Badge role="warning">Badge</Badge>
+          </Elem>
+          <Elem>
+            <Badge role="error">Badge</Badge>
+          </Elem>
+          <Elem>
+            <Badge border>Badge</Badge>
+          </Elem>
+          <Elem>
+            <Badge border role="info">
+              Badge
+            </Badge>
+          </Elem>
+          <Elem>
+            <Badge border role="success">
+              Badge
+            </Badge>
+          </Elem>
+          <Elem>
+            <Badge border role="warning">
+              Badge
+            </Badge>
+          </Elem>
+          <Elem>
+            <Badge border role="error">
+              Badge
+            </Badge>
+          </Elem>
+        </Grid>
+      </Card>
+      <Card>
+        <Grid cols={3}>
+          <Elem>
+            <Badge>Badge</Badge>
+          </Elem>
+          <Elem>
+            <Badge role="info">Badge</Badge>
+          </Elem>
+          <Elem>
+            <Badge role="success">Badge</Badge>
+          </Elem>
+        </Grid>
       </Card>
     </ModeProvider>
   </ThemeProvider>

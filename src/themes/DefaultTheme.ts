@@ -333,7 +333,7 @@ export const DefaultTheme = {
       },
       default: {
         size: 'md',
-        color: 'regular',
+        color: 'info',
         weight: 'medium',
       },
       color: {
