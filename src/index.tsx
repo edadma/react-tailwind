@@ -17,6 +17,7 @@ import {
   Text,
   Breadcrumbs,
   Breadcrumb,
+  Space,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -29,7 +30,11 @@ const App: React.FC = () => (
   <ThemeProvider>
     <ModeProvider>
       <Card>
-        <ModeSwitcher /> <ThemeSwitcher value={DefaultTheme} /> <ThemeSwitcher value={CB3Theme} />
+        <Space>
+          <ModeSwitcher />
+          <ThemeSwitcher value={DefaultTheme} />
+          <ThemeSwitcher value={CB3Theme} />
+        </Space>
       </Card>
       <Card>
         <Breadcrumbs>
@@ -396,3 +401,4 @@ export { Spinner } from './Spinner'
 export { Tabs, Tab } from './Tabs'
 export { Form } from './Form'
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs'
+export { Space } from './Space'

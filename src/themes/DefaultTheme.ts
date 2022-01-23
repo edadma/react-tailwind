@@ -50,7 +50,7 @@ export const DefaultTheme = {
   },
   component: {
     button: {
-      style: 'inline-block focus:ring-2 text-center shadow-md hover:shadow-lg', // todo:  mr-2 mb-2
+      style: 'inline-block focus:ring-2 text-center shadow-md hover:shadow-lg',
       color: {
         primary: new ButtonColor(
           'text-green-600',
