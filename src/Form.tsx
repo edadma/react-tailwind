@@ -41,16 +41,19 @@ interface InputProps
   placeholder?: string
 }
 
-export const Input: React.FC<InputProps> = ({
-  children,
-  className,
-  role,
-  inputSize,
-  weight,
-  label,
-  renderError,
-  ...other
-}) => {
+export const Input: React.FC<InputProps> = (props) => {
+  const {
+    children,
+    className,
+    rounded,
+    pill,
+    role,
+    inputSize,
+    weight,
+    label,
+    renderError,
+    ...other
+  } = props
   const { theme } = useTheme()
   const formik = useForm()
 
@@ -71,15 +74,13 @@ export const Input: React.FC<InputProps> = ({
         id={other.name}
         className={`${colorClass(theme, 'input', role, 'input')} ${optionProps(
           theme,
-          other,
+          props,
           'input',
           'rounded',
           'pill'
-        )} ${sizeClass(theme, 'input', inputSize, 'input')} ${weightClass(
-          theme,
-          'input',
-          weight
-        )} ${theme.component.input.style} ${className || ''}`}
+        )} ${sizeClass(theme, 'input', inputSize, 'text')} ${weightClass(theme, 'input', weight)} ${
+          theme.component.input.style
+        } ${className || ''}`}
         {...other}
       >
         {children}

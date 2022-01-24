@@ -385,45 +385,45 @@ export const DefaultTheme = {
       style: 'space-y-5',
     },
     input: {
-      style: 'bg-gray-50 border p-2.5 dark:bg-gray-600',
+      style: 'bg-gray-50 border p-2.5 dark:bg-gray-700',
       options: {
         rounded: 'rounded-lg',
         border: 'border',
       },
       default: {
         rounded: true,
-        size: 'md',
+        size: 'sm',
         color: 'regular',
         weight: 'medium',
       },
       color: {
         primary: {
           input:
-            'border-green-300 text-green-900 focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-500 dark:border-green-500 dark:placeholder-green-400 dark:text-white',
+            'border-green-300 text-green-900 focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-500 dark:border-green-600 dark:placeholder-green-400 dark:text-white',
         },
         secondary: {
           input:
-            'border-blue-300 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:border-blue-500 dark:placeholder-blue-400 dark:text-white',
+            'border-blue-300 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white',
         },
         regular: {
           input:
-            'border-gray-300 text-gray-900 focus:ring-2 focus:ring-gray-500 focus:border-gray-500 dark:focus:ring-gray-500 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white',
+            'border-gray-300 text-gray-900 focus:ring-2 focus:ring-gray-500 focus:border-gray-500 dark:focus:ring-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white',
         },
         info: {
           input:
-            'border-blue-300 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:border-blue-500 dark:placeholder-blue-400 dark:text-white',
+            'border-blue-300 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white',
         },
         success: {
           input:
-            'border-green-300 text-green-900 focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-500 dark:border-green-500 dark:placeholder-green-400 dark:text-white',
+            'border-green-300 text-green-900 focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-500 dark:border-green-600 dark:placeholder-green-400 dark:text-white',
         },
         warning: {
           input:
-            'border-yellow-300 text-yellow-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 dark:focus:ring-yellow-500 dark:border-yellow-500 dark:placeholder-yellow-400 dark:text-white',
+            'border-yellow-300 text-yellow-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 dark:focus:ring-yellow-500 dark:border-yellow-600 dark:placeholder-yellow-400 dark:text-white',
         },
         error: {
           input:
-            'border-red-300 text-red-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 dark:focus:ring-red-500 dark:border-red-500 dark:placeholder-red-400 dark:text-white',
+            'border-red-300 text-red-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 dark:focus:ring-red-500 dark:border-red-600 dark:placeholder-red-400 dark:text-white',
         },
       },
     },
