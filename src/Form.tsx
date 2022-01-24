@@ -55,7 +55,7 @@ export const Input: React.FC<InputProps> = ({
   const formik = useForm()
 
   return (
-    <div className="inline-block align-top">
+    <div>
       {label && (
         <label
           htmlFor={other.name}

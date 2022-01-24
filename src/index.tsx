@@ -40,7 +40,10 @@ const App: React.FC = () => {
               initialValues: { email: '', password: '' },
               validationSchema: yup.object({
                 email: yup.string().email('Must be a valid email.').required('Email is required.'),
-                password: yup.string().required('Password is required.'),
+                password: yup
+                  .string()
+                  .min(8, 'Password must be at least 8 characters.')
+                  .required('Password is required.'),
               }),
               onSubmit: setData,
             }}
@@ -49,9 +52,15 @@ const App: React.FC = () => {
               name="email"
               label="Your email"
               placeholder="name@company.com"
-              className="block w-full"
+              className="w-full"
             />
-            <Input type="password" name="password" label="Your password" placeholder="••••••••" />
+            <Input
+              type="password"
+              name="password"
+              label="Your password"
+              placeholder="••••••••"
+              className="w-full"
+            />
             <Button type="submit" role="success" className="w-full">
               Login to your account
             </Button>
