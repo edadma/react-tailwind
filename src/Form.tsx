@@ -4,7 +4,8 @@ import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './The
 import { useFormik } from 'formik'
 import { Text } from './Text'
 
-interface FormProps {
+interface FormProps
+  extends React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> {
   init: any
 }
 
@@ -12,12 +13,18 @@ export const FormContext = React.createContext<any>(null)
 
 export const useForm = () => useContext(FormContext)
 
-export const Form: React.FC<FormProps> = ({ children, init }) => {
+export const Form: React.FC<FormProps> = ({ children, className, init }) => {
   const formik = useFormik(init)
+  const { theme } = useTheme()
 
   return (
     <FormContext.Provider value={formik}>
-      <form onSubmit={formik.handleSubmit}>{children}</form>
+      <form
+        className={`${theme.component.form.style} ${className || ''}`}
+        onSubmit={formik.handleSubmit}
+      >
+        {children}
+      </form>
     </FormContext.Provider>
   )
 }
@@ -76,12 +83,12 @@ export const Input: React.FC<InputProps> = ({
       >
         {children}
       </input>
-      {formik.errors.name &&
+      {formik.errors[other.name!] &&
         (renderError ? (
-          <div>{renderError(formik.errors.name)}</div>
+          <div>{renderError(formik.errors[other.name!])}</div>
         ) : (
           <div>
-            <Text role="error">{formik.errors.name}</Text>
+            <Text role="error">{formik.errors[other.name!]}</Text>
           </div>
         ))}
     </div>

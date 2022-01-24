@@ -381,6 +381,9 @@ export const DefaultTheme = {
         span: 'ml-1 text-sm font-medium text-gray-400 md:ml-2 dark:text-gray-500',
       },
     },
+    form: {
+      style: 'space-y-5',
+    },
     input: {
       style: 'bg-gray-50 border p-2.5 dark:bg-gray-600',
       options: {
