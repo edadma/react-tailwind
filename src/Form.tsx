@@ -59,30 +59,29 @@ export const Input: React.FC<InputProps> = ({
       )}
       <input
         onChange={formik.handleChange}
-        value={formik.values[other['name']!]}
-        className={`${colorClass(theme, 'input', role, 'input')} ${colorClass(
+        value={formik.values[other.name!]}
+        id={other.name}
+        className={`${colorClass(theme, 'input', role, 'input')} ${optionProps(
+          theme,
+          other,
+          'input',
+          'rounded',
+          'pill'
+        )} ${sizeClass(theme, 'input', inputSize, 'input')} ${weightClass(
           theme,
           'input',
-          role,
-          'focus'
-        )} ${optionProps(theme, other, 'input', 'rounded', 'pill')} ${sizeClass(
-          theme,
-          'input',
-          inputSize,
-          'input'
-        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style} ${
-          className || ''
-        }`}
+          weight
+        )} ${theme.component.input.style} ${className || ''}`}
         {...other}
       >
         {children}
       </input>
-      {formik.errors['name'] &&
+      {formik.errors.name &&
         (renderError ? (
-          <div>{renderError(formik.errors['name'])}</div>
+          <div>{renderError(formik.errors.name)}</div>
         ) : (
           <div>
-            <Text role="error">{formik.errors['name']}</Text>
+            <Text role="error">{formik.errors.name}</Text>
           </div>
         ))}
     </div>

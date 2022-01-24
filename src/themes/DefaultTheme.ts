@@ -382,37 +382,45 @@ export const DefaultTheme = {
       },
     },
     input: {
-      style: '',
+      style: 'bg-gray-50 border p-2.5 dark:bg-gray-600',
       options: {
-        rounded: 'rounded',
+        rounded: 'rounded-lg',
         border: 'border',
       },
       default: {
+        rounded: true,
         size: 'md',
-        color: 'info',
+        color: 'regular',
         weight: 'medium',
       },
       color: {
         primary: {
-          input: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
+          input:
+            'border-green-300 text-green-900 focus:ring-green-500 focus:border-green-5000 dark:border-green-500 dark:placeholder-green-400 dark:text-white',
         },
         secondary: {
-          input: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500',
+          input:
+            'border-blue-300 text-blue-900 focus:ring-blue-500 focus:border-blue-500 dark:border-blue-500 dark:placeholder-blue-400 dark:text-white',
         },
         regular: {
-          input: 'text-gray-600 border-gray-600 dark:text-gray-500 dark:border-gray-500',
+          input:
+            'border-gray-300 text-gray-900 focus:ring-gray-500 focus:border-gray-500 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white',
         },
         info: {
-          input: 'text-blue-600 border-blue-600 dark:text-blue-500 dark:border-blue-500',
+          input:
+            'border-blue-300 text-blue-900 focus:ring-blue-500 focus:border-blue-500 dark:border-blue-500 dark:placeholder-blue-400 dark:text-white',
         },
         success: {
-          input: 'text-green-600 border-green-600 dark:text-green-500 dark:border-green-500',
+          input:
+            'border-green-300 text-green-900 focus:ring-green-500 focus:border-green-500 dark:border-green-500 dark:placeholder-green-400 dark:text-white',
         },
         warning: {
-          input: 'text-yellow-600 border-yellow-600 dark:text-yellow-500 dark:border-yellow-500',
+          input:
+            'border-yellow-300 text-yellow-900 focus:ring-yellow-500 focus:border-yellow-500 dark:border-yellow-500 dark:placeholder-yellow-400 dark:text-white',
         },
         error: {
-          input: 'text-red-600 border-red-600 dark:text-red-500 dark:border-red-500',
+          input:
+            'border-red-300 text-red-900 focus:ring-red-500 focus:border-red-500  dark:border-red-500 dark:placeholder-red-400 dark:text-white',
         },
       },
     },
