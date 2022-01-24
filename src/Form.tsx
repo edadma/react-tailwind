@@ -66,6 +66,7 @@ export const Input: React.FC<InputProps> = ({
       )}
       <input
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values[other.name!]}
         id={other.name}
         className={`${colorClass(theme, 'input', role, 'input')} ${optionProps(
@@ -83,7 +84,8 @@ export const Input: React.FC<InputProps> = ({
       >
         {children}
       </input>
-      {formik.errors[other.name!] &&
+      {formik.touched[other.name!] &&
+        formik.errors[other.name!] &&
         (renderError ? (
           <div>{renderError(formik.errors[other.name!])}</div>
         ) : (
