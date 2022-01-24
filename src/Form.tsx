@@ -1,19 +1,19 @@
-import React, { useContext } from 'react'
+import React, { ReactNode, useContext } from 'react'
 import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 import { useFormik } from 'formik'
+import { Text } from './Text'
 
 interface FormProps {
-  onSubmit: (data: any) => void
-  initialValues: any
+  init: any
 }
 
 export const FormContext = React.createContext<any>(null)
 
 export const useForm = () => useContext(FormContext)
 
-export const Form: React.FC<FormProps> = ({ children, onSubmit, initialValues }) => {
-  const formik = useFormik({ onSubmit, initialValues })
+export const Form: React.FC<FormProps> = ({ children, init }) => {
+  const formik = useFormik(init)
 
   return (
     <FormContext.Provider value={formik}>
@@ -30,6 +30,7 @@ interface InputProps
   inputSize?: Size
   weight?: Weight
   label?: string
+  renderError?: (error: string) => ReactNode
   placeholder?: string
 }
 
@@ -40,16 +41,17 @@ export const Input: React.FC<InputProps> = ({
   inputSize,
   weight,
   label,
+  renderError,
   ...other
 }) => {
   const { theme } = useTheme()
   const formik = useForm()
 
   return (
-    <div className="mb-6">
+    <>
       {label && (
         <label
-          htmlFor="email"
+          htmlFor={other.name}
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
         >
           {label}
@@ -75,6 +77,14 @@ export const Input: React.FC<InputProps> = ({
       >
         {children}
       </input>
-    </div>
+      {formik.errors['name'] &&
+        (renderError ? (
+          <div>{renderError(formik.errors['name'])}</div>
+        ) : (
+          <div>
+            <Text role="error">{}</Text>
+          </div>
+        ))}
+    </>
   )
 }

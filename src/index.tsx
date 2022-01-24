@@ -26,7 +26,7 @@ import { DefaultTheme } from './themes/DefaultTheme'
 import { CB3Theme } from './themes/CB3Theme'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { Home } from './Icons'
-// import { HiMail } from 'react-icons/hi'
+import * as yup from 'yup'
 
 const App: React.FC = () => {
   const [data, setData] = useState({})
@@ -35,8 +35,19 @@ const App: React.FC = () => {
     <ThemeProvider>
       <ModeProvider>
         <Card>
-          <Form initialValues={{ input: '' }} onSubmit={setData}>
-            <Input name="input" placeholder="this is the placeholder" />
+          <Form
+            init={{
+              initialValues: { name: '' },
+              validationSchema: yup.object({ name: yup.string().required('Name required.') }),
+              onSubmit: setData,
+            }}
+          >
+            <Input
+              name="name"
+              label="type something"
+              placeholder="this is the placeholder"
+              renderError={(error) => <Text role="error">{error}</Text>}
+            />
           </Form>
           <pre className="text-white">{JSON.stringify(data, null, 2)}</pre>
         </Card>
