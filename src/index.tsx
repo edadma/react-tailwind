@@ -20,6 +20,7 @@ import {
   Space,
   Input,
   Form,
+  Checkbox,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -37,7 +38,7 @@ const App: React.FC = () => {
         <Card className="max-w-sm">
           <Form
             init={{
-              initialValues: { email: '', password: '' },
+              initialValues: { email: '', password: '', remember: false },
               validationSchema: yup.object({
                 email: yup.string().email('Must be a valid email.').required('Email is required.'),
                 password: yup
@@ -61,6 +62,7 @@ const App: React.FC = () => {
               placeholder="••••••••"
               className="w-full"
             />
+            <Checkbox name="remember">Remember me</Checkbox>
             <Button type="submit" role="success" className="w-full">
               Login to your account
             </Button>
@@ -440,6 +442,6 @@ export { ThemeProvider } from './ThemeProvider'
 export { Badge } from './Badge'
 export { Spinner } from './Spinner'
 export { Tabs, Tab } from './Tabs'
-export { Form, Input } from './Form'
+export { Form, Input, Checkbox } from './Form'
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs'
 export { Space } from './Space'
