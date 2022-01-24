@@ -48,7 +48,7 @@ export const Input: React.FC<InputProps> = ({
   const formik = useForm()
 
   return (
-    <>
+    <div className="inline-block align-top">
       {label && (
         <label
           htmlFor={other.name}
@@ -85,6 +85,6 @@ export const Input: React.FC<InputProps> = ({
             <Text role="error">{formik.errors['name']}</Text>
           </div>
         ))}
-    </>
+    </div>
   )
 }

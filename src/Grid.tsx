@@ -114,16 +114,13 @@ export const Grid: React.FC<GridProps> = ({
 
   return (
     <div
-      className={
-        `${colsClass[cols || theme.component.grid.default.cols]} ${
-          rows !== undefined ? rowsClass[rows] : ''
-        } ${gapClass[gap !== undefined ? gap : theme.component.grid.default.gap]} ${
-          gapx !== undefined ? gapxClass[gapx] : ''
-        } ${gapy !== undefined ? gapyClass[gapy] : ''} ${
-          flow !== undefined ? flowClass[flow] : ''
-        } ${colorClass(theme, 'grid', bg, 'div')} ${theme.component.grid.style}` +
-        (className ? ' ' + className : '')
-      }
+      className={`${colsClass[cols || theme.component.grid.default.cols]} ${
+        rows !== undefined ? rowsClass[rows] : ''
+      } ${gapClass[gap !== undefined ? gap : theme.component.grid.default.gap]} ${
+        gapx !== undefined ? gapxClass[gapx] : ''
+      } ${gapy !== undefined ? gapyClass[gapy] : ''} ${
+        flow !== undefined ? flowClass[flow] : ''
+      } ${colorClass(theme, 'grid', bg, 'div')} ${theme.component.grid.style} ${className || ''}`}
       {...other}
     >
       {children}
