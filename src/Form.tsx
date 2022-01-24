@@ -33,6 +33,7 @@ interface InputProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   rounded?: boolean
   pill?: boolean
+  border?: boolean
   role?: Color
   inputSize?: Size
   weight?: Weight
@@ -47,6 +48,7 @@ export const Input: React.FC<InputProps> = (props) => {
     className,
     rounded,
     pill,
+    border,
     role,
     inputSize,
     weight,
@@ -77,7 +79,8 @@ export const Input: React.FC<InputProps> = (props) => {
           props,
           'input',
           'rounded',
-          'pill'
+          'pill',
+          'border'
         )} ${sizeClass(theme, 'input', inputSize, 'text')} ${weightClass(theme, 'input', weight)} ${
           theme.component.input.style
         } ${className || ''}`}

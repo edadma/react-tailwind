@@ -385,13 +385,15 @@ export const DefaultTheme = {
       style: 'space-y-6',
     },
     input: {
-      style: 'bg-gray-50 border p-2.5 dark:bg-gray-700',
+      style: 'bg-gray-50 p-2.5 dark:bg-gray-700',
       options: {
         rounded: 'rounded-lg',
         border: 'border',
       },
       default: {
         rounded: true,
+        pill: false,
+        border: true,
         size: 'sm',
         color: 'regular',
         weight: 'medium',
@@ -399,31 +401,31 @@ export const DefaultTheme = {
       color: {
         primary: {
           input:
-            'border-green-300 text-green-900 focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-500 dark:border-green-600 dark:placeholder-green-400 dark:text-white',
+            'border-green-300 text-green-900 accent-green-500 focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-500 dark:border-green-600 dark:placeholder-green-400 dark:text-green-100',
         },
         secondary: {
           input:
-            'border-blue-300 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white',
+            'border-blue-300 text-blue-900 accent-blue-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:border-blue-600 dark:placeholder-blue-400 dark:text-blue-100',
         },
         regular: {
           input:
-            'border-gray-300 text-gray-900 focus:ring-2 focus:ring-gray-500 focus:border-gray-500 dark:focus:ring-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white',
+            'border-gray-300 text-gray-900 accent-gray-500 focus:ring-2 focus:ring-gray-500 focus:border-gray-500 dark:focus:ring-gray-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-100',
         },
         info: {
           input:
-            'border-blue-300 text-blue-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:border-blue-600 dark:placeholder-blue-400 dark:text-white',
+            'border-blue-300 text-blue-900 accent-blue-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:border-blue-600 dark:placeholder-blue-400 dark:text-blue-100',
         },
         success: {
           input:
-            'border-green-300 text-green-900 focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-500 dark:border-green-600 dark:placeholder-green-400 dark:text-white',
+            'border-green-300 text-green-900 accent-green-500 focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:focus:ring-green-500 dark:border-green-600 dark:placeholder-green-400 dark:text-green-100',
         },
         warning: {
           input:
-            'border-yellow-300 text-yellow-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 dark:focus:ring-yellow-500 dark:border-yellow-600 dark:placeholder-yellow-400 dark:text-white',
+            'border-yellow-300 text-yellow-900 accent-yellow-500 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 dark:focus:ring-yellow-500 dark:border-yellow-600 dark:placeholder-yellow-400 dark:text-yellow-100',
         },
         error: {
           input:
-            'border-red-300 text-red-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 dark:focus:ring-red-500 dark:border-red-600 dark:placeholder-red-400 dark:text-white',
+            'border-red-300 text-red-900 accent-red-500 focus:ring-2 focus:ring-red-500 focus:border-red-500 dark:focus:ring-red-500 dark:border-red-600 dark:placeholder-red-400 dark:text-red-100',
         },
       },
     },
@@ -432,7 +434,7 @@ export const DefaultTheme = {
         div1: 'flex items-start',
         div2: 'flex items-center h-5',
         input:
-          'w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800',
+          'w-4 h-4 bg-gray-50 rounded border border-gray-300 accent-gray-500 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800',
         div3: 'ml-3 text-sm',
         label: 'font-medium text-gray-900 dark:text-gray-300',
       },
