@@ -82,7 +82,7 @@ export const Input: React.FC<InputProps> = ({
           <div>{renderError(formik.errors['name'])}</div>
         ) : (
           <div>
-            <Text role="error">{}</Text>
+            <Text role="error">{formik.errors['name']}</Text>
           </div>
         ))}
     </>

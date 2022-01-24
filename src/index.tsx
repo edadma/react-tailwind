@@ -42,12 +42,7 @@ const App: React.FC = () => {
               onSubmit: setData,
             }}
           >
-            <Input
-              name="name"
-              label="type something"
-              placeholder="this is the placeholder"
-              renderError={(error) => <Text role="error">{error}</Text>}
-            />
+            <Input name="name" label="type something" placeholder="this is the placeholder" />
           </Form>
           <pre className="text-white">{JSON.stringify(data, null, 2)}</pre>
         </Card>
