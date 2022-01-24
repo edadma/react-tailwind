@@ -382,7 +382,7 @@ export const DefaultTheme = {
       },
     },
     form: {
-      style: 'space-y-5',
+      style: 'space-y-6',
     },
     input: {
       style: 'bg-gray-50 border p-2.5 dark:bg-gray-700',
