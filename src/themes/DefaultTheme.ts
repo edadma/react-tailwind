@@ -222,13 +222,13 @@ export const DefaultTheme = {
     text: {
       style: 'inline-flex items-center',
       color: {
-        primary: { text: 'text-green-700 dark:text-green-400' },
-        secondary: { text: 'text-blue-700 dark:text-blue-400' },
-        regular: { text: 'text-gray-700 dark:text-gray-400' },
-        info: { text: 'text-blue-700 dark:text-blue-400' },
-        success: { text: 'text-green-700 dark:text-green-400' },
-        warning: { text: 'text-yellow-700 dark:text-yellow-400' },
-        error: { text: 'text-red-700 dark:text-red-400' },
+        primary: { text: 'text-green-800 dark:text-green-300' },
+        secondary: { text: 'text-blue-800 dark:text-blue-300' },
+        regular: { text: 'text-gray-800 dark:text-gray-300' },
+        info: { text: 'text-blue-800 dark:text-blue-300' },
+        success: { text: 'text-green-800 dark:text-green-300' },
+        warning: { text: 'text-yellow-800 dark:text-yellow-300' },
+        error: { text: 'text-red-800 dark:text-red-300' },
       },
       options: {
         underline: 'underline',
@@ -268,7 +268,7 @@ export const DefaultTheme = {
     spinner: {
       style: 'inline-block w-8 h-8 border-4 border-solid rounded-full animate-spin',
       color: {
-        primary: { div: 'border-green-700' },
+        primary: { div: 'border-green-500' },
         secondary: { div: 'border-blue-500' },
         regular: { div: 'border-gray-500' },
         info: { div: 'border-blue-500' },
@@ -436,10 +436,42 @@ export const DefaultTheme = {
       style: {
         div1: 'flex items-start',
         div2: 'flex items-center h-5',
-        input:
-          'w-4 h-4 bg-gray-50 rounded border border-gray-300 accent-gray-500 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800',
+        input: 'w-4 h-4 bg-gray-500 rounded border focus:ring-3',
         div3: 'ml-3 text-sm',
         label: 'font-medium text-gray-900 dark:text-gray-300',
+      },
+      default: {
+        color: 'regular',
+      },
+      color: {
+        primary: {
+          checkbox:
+            'border-green-300 accent-green-500 focus:ring-green-300 dark:accent-green-500 dark:bg-green-700 dark:border-green-600 dark:focus:accent-green-600 dark:ring-offset-green-800',
+        },
+        secondary: {
+          checkbox:
+            'border-blue-300 accent-blue-500 focus:ring-blue-300 dark:accent-blue-500 dark:bg-blue-700 dark:border-blue-600 dark:focus:accent-blue-600 dark:ring-offset-blue-800',
+        },
+        regular: {
+          checkbox:
+            'border-gray-300 accent-gray-500 focus:ring-gray-300 dark:accent-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:accent-gray-600 dark:ring-offset-gray-800',
+        },
+        info: {
+          checkbox:
+            'border-blue-300 accent-blue-500 focus:ring-blue-300 dark:accent-blue-500 dark:bg-blue-700 dark:border-blue-600 dark:focus:accent-blue-600 dark:ring-offset-blue-800',
+        },
+        success: {
+          checkbox:
+            'border-green-300 accent-green-500 focus:ring-green-300 dark:accent-green-500 dark:bg-green-700 dark:border-green-600 dark:focus:accent-green-600 dark:ring-offset-green-800',
+        },
+        warning: {
+          checkbox:
+            'border-yellow-300 accent-yellow-500 focus:ring-yellow-300 dark:accent-yellow-500 dark:bg-yellow-700 dark:border-yellow-600 dark:focus:accent-yellow-600 dark:ring-offset-yellow-800',
+        },
+        error: {
+          checkbox:
+            'border-red-300 accent-red-500 focus:ring-red-300 dark:accent-red-500 dark:bg-red-700 dark:border-red-600 dark:focus:accent-red-600 dark:ring-offset-red-800',
+        },
       },
     },
     link: {

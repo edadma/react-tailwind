@@ -143,7 +143,7 @@ export const Demo: React.FC = () => {
                   role="info"
                   className="w-full"
                 />
-                <Checkbox name="agree">
+                <Checkbox name="agree" role="info">
                   <Text>I agree with the</Text>&nbsp;
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>

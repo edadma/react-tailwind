@@ -1,10 +1,10 @@
-import React, { ReactNode, useContext } from 'react'
+import React, { FC, ReactNode, useContext } from 'react'
 import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 import { useFormik } from 'formik'
 import { Text } from './Text'
 
-export const FormContext = React.createContext<any>(null)
+const FormContext = React.createContext<any>(null)
 
 export const useForm = () => useContext(FormContext)
 
@@ -13,7 +13,7 @@ interface FormProps
   init: any
 }
 
-export const Form: React.FC<FormProps> = ({ children, className, init }) => {
+export const Form: FC<FormProps> = ({ children, className, init }) => {
   const formik = useFormik(init)
   const { theme } = useTheme()
 
@@ -42,7 +42,7 @@ interface InputProps
   placeholder?: string
 }
 
-export const Input: React.FC<InputProps> = (props) => {
+export const Input: FC<InputProps> = (props) => {
   const {
     children,
     className,
@@ -64,7 +64,7 @@ export const Input: React.FC<InputProps> = (props) => {
       {label && (
         <label
           htmlFor={other.name}
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          className="block mb-2 text-sm font-medium text-gray-800 dark:text-gray-300"
         >
           {label}
         </label>
@@ -107,31 +107,37 @@ export const Input: React.FC<InputProps> = (props) => {
 interface CheckboxProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   name: string
+  role?: Color
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({ children, className, name }) => {
+export const Checkbox: FC<CheckboxProps> = ({ children, className, name, role }) => {
   const formik = useForm()
   const { theme } = useTheme()
 
   return (
-    <FormContext.Provider value={formik}>
-      <div className={theme.component.checkbox.style.div1}>
-        <div className={theme.component.checkbox.style.div2}>
-          <input
-            id={name}
-            name={name}
-            aria-describedby={name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values[name!]}
-            type="checkbox"
-            className={theme.component.checkbox.style.input + (' ' + className || '')}
-          />
-        </div>
-        <div className={theme.component.checkbox.style.div3}>
-          <label htmlFor={name}>{children}</label>
-        </div>
+    <div className={theme.component.checkbox.style.div1}>
+      <div className={theme.component.checkbox.style.div2}>
+        <input
+          id={name}
+          name={name}
+          aria-describedby={name}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values[name!]}
+          type="checkbox"
+          className={`${theme.component.checkbox.style.input} ${colorClass(
+            theme,
+            'checkbox',
+            role,
+            'checkbox'
+          )} ${className || ''}`}
+        />
       </div>
-    </FormContext.Provider>
+      <div className={theme.component.checkbox.style.div3}>
+        <label className={theme.component.checkbox.style.label} htmlFor={name}>
+          {children}
+        </label>
+      </div>
+    </div>
   )
 }
