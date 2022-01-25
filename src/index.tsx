@@ -31,7 +31,10 @@ import { Home } from './Icons'
 import * as yup from 'yup'
 
 const App: React.FC = () => {
-  const [data, setData] = useState({})
+  const [form1, setForm1] = useState()
+  const [form2, setForm2] = useState()
+  const [form3, setForm3] = useState()
+  const [form4, setForm4] = useState()
 
   return (
     <ThemeProvider>
@@ -44,8 +47,11 @@ const App: React.FC = () => {
           </Space>
         </Card>
         <Card>
-          <Grid cols={3}>
+          <Grid cols={4}>
             <Elem className="max-w-sm">
+              <Text italic className="mb-10">
+                Simple form with no password strength checking and default styling on the inputs.
+              </Text>
               <Form
                 init={{
                   initialValues: { email: '', password: '', remember: false },
@@ -59,34 +65,31 @@ const App: React.FC = () => {
                       .min(8, 'Password must be at least 8 characters.')
                       .required('Password is required.'),
                   }),
-                  onSubmit: setData,
+                  onSubmit: setForm1,
                 }}
               >
-                <Input
-                  name="email"
-                  label="Your email"
-                  placeholder="name@company.com"
-                  className="w-full"
-                />
+                <Input name="email" label="Your email" placeholder="name@company.com" />
                 <Input
                   type="password"
                   name="password"
                   label="Your password"
                   placeholder="••••••••"
-                  className="w-full"
                 />
                 <Checkbox name="remember">Remember me</Checkbox>
                 <Button type="submit">Login</Button>
               </Form>
               <Card className="mt-5">
                 <Text className="mb-2">Form values:</Text>
-                <pre className="text-white">{JSON.stringify(data, null, 2)}</pre>
+                <pre className="text-white">{JSON.stringify(form1, null, 2)}</pre>
               </Card>
             </Elem>
             <Elem className="max-w-sm">
+              <Text italic className="mb-10">
+                Form with strong password strength checking and extra styling on the inputs.
+              </Text>
               <Form
                 init={{
-                  initialValues: { email: '', password: '', passwordConfirm: '', remember: false },
+                  initialValues: { email: '', password: '', passwordConfirm: '', agree: false },
                   validationSchema: yup.object({
                     email: yup
                       .string()
@@ -95,14 +98,22 @@ const App: React.FC = () => {
                     password: yup
                       .string()
                       .required('Password is required.')
-                      .min(8, 'Password must be at least 8 characters.'),
+                      .min(8, 'Password must be at least 8 characters.')
+                      .matches(
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])/,
+                        'Password must contain at least: one uppercase, one lowercase, one number, and one special character'
+                      ),
                     passwordConfirm: yup
                       .string()
                       .required('Confirmed password is required.')
                       .min(8, 'Confirmed password must be at least 8 characters.')
+                      .matches(
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])/,
+                        'Confirmed password must contain at least: one uppercase, one lowercase, one number, and one special character'
+                      )
                       .oneOf([yup.ref('password')], 'Passwords do not match'),
                   }),
-                  onSubmit: setData,
+                  onSubmit: setForm2,
                 }}
               >
                 <Input
@@ -110,6 +121,7 @@ const App: React.FC = () => {
                   label="Your email"
                   placeholder="name@company.com"
                   pill
+                  role="info"
                   className="w-full"
                 />
                 <Input
@@ -118,6 +130,7 @@ const App: React.FC = () => {
                   label="Your desired password"
                   placeholder="••••••••"
                   pill
+                  role="info"
                   className="w-full"
                 />
                 <Input
@@ -126,23 +139,165 @@ const App: React.FC = () => {
                   label="Confirm your password"
                   placeholder="••••••••"
                   pill
+                  role="info"
                   className="w-full"
                 />
                 <Checkbox name="agree">
                   <Text>I agree with the</Text>&nbsp;
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>
-                <Button type="submit" pill className="w-full">
+                <Button type="submit" role="info" pill className="w-full">
                   Login
                 </Button>
               </Form>
               <Card className="mt-5">
                 <Text className="mb-2">Form values:</Text>
-                <pre className="text-white">{JSON.stringify(data, null, 2)}</pre>
+                <pre className="text-white">{JSON.stringify(form2, null, 2)}</pre>
               </Card>
             </Elem>
-            <Elem>
-              <Badge role="success">Badge</Badge>
+            <Elem className="max-w-sm">
+              <Text italic className="mb-10">
+                Form with strong password strength checking and extra styling on the inputs.
+              </Text>
+              <Form
+                init={{
+                  initialValues: { email: '', password: '', passwordConfirm: '', agree: false },
+                  validationSchema: yup.object({
+                    email: yup
+                      .string()
+                      .required('Email is required.')
+                      .email('Must be a valid email.'),
+                    password: yup
+                      .string()
+                      .required('Password is required.')
+                      .min(8, 'Password must be at least 8 characters.')
+                      .matches(
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])/,
+                        'Password must contain at least: one uppercase, one lowercase, one number, and one special character'
+                      ),
+                    passwordConfirm: yup
+                      .string()
+                      .required('Confirmed password is required.')
+                      .min(8, 'Confirmed password must be at least 8 characters.')
+                      .matches(
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])/,
+                        'Confirmed password must contain at least: one uppercase, one lowercase, one number, and one special character'
+                      )
+                      .oneOf([yup.ref('password')], 'Passwords do not match'),
+                  }),
+                  onSubmit: setForm3,
+                }}
+              >
+                <Input
+                  name="email"
+                  label="Your email"
+                  placeholder="name@company.com"
+                  pill
+                  role="info"
+                  className="w-full"
+                />
+                <Input
+                  type="password"
+                  name="password"
+                  label="Your desired password"
+                  placeholder="••••••••"
+                  pill
+                  role="info"
+                  className="w-full"
+                />
+                <Input
+                  type="password"
+                  name="passwordConfirm"
+                  label="Confirm your password"
+                  placeholder="••••••••"
+                  pill
+                  role="info"
+                  className="w-full"
+                />
+                <Checkbox name="agree">
+                  <Text>I agree with the</Text>&nbsp;
+                  <Link href="#">terms and conditions</Link>
+                </Checkbox>
+                <Button type="submit" role="info" pill className="w-full">
+                  Login
+                </Button>
+              </Form>
+              <Card className="mt-5">
+                <Text className="mb-2">Form values:</Text>
+                <pre className="text-white">{JSON.stringify(form3, null, 2)}</pre>
+              </Card>
+            </Elem>
+            <Elem className="max-w-sm">
+              <Text italic className="mb-10">
+                Form with strong password strength checking and extra styling on the inputs.
+              </Text>
+              <Form
+                init={{
+                  initialValues: { email: '', password: '', passwordConfirm: '', agree: false },
+                  validationSchema: yup.object({
+                    email: yup
+                      .string()
+                      .required('Email is required.')
+                      .email('Must be a valid email.'),
+                    password: yup
+                      .string()
+                      .required('Password is required.')
+                      .min(8, 'Password must be at least 8 characters.')
+                      .matches(
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])/,
+                        'Password must contain at least: one uppercase, one lowercase, one number, and one special character'
+                      ),
+                    passwordConfirm: yup
+                      .string()
+                      .required('Confirmed password is required.')
+                      .min(8, 'Confirmed password must be at least 8 characters.')
+                      .matches(
+                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])/,
+                        'Confirmed password must contain at least: one uppercase, one lowercase, one number, and one special character'
+                      )
+                      .oneOf([yup.ref('password')], 'Passwords do not match'),
+                  }),
+                  onSubmit: setForm4,
+                }}
+              >
+                <Input
+                  name="email"
+                  label="Your email"
+                  placeholder="name@company.com"
+                  pill
+                  role="info"
+                  className="w-full"
+                />
+                <Input
+                  type="password"
+                  name="password"
+                  label="Your desired password"
+                  placeholder="••••••••"
+                  pill
+                  role="info"
+                  className="w-full"
+                />
+                <Input
+                  type="password"
+                  name="passwordConfirm"
+                  label="Confirm your password"
+                  placeholder="••••••••"
+                  pill
+                  role="info"
+                  className="w-full"
+                />
+                <Checkbox name="agree">
+                  <Text>I agree with the</Text>&nbsp;
+                  <Link href="#">terms and conditions</Link>
+                </Checkbox>
+                <Button type="submit" role="info" pill className="w-full">
+                  Login
+                </Button>
+              </Form>
+              <Card className="mt-5">
+                <Text className="mb-2">Form values:</Text>
+                <pre className="text-white">{JSON.stringify(form4, null, 2)}</pre>
+              </Card>
             </Elem>
           </Grid>
         </Card>
