@@ -59,7 +59,7 @@ export const Input: FC<InputProps> = (props) => {
   } = props
   const { theme } = useTheme()
   const formik = useForm()
-  const id = _.uniqueId('form-')
+  const id = _.uniqueId('input-')
 
   return (
     <div>
@@ -115,12 +115,13 @@ interface CheckboxProps
 export const Checkbox: FC<CheckboxProps> = ({ children, className, name, role }) => {
   const formik = useForm()
   const { theme } = useTheme()
+  const id = _.uniqueId('checkbox-')
 
   return (
     <div className={theme.component.checkbox.style.div1}>
       <div className={theme.component.checkbox.style.div2}>
         <input
-          id={name}
+          id={id}
           name={name}
           aria-describedby={name}
           onChange={formik.handleChange}
@@ -136,7 +137,7 @@ export const Checkbox: FC<CheckboxProps> = ({ children, className, name, role })
         />
       </div>
       <div className={theme.component.checkbox.style.div3}>
-        <label className={theme.component.checkbox.style.label} htmlFor={name}>
+        <label className={theme.component.checkbox.style.label} htmlFor={id}>
           {children}
         </label>
       </div>
