@@ -477,13 +477,13 @@ export const DefaultTheme = {
     link: {
       style: 'hover:underline',
       color: {
-        primary: { text: 'text-green-700 dark:text-green-400' },
-        secondary: { text: 'text-blue-700 dark:text-blue-400' },
-        regular: { text: 'text-gray-700 dark:text-gray-400' },
-        info: { text: 'text-blue-700 dark:text-blue-400' },
-        success: { text: 'text-green-700 dark:text-green-400' },
-        warning: { text: 'text-yellow-700 dark:text-yellow-400' },
-        error: { text: 'text-red-700 dark:text-red-400' },
+        primary: { text: 'text-green-800 dark:text-green-300' },
+        secondary: { text: 'text-blue-800 dark:text-blue-300' },
+        regular: { text: 'text-gray-800 dark:text-gray-300' },
+        info: { text: 'text-blue-800 dark:text-blue-300' },
+        success: { text: 'text-green-800 dark:text-green-300' },
+        warning: { text: 'text-yellow-800 dark:text-yellow-300' },
+        error: { text: 'text-red-800 dark:text-red-300' },
       },
       options: {
         italic: 'italic',
