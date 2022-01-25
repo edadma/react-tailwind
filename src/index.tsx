@@ -21,6 +21,7 @@ import {
   Input,
   Form,
   Checkbox,
+  Link,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -35,48 +36,115 @@ const App: React.FC = () => {
   return (
     <ThemeProvider>
       <ModeProvider>
-        <Card className="max-w-sm">
-          <Form
-            init={{
-              initialValues: { email: '', password: '', remember: false },
-              validationSchema: yup.object({
-                email: yup.string().email('Must be a valid email.').required('Email is required.'),
-                password: yup
-                  .string()
-                  .min(8, 'Password must be at least 8 characters.')
-                  .required('Password is required.'),
-              }),
-              onSubmit: setData,
-            }}
-          >
-            <Input
-              name="email"
-              label="Your email"
-              placeholder="name@company.com"
-              className="w-full"
-            />
-            <Input
-              type="password"
-              name="password"
-              label="Your password"
-              placeholder="••••••••"
-              className="w-full"
-            />
-            <Checkbox name="remember">Remember me</Checkbox>
-            <Button type="submit" role="info">
-              Login
-            </Button>
-          </Form>
-        </Card>
-        <Card>
-          <pre className="text-white">{JSON.stringify(data, null, 2)}</pre>
-        </Card>
         <Card>
           <Space>
             <ModeSwitcher />
             <ThemeSwitcher value={DefaultTheme} />
             <ThemeSwitcher value={CB3Theme} />
           </Space>
+        </Card>
+        <Card>
+          <Grid cols={3}>
+            <Elem className="max-w-sm">
+              <Form
+                init={{
+                  initialValues: { email: '', password: '', remember: false },
+                  validationSchema: yup.object({
+                    email: yup
+                      .string()
+                      .email('Must be a valid email.')
+                      .required('Email is required.'),
+                    password: yup
+                      .string()
+                      .min(8, 'Password must be at least 8 characters.')
+                      .required('Password is required.'),
+                  }),
+                  onSubmit: setData,
+                }}
+              >
+                <Input
+                  name="email"
+                  label="Your email"
+                  placeholder="name@company.com"
+                  className="w-full"
+                />
+                <Input
+                  type="password"
+                  name="password"
+                  label="Your password"
+                  placeholder="••••••••"
+                  className="w-full"
+                />
+                <Checkbox name="remember">Remember me</Checkbox>
+                <Button type="submit">Login</Button>
+              </Form>
+              <Card className="mt-5">
+                <Text className="mb-2">Form values:</Text>
+                <pre className="text-white">{JSON.stringify(data, null, 2)}</pre>
+              </Card>
+            </Elem>
+            <Elem className="max-w-sm">
+              <Form
+                init={{
+                  initialValues: { email: '', password: '', passwordConfirm: '', remember: false },
+                  validationSchema: yup.object({
+                    email: yup
+                      .string()
+                      .email('Must be a valid email.')
+                      .required('Email is required.'),
+                    password: yup
+                      .string()
+                      .min(8, 'Password must be at least 8 characters.')
+                      .required('Password is required.'),
+                    passwordConfirm: yup
+                      .string()
+                      .min(8, 'Password must be at least 8 characters.')
+                      .required('Confirmed password is required.')
+                      .oneOf([yup.ref('password')], 'Passwords do not match'),
+                  }),
+                  onSubmit: setData,
+                }}
+              >
+                <Input
+                  name="email"
+                  label="Your email"
+                  placeholder="name@company.com"
+                  pill
+                  className="w-full"
+                />
+                <Input
+                  type="password"
+                  name="password"
+                  label="Your desired password"
+                  placeholder="••••••••"
+                  pill
+                  className="w-full"
+                />
+                <Input
+                  type="password"
+                  name="passwordConfirm"
+                  label="Confirm your password"
+                  placeholder="••••••••"
+                  pill
+                  className="w-full"
+                />
+                <Checkbox name="agree">
+                  <Text>I agree with the</Text>&nbsp;
+                  <Link href="#">terms and conditions</Link>
+                </Checkbox>
+                <Button type="submit" pill className="w-full">
+                  Login
+                </Button>
+              </Form>
+              <Card className="mt-5">
+                <Text className="mb-2">Form values:</Text>
+                <pre className="text-white">{JSON.stringify(data, null, 2)}</pre>
+              </Card>
+            </Elem>
+            <Elem>
+              <Badge role="success">Badge</Badge>
+            </Elem>
+          </Grid>
         </Card>
         <Card>
           <Breadcrumbs>
@@ -405,19 +473,6 @@ const App: React.FC = () => {
             </Elem>
           </Grid>
         </Card>
-        <Card>
-          <Grid cols={3}>
-            <Elem>
-              <Badge>Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge role="info">Badge</Badge>
-            </Elem>
-            <Elem>
-              <Badge role="success">Badge</Badge>
-            </Elem>
-          </Grid>
-        </Card>
       </ModeProvider>
     </ThemeProvider>
   )
@@ -445,3 +500,4 @@ export { Tabs, Tab } from './Tabs'
 export { Form, Input, Checkbox } from './Form'
 export { Breadcrumbs, Breadcrumb } from './Breadcrumbs'
 export { Space } from './Space'
+export { Link } from './Link'

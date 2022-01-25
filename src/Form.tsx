@@ -91,7 +91,7 @@ export const Input: React.FC<InputProps> = (props) => {
       {formik.touched[other.name!] &&
         formik.errors[other.name!] &&
         (renderError ? (
-          <div>{renderError(formik.errors[other.name!])}</div>
+          <div className="transition-transform">{renderError(formik.errors[other.name!])}</div>
         ) : (
           <div>
             <Text role="error">{formik.errors[other.name!]}</Text>
@@ -126,9 +126,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ children, className, name })
           />
         </div>
         <div className={theme.component.checkbox.style.div3}>
-          <label htmlFor={name} className={theme.component.checkbox.style.label}>
-            {children}
-          </label>
+          <label htmlFor={name}>{children}</label>
         </div>
       </div>
     </FormContext.Provider>

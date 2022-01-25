@@ -234,11 +234,13 @@ export const DefaultTheme = {
         underline: 'underline',
         overline: 'overline',
         strikethrough: 'line-through',
+        italic: 'italic',
       },
       default: {
         underline: false,
         overline: false,
         strikethrough: false,
+        italic: false,
         size: 'sm',
         color: 'regular',
         align: 'left',
@@ -388,6 +390,7 @@ export const DefaultTheme = {
       style: 'bg-gray-50 p-2.5 dark:bg-gray-700',
       options: {
         rounded: 'rounded-lg',
+        pill: 'rounded-full',
         border: 'border',
       },
       default: {
@@ -437,6 +440,28 @@ export const DefaultTheme = {
           'w-4 h-4 bg-gray-50 rounded border border-gray-300 accent-gray-500 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800',
         div3: 'ml-3 text-sm',
         label: 'font-medium text-gray-900 dark:text-gray-300',
+      },
+    },
+    link: {
+      style: 'hover:underline',
+      color: {
+        primary: { text: 'text-green-700 dark:text-green-400' },
+        secondary: { text: 'text-blue-700 dark:text-blue-400' },
+        regular: { text: 'text-gray-700 dark:text-gray-400' },
+        info: { text: 'text-blue-700 dark:text-blue-400' },
+        success: { text: 'text-green-700 dark:text-green-400' },
+        warning: { text: 'text-yellow-700 dark:text-yellow-400' },
+        error: { text: 'text-red-700 dark:text-red-400' },
+      },
+      options: {
+        italic: 'italic',
+      },
+      default: {
+        italic: false,
+        size: 'sm',
+        color: 'info',
+        align: 'left',
+        weight: 'medium',
       },
     },
   },

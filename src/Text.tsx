@@ -22,15 +22,20 @@ interface TextProps
   align?: Align
 }
 
-export const Text: React.FC<TextProps> = ({
-  children,
-  className,
-  role,
-  size,
-  weight,
-  align,
-  ...other
-}) => {
+export const Text: React.FC<TextProps> = (props) => {
+  const {
+    children,
+    className,
+    role,
+    size,
+    weight,
+    align,
+    underline,
+    overline,
+    strikethrough,
+    italic,
+    ...other
+  } = props
   const { theme } = useTheme()
 
   return (
@@ -42,7 +47,7 @@ export const Text: React.FC<TextProps> = ({
         'text'
       )} ${sizeClass(theme, 'text', size, 'text')} ${optionProps(
         theme,
-        other,
+        props,
         'text',
         'underline',
         'overline',
