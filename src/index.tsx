@@ -90,16 +90,16 @@ const App: React.FC = () => {
                   validationSchema: yup.object({
                     email: yup
                       .string()
-                      .email('Must be a valid email.')
-                      .required('Email is required.'),
+                      .required('Email is required.')
+                      .email('Must be a valid email.'),
                     password: yup
                       .string()
-                      .min(8, 'Password must be at least 8 characters.')
-                      .required('Password is required.'),
+                      .required('Password is required.')
+                      .min(8, 'Password must be at least 8 characters.'),
                     passwordConfirm: yup
                       .string()
-                      .min(8, 'Password must be at least 8 characters.')
                       .required('Confirmed password is required.')
+                      .min(8, 'Confirmed password must be at least 8 characters.')
                       .oneOf([yup.ref('password')], 'Passwords do not match'),
                   }),
                   onSubmit: setData,

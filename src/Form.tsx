@@ -74,16 +74,19 @@ export const Input: React.FC<InputProps> = (props) => {
         onBlur={formik.handleBlur}
         value={formik.values[other.name!]}
         id={other.name}
-        className={`${colorClass(theme, 'input', role, 'input')} ${optionProps(
+        className={`${colorClass(
           theme,
-          props,
           'input',
-          'rounded',
-          'pill',
-          'border'
-        )} ${sizeClass(theme, 'input', inputSize, 'text')} ${weightClass(theme, 'input', weight)} ${
-          theme.component.input.style
-        } ${className || ''}`}
+          formik.touched[other.name!] && formik.errors[other.name!] ? 'error' : role,
+          'input'
+        )} ${optionProps(theme, props, 'input', 'rounded', 'pill', 'border')} ${sizeClass(
+          theme,
+          'input',
+          inputSize,
+          'text'
+        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style} ${
+          className || ''
+        }`}
         {...other}
       >
         {children}
