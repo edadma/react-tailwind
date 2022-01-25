@@ -80,7 +80,9 @@ const App: React.FC = () => {
               </Form>
               <Card className="mt-5">
                 <Text className="mb-2">Form values:</Text>
-                <pre className="text-white">{JSON.stringify(form1, null, 2)}</pre>
+                <pre className="text-white">
+                  {form1 ? JSON.stringify(form1, null, 2) : 'not submitted'}
+                </pre>
               </Card>
             </Elem>
             <Elem className="max-w-sm">
@@ -152,7 +154,9 @@ const App: React.FC = () => {
               </Form>
               <Card className="mt-5">
                 <Text className="mb-2">Form values:</Text>
-                <pre className="text-white">{JSON.stringify(form2, null, 2)}</pre>
+                <pre className="text-white">
+                  {form2 ? JSON.stringify(form2, null, 2) : 'not submitted'}
+                </pre>
               </Card>
             </Elem>
             <Elem className="max-w-sm">
@@ -224,7 +228,9 @@ const App: React.FC = () => {
               </Form>
               <Card className="mt-5">
                 <Text className="mb-2">Form values:</Text>
-                <pre className="text-white">{JSON.stringify(form3, null, 2)}</pre>
+                <pre className="text-white">
+                  {form3 ? JSON.stringify(form3, null, 2) : 'not submitted'}
+                </pre>
               </Card>
             </Elem>
             <Elem className="max-w-sm">
@@ -296,7 +302,9 @@ const App: React.FC = () => {
               </Form>
               <Card className="mt-5">
                 <Text className="mb-2">Form values:</Text>
-                <pre className="text-white">{JSON.stringify(form4, null, 2)}</pre>
+                <pre className="text-white">
+                  {form4 ? JSON.stringify(form4, null, 2) : 'not submitted'}
+                </pre>
               </Card>
             </Elem>
           </Grid>

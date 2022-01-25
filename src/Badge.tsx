@@ -11,16 +11,8 @@ interface BadgeProps
   border?: boolean
 }
 
-export const Badge: React.FC<BadgeProps> = ({
-  children,
-  className,
-  role,
-  size,
-  weight,
-  rounded,
-  border,
-  ...other
-}) => {
+export const Badge: React.FC<BadgeProps> = (props) => {
+  const { children, className, role, size, weight, rounded, border, ...other } = props
   const { theme } = useTheme()
 
   return (
@@ -32,7 +24,7 @@ export const Badge: React.FC<BadgeProps> = ({
         'border'
       )} ${sizeClass(theme, 'badge', size, 'text')} ${optionProps(
         theme,
-        other,
+        props,
         'badge',
         'rounded',
         'border'
