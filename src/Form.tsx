@@ -3,6 +3,7 @@ import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 import { useFormik } from 'formik'
 import { Text } from './Text'
+import _ from 'lodash'
 
 const FormContext = React.createContext<any>(null)
 
@@ -58,12 +59,13 @@ export const Input: FC<InputProps> = (props) => {
   } = props
   const { theme } = useTheme()
   const formik = useForm()
+  const id = _.uniqueId('form-')
 
   return (
     <div>
       {label && (
         <label
-          htmlFor={other.name}
+          htmlFor={id}
           className="block mb-2 text-sm font-medium text-gray-800 dark:text-gray-300"
         >
           {label}
@@ -73,7 +75,7 @@ export const Input: FC<InputProps> = (props) => {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values[other.name!]}
-        id={other.name}
+        id={id}
         className={`${colorClass(
           theme,
           'input',
