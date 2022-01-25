@@ -21,6 +21,8 @@ import {
   Form,
   Checkbox,
   Link,
+  Center,
+  Between,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -49,7 +51,8 @@ export const Demo: React.FC = () => {
           <Grid cols={4}>
             <Elem className="max-w-sm">
               <Text italic className="mb-10">
-                Simple form with no password strength checking and default styling on the inputs.
+                Simple form with no password strength checking and default styling on the inputs
+                except for full width.
               </Text>
               <Form
                 init={{
@@ -67,15 +70,28 @@ export const Demo: React.FC = () => {
                   onSubmit: setForm1,
                 }}
               >
-                <Input name="email" label="Your email" placeholder="name@company.com" />
+                <Input
+                  name="email"
+                  label="Your email"
+                  placeholder="name@company.com"
+                  className="w-full"
+                />
                 <Input
                   type="password"
                   name="password"
                   label="Your password"
                   placeholder="••••••••"
+                  className="w-full"
                 />
-                <Checkbox name="remember">Remember me</Checkbox>
-                <Button type="submit">Login</Button>
+                <Between>
+                  <Checkbox name="remember">Remember me</Checkbox>
+                  <Link href="#" role="info">
+                    Forgot password?
+                  </Link>
+                </Between>
+                <Center>
+                  <Button type="submit">Login</Button>
+                </Center>
               </Form>
               <Card className="mt-5">
                 <Text className="mb-2">Form values:</Text>
