@@ -160,7 +160,7 @@ export const Demo: React.FC = () => {
                   className="w-full"
                 />
                 <Checkbox name="agree" role="info">
-                  <Text>I agree with the</Text>&nbsp;
+                  <Text>I agree to the</Text>&nbsp;
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>
                 <Button type="submit" role="info" pill className="w-full">
@@ -234,7 +234,7 @@ export const Demo: React.FC = () => {
                   className="w-full"
                 />
                 <Checkbox name="agree">
-                  <Text>I agree with the</Text>&nbsp;
+                  <Text>I agree to the</Text>&nbsp;
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>
                 <Button type="submit" role="info" pill className="w-full">
@@ -308,7 +308,7 @@ export const Demo: React.FC = () => {
                   className="w-full"
                 />
                 <Checkbox name="agree">
-                  <Text>I agree with the</Text>&nbsp;
+                  <Text>I agree to the</Text>&nbsp;
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>
                 <Button type="submit" role="info" pill className="w-full">
