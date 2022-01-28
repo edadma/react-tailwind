@@ -1,13 +1,15 @@
-// import ReactDOM from 'react-dom'
-// import { StrictMode } from 'react'
-// import { Demo } from './Demo'
-//
-// ReactDOM.render(
-//   <StrictMode>
-//     <Demo />
-//   </StrictMode>,
-//   document.getElementById('root')
-// )
+import ReactDOM from 'react-dom'
+import './index.css'
+import { StrictMode } from 'react'
+import { Demo } from './Demo'
+import { ExampleTable } from './Table'
+
+ReactDOM.render(
+  <StrictMode>
+    <ExampleTable />
+  </StrictMode>,
+  document.getElementById('root')
+)
 
 export { Button } from './Button'
 export { Progress } from './Progress'

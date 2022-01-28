@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './index.css'
 import {
   Button,
   Card,
@@ -164,7 +163,7 @@ export const Demo: React.FC = () => {
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>
                 <Button type="submit" role="info" pill className="w-full">
-                  Login
+                  Register
                 </Button>
               </Form>
               <Card className="mt-5">
