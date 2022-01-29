@@ -496,5 +496,15 @@ export const DefaultTheme = {
         weight: 'medium',
       },
     },
+    table: {
+      style: {
+        table: 'overflow-hidden rounded-lg shadow-md',
+        thead: 'bg-gray-50 dark:bg-gray-700',
+        th: 'py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400',
+        tr: 'bg-white dark:bg-gray-800',
+        horizontalDividers: 'border-b dark:border-gray-700',
+        td: 'py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white',
+      },
+    },
   },
 }

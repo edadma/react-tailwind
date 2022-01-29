@@ -22,6 +22,7 @@ import {
   Link,
   Center,
   Between,
+  Table,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -29,6 +30,39 @@ import { CB3Theme } from './themes/CB3Theme'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { Home } from './Icons'
 import * as yup from 'yup'
+
+const data = [
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+]
+
+const columns = [
+  {
+    title: 'Name',
+    index: 'name',
+    key: 'name',
+  },
+  {
+    title: 'Age',
+    index: 'age',
+    key: 'age',
+  },
+  {
+    title: 'Address',
+    index: 'address',
+    key: 'address',
+  },
+]
 
 export const Demo: React.FC = () => {
   const [form1, setForm1] = useState()
@@ -45,6 +79,11 @@ export const Demo: React.FC = () => {
             <ThemeSwitcher value={DefaultTheme} />
             <ThemeSwitcher value={CB3Theme} />
           </Space>
+        </Card>
+        <Card>
+          <Grid cols={4}>
+            <Table striped hoverable bordered columns={columns} data={data} />
+          </Grid>
         </Card>
         <Card>
           <Grid cols={4}>

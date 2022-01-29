@@ -6,7 +6,7 @@ import { ExampleTable } from './Table'
 
 ReactDOM.render(
   <StrictMode>
-    <ExampleTable />
+    <Demo />
   </StrictMode>,
   document.getElementById('root')
 )
@@ -29,3 +29,4 @@ export { Space } from './Space'
 export { Link } from './Link'
 export { Center } from './Center'
 export { Between } from './Between'
+export { Table } from './Table'
