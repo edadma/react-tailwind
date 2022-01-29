@@ -12,24 +12,15 @@ interface CardProps
   pad?: number
 }
 
-export const Card: React.FC<CardProps> = ({
-  children,
-  className,
-  rounded,
-  border,
-  shadow,
-  fit,
-  bg,
-  pad,
-  ...other
-}) => {
+export const Card: React.FC<CardProps> = (props) => {
+  const { children, className, rounded, border, shadow, fit, bg, pad, ...other } = props
   const { theme } = useTheme()
 
   return (
     <div
       className={`${optionProps(
         theme,
-        other,
+        props,
         'card',
         'rounded',
         'border',

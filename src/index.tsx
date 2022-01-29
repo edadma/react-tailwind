@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import { StrictMode } from 'react'
 import { Demo } from './Demo'
-import { ExampleTable } from './Table'
 
 ReactDOM.render(
   <StrictMode>

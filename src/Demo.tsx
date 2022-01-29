@@ -82,7 +82,8 @@ export const Demo: React.FC = () => {
         </Card>
         <Card>
           <Grid cols={4}>
-            <Table striped hoverable bordered columns={columns} data={data} />
+            <Table striped hoverable columns={columns} data={data} />
+            <Table columns={columns} data={data} />
           </Grid>
         </Card>
         <Card>
