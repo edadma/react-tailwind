@@ -1,12 +1,5 @@
 import React, { FC } from 'react'
-import { Card } from './Card'
-import { Space } from './Space'
-import { ModeSwitcher } from './ModeSwitcher'
-import { ThemeSwitcher } from './ThemeSwitcher'
-import { DefaultTheme } from './themes/DefaultTheme'
-import { CB3Theme } from './themes/CB3Theme'
-import { optionProps, ThemeProvider, useTheme } from './ThemeProvider'
-import { ModeProvider } from './ModeProvider'
+import { optionProps, useTheme } from './ThemeProvider'
 
 export interface TableColumn {
   title: React.ReactNode
@@ -24,11 +17,11 @@ interface TableProps
 }
 
 export const Table: FC<TableProps> = (props) => {
-  const { columns, data, bordered, striped, hoverable, ...other } = props
+  const { className, columns, data, bordered, striped, hoverable, ...other } = props
   const { theme } = useTheme()
 
   return (
-    <table className={theme.component.table.style.table} {...other}>
+    <table className={`${theme.component.table.style.table} ${className || ''}`} {...other}>
       <thead className={theme.component.table.style.thead}>
         <tr>
           {columns.map(({ title, index, key }, ind) => (

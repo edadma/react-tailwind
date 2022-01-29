@@ -23,6 +23,7 @@ import {
   Center,
   Between,
   Table,
+  Pagination,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -84,6 +85,11 @@ export const Demo: React.FC = () => {
           <Grid cols={4}>
             <Table striped hoverable columns={columns} data={data} />
             <Table columns={columns} data={data} />
+          </Grid>
+        </Card>
+        <Card>
+          <Grid cols={5}>
+            <Pagination current={2} pageSize={10} total={107} />
           </Grid>
         </Card>
         <Card>

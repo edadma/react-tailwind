@@ -499,7 +499,7 @@ export const DefaultTheme = {
     table: {
       style: {
         table: 'overflow-hidden rounded-lg shadow-md',
-        thead: 'bg-gray-50 dark:bg-gray-700',
+        thead: 'bg-gray-100 dark:bg-gray-700',
         th: 'py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400',
         tr: 'bg-white dark:bg-gray-800',
         trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
@@ -507,7 +507,7 @@ export const DefaultTheme = {
         td: 'py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white',
       },
       options: {
-        hoverable: 'hover:bg-gray-700 dark:hover:bg-gray-700',
+        hoverable: 'hover:bg-gray-200 dark:hover:bg-gray-700',
       },
       default: {
         hoverable: false,
