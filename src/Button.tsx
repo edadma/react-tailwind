@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 
@@ -17,7 +17,7 @@ interface ButtonProps
   weight?: Weight
 }
 
-export const Button: React.FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props) => {
   const {
     children,
     className,
@@ -32,6 +32,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     ...other
   } = props
   const { theme } = useTheme()
+  const roundedOpt = pill ? false : rounded
 
   return (
     <button

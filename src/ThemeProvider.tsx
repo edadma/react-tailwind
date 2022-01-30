@@ -2,16 +2,29 @@ import React, { useContext, useState } from 'react'
 import { Align, Color, Size, Weight } from './types'
 import { DefaultTheme } from './themes/DefaultTheme'
 
-export const optionProps = (context: any, props: any, component: string, ...options: string[]) =>
-  options
+export const optionProps = (theme: any, props: any, component: string, ...options: string[]) => {
+  const extensibleProps: any = {}
+
+  options.forEach((option) => (extensibleProps[option] = props[option]))
+
+  if (theme.component[component].exclusions)
+    options.forEach((option) => {
+      if (theme.component[component].exclusions[option])
+        extensibleProps[theme.component[component].exclusions[option]] = false
+    })
+
+  return options
     .map((option) => {
-      const style = context.component[component].options[option]
+      const style = theme.component[component].options[option]
       const selected =
-        props[option] !== undefined ? props[option] : context.component[component].default[option]
+        extensibleProps[option] !== undefined
+          ? extensibleProps[option]
+          : theme.component[component].default[option]
 
       return Array.isArray(style) ? style[selected ? 0 : 1] : selected ? style : ''
     })
     .join(' ')
+}
 
 export const SET_THEME: SetTheme = {
   theme: DefaultTheme,
@@ -41,8 +54,15 @@ export const colorClass = (theme: any, component: string, color: Color | undefin
 export const sizeClass = (theme: any, component: string, size: Size | undefined, elem: string) =>
   theme.size[size || theme.component[component].default.size][elem]
 
+const alignClasses: any = {
+  left: 'text-left',
+  center: 'text-center',
+  right: 'text-right',
+  justify: 'text-justify',
+}
+
 export const alignClass = (theme: any, component: string, align: Align | undefined) =>
-  theme.align[align || theme.component[component].default.align]
+  alignClasses[align || theme.component[component].default.align]
 
 export const weightClass = (theme: any, component: string, weight: Weight | undefined) =>
   theme.weight[weight || theme.component[component].default.weight]
@@ -67,4 +87,4 @@ const padClasses: any = {
 }
 
 export const padClass = (theme: any, component: string, pad: number | undefined) =>
-  padClasses[pad || theme.component[component].default.pad]
+  padClasses[pad || theme.component[component].default.pad] // todo: it should be possible for 'pad' to be null as well as undefined, where null means no padding class; and it should be possible for default.pad to be null as well with the same meaning

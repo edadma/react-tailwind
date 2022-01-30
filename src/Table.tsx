@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import { optionProps, useTheme } from './ThemeProvider'
 import { Text } from './Text'
+import { Align } from './types'
 
 export type TableCellRenderer = (data: any, record?: any, index?: string) => ReactNode
 
@@ -8,6 +9,7 @@ export interface TableColumn {
   title: React.ReactNode
   index: string
   key?: string
+  align?: Align
   render?: TableCellRenderer // todo: should 'index' be the property name of 'data'?
 }
 
@@ -31,7 +33,11 @@ export const Table: FC<TableProps> = (props) => {
       <thead className={theme.component.table.style.thead}>
         <tr>
           {columns.map(({ title, index, key }, ind) => (
-            <th scope="col" className={theme.component.table.style.th}>
+            <th
+              scope="col"
+              className={theme.component.table.style.th}
+              key={key || index.toString()}
+            >
               {title}
             </th>
           ))}
@@ -51,9 +57,10 @@ export const Table: FC<TableProps> = (props) => {
             )} ${
               striped ? theme.component.table.style.trStriped : theme.component.table.style.tr
             } ${row < data.length - 1 ? theme.component.table.style.horizontalDividers : ''}`}
+            key={record.key || row.toString()}
           >
-            {columns.map(({ index }, col) => (
-              <td className={theme.component.table.style.td}>
+            {columns.map(({ index, key }, col) => (
+              <td className={theme.component.table.style.td} key={key || col.toString()}>
                 {(columns[col].render ? columns[col].render! : DEFAULT_CELL_RENDERER)(
                   record[index],
                   record,

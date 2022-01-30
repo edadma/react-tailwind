@@ -42,12 +42,6 @@ export const DefaultTheme = {
     extrabold: 'font-extrabold',
     black: 'font-black',
   },
-  align: {
-    left: 'text-left',
-    center: 'text-center',
-    right: 'text-right',
-    justify: 'text-justify',
-  },
   width: {
     40: 'w-40',
     44: 'w-44',
@@ -141,6 +135,7 @@ export const DefaultTheme = {
         hasIcon: ['p-2.5', 'px-5 py-2.5'],
         transition: 'transition ease-in-out duration-300',
       },
+      exclusions: { pill: 'rounded' },
       default: {
         rounded: true,
         pill: false,
