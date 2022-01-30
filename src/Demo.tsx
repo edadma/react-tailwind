@@ -24,6 +24,11 @@ import {
   Between,
   Table,
   Pagination,
+  Content,
+  RowLayout,
+  ColLayout,
+  Sider,
+  Navbar,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -31,7 +36,6 @@ import { CB3Theme } from './themes/CB3Theme'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { Home } from './Icons'
 import * as yup from 'yup'
-import { Content, RowLayout, Sider } from './Layout'
 import { TableColumn } from './Table'
 
 const data = [
@@ -91,31 +95,34 @@ export const Demo: React.FC = () => {
   return (
     <ThemeProvider>
       <ModeProvider>
-        <RowLayout>
-          <Sider width={56}>
-            <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+        <ColLayout>
+          <Navbar />
+          <RowLayout>
+            <Sider width={56}>
+              <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
 
-            <Button pill className="flex mb-2 w-36">
-              <span className="inline-flex items-center mr-2 text-2xl">
-                <i className="bx bx-plus"></i>
-              </span>{' '}
-              Compose
-            </Button>
-            <Item icon="bxs-inbox" label="Inbox" />
-            <Item icon="bxs-star" label="Starred" />
-            <Item icon="bxs-chevrons-right" label="Important" />
-            <Item icon="bxs-file-blank" label="Drafts" />
-            <Item icon="bxs-info-circle" label="Spam" />
-            <Item icon="bxs-trash" label="Bin" />
-            <Item icon="bxs-send" label="Sent" count={5} />
-            <Item icon="bxs-time-five" label="Scheduled" />
-            <Item icon="bxs-envelope" label="All Mail" />
-            <Item icon="bx-log-out" label="Logout" />
-          </Sider>
-          <Content>
-            <Table className="w-full" striped hoverable columns={columns} data={data} />
-          </Content>
-        </RowLayout>
+              <Button pill className="flex mb-2 w-36">
+                <span className="inline-flex items-center mr-2 text-2xl">
+                  <i className="bx bx-plus" />
+                </span>
+                Compose
+              </Button>
+              <Item icon="bxs-inbox" label="Inbox" />
+              <Item icon="bxs-star" label="Starred" />
+              <Item icon="bxs-chevrons-right" label="Important" />
+              <Item icon="bxs-file-blank" label="Drafts" />
+              <Item icon="bxs-info-circle" label="Spam" />
+              <Item icon="bxs-trash" label="Bin" />
+              <Item icon="bxs-send" label="Sent" count={5} />
+              <Item icon="bxs-time-five" label="Scheduled" />
+              <Item icon="bxs-envelope" label="All Mail" />
+              <Item icon="bx-log-out" label="Logout" />
+            </Sider>
+            <Content>
+              <Table className="w-full" striped hoverable columns={columns} data={data} />
+            </Content>
+          </RowLayout>
+        </ColLayout>
         <Card>
           <Space>
             <ModeSwitcher />

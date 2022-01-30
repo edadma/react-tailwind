@@ -9,7 +9,7 @@ export const optionProps = (theme: any, props: any, component: string, ...option
 
   if (theme.component[component].exclusions)
     options.forEach((option) => {
-      if (theme.component[component].exclusions[option])
+      if (theme.component[component].exclusions[option] && extensibleProps[option])
         extensibleProps[theme.component[component].exclusions[option]] = false
     })
 

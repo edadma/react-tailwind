@@ -16,6 +16,20 @@ export const RowLayout: FC<RowLayoutProps> = (props) => {
   )
 }
 
+interface ColLayoutProps
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+
+export const ColLayout: FC<ColLayoutProps> = (props) => {
+  const { children, className, ...other } = props
+  // const { theme } = useTheme()
+
+  return (
+    <div className="min-h-screen flex flex-col" {...other}>
+      {children}
+    </div>
+  )
+}
+
 interface ContentProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
