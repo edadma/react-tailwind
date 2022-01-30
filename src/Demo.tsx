@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import {
   Button,
   Card,
@@ -66,6 +66,20 @@ const columns = [
   },
 ]
 
+const Segment: FC<{ icon: string; label: string; count?: number }> = ({ icon, label, count }) => (
+  <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 dark:hover:text-gray-500">
+    <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
+      <i className={`bx ${icon}`} />
+    </span>
+    <span className="text-sm font-medium">{label}</span>
+    {count && (
+      <span className="ml-auto text-sm bg-red-100 rounded-full px-3 py-px text-red-500">
+        {count}
+      </span>
+    )}
+  </Text>
+)
+
 export const Demo: React.FC = () => {
   const [form1, setForm1] = useState()
   const [form2, setForm2] = useState()
@@ -85,63 +99,15 @@ export const Demo: React.FC = () => {
               </span>{' '}
               Compose
             </Button>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-inbox"></i>
-              </span>
-              <span className="text-sm font-medium">Inbox</span>
-            </Text>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-star"></i>
-              </span>
-              <span className="text-sm font-medium">Starred</span>
-            </Text>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-chevrons-right"></i>
-              </span>
-              <span className="text-sm font-medium">Important</span>
-            </Text>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-file-blank"></i>
-              </span>
-              <span className="text-sm font-medium">Drafts</span>
-            </Text>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-info-circle"></i>
-              </span>
-              <span className="text-sm font-medium">Spam</span>
-            </Text>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-trash"></i>
-              </span>
-              <span className="text-sm font-medium">Bin</span>
-            </Text>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-send"></i>
-              </span>
-              <span className="text-sm font-medium">Sent</span>
-              <span className="ml-auto text-sm bg-red-100 rounded-full px-3 py-px text-red-500">
-                5
-              </span>
-            </Text>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-time-five"></i>
-              </span>
-              <span className="text-sm font-medium">Scheduled</span>
-            </Text>
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bxs-envelope"></i>
-              </span>
-              <span className="text-sm font-medium">All Mail</span>
-            </Text>
+            <Segment icon="bxs-inbox" label="Inbox" />
+            <Segment icon="bxs-star" label="Starred" />
+            <Segment icon="bxs-chevrons-right" label="Important" />
+            <Segment icon="bxs-file-blank" label="Drafts" />
+            <Segment icon="bxs-info-circle" label="Spam" />
+            <Segment icon="bxs-trash" label="Bin" />
+            <Segment icon="bxs-send" label="Sent" count={5} />
+            <Segment icon="bxs-time-five" label="Scheduled" />
+            <Segment icon="bxs-envelope" label="All Mail" />
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-log-out"></i>
