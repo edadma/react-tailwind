@@ -79,53 +79,68 @@ export const Demo: React.FC = () => {
           <Sider width={56}>
             <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
 
-            <div className="flex items-center justify-center h-20">
-              <h1 className="text-3xl uppercase text-indigo-500">Logo</h1>
-            </div>
+            <Button pill className="flex mb-2 w-36">
+              <span className="inline-flex items-center mr-2 text-2xl">
+                <i className="bx bx-plus"></i>
+              </span>{' '}
+              Compose
+            </Button>
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bx-home"></i>
+                <i className="bx bxs-inbox"></i>
               </span>
-              <span className="text-sm font-medium">Dashboard</span>
+              <span className="text-sm font-medium">Inbox</span>
             </Text>
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bx-music"></i>
+                <i className="bx bxs-star"></i>
               </span>
-              <span className="text-sm font-medium">Music</span>
+              <span className="text-sm font-medium">Starred</span>
             </Text>
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bx-drink"></i>
+                <i className="bx bxs-chevrons-right"></i>
               </span>
-              <span className="text-sm font-medium">Drink</span>
+              <span className="text-sm font-medium">Important</span>
             </Text>
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bx-shopping-bag"></i>
+                <i className="bx bxs-file-blank"></i>
               </span>
-              <span className="text-sm font-medium">Shopping</span>
+              <span className="text-sm font-medium">Drafts</span>
             </Text>
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bx-chat"></i>
+                <i className="bx bxs-info-circle"></i>
               </span>
-              <span className="text-sm font-medium">Chat</span>
+              <span className="text-sm font-medium">Spam</span>
             </Text>
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bx-user"></i>
+                <i className="bx bxs-trash"></i>
               </span>
-              <span className="text-sm font-medium">Profile</span>
+              <span className="text-sm font-medium">Bin</span>
             </Text>
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bx-bell"></i>
+                <i className="bx bxs-send"></i>
               </span>
-              <span className="text-sm font-medium">Notifications</span>
+              <span className="text-sm font-medium">Sent</span>
               <span className="ml-auto text-sm bg-red-100 rounded-full px-3 py-px text-red-500">
                 5
               </span>
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
+              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
+                <i className="bx bxs-time-five"></i>
+              </span>
+              <span className="text-sm font-medium">Scheduled</span>
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
+              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
+                <i className="bx bxs-envelope"></i>
+              </span>
+              <span className="text-sm font-medium">All Mail</span>
             </Text>
             <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
@@ -135,7 +150,7 @@ export const Demo: React.FC = () => {
             </Text>
           </Sider>
           <Content>
-            <Text>asdf</Text>
+            <Table striped hoverable columns={columns} data={data} />
           </Content>
         </RowLayout>
         <Card>
