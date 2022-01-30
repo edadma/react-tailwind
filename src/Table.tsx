@@ -1,10 +1,14 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 import { optionProps, useTheme } from './ThemeProvider'
+import { Text } from './Text'
+
+export type TableCellRenderer = (data: any, record?: any, index?: string) => ReactNode
 
 export interface TableColumn {
   title: React.ReactNode
   index: string
   key?: string
+  render?: TableCellRenderer // should 'index' be the property name of 'data'
 }
 
 interface TableProps
@@ -15,6 +19,8 @@ interface TableProps
   striped?: boolean
   hoverable?: boolean
 }
+
+const DEFAULT_CELL_RENDERER: TableCellRenderer = (data) => <Text>{data}</Text>
 
 export const Table: FC<TableProps> = (props) => {
   const { className, columns, data, bordered, striped, hoverable, ...other } = props
@@ -32,7 +38,7 @@ export const Table: FC<TableProps> = (props) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((row, ind) => (
+        {data.map((record, row) => (
           <tr
             className={`${optionProps(
               theme,
@@ -44,10 +50,16 @@ export const Table: FC<TableProps> = (props) => {
               'hoverable'
             )} ${
               striped ? theme.component.table.style.trStriped : theme.component.table.style.tr
-            } ${ind < data.length - 1 ? theme.component.table.style.horizontalDividers : ''}`}
+            } ${row < data.length - 1 ? theme.component.table.style.horizontalDividers : ''}`}
           >
-            {columns.map(({ index }) => (
-              <td className={theme.component.table.style.td}>{row[index]}</td>
+            {columns.map(({ index }, col) => (
+              <td className={theme.component.table.style.td}>
+                {(columns[col].render ? columns[col].render! : DEFAULT_CELL_RENDERER)(
+                  record[index],
+                  record,
+                  index
+                )}
+              </td>
             ))}
           </tr>
         ))}

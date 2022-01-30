@@ -32,6 +32,7 @@ import { ThemeSwitcher } from './ThemeSwitcher'
 import { Home } from './Icons'
 import * as yup from 'yup'
 import { Content, RowLayout, Sider } from './Layout'
+import { TableColumn } from './Table'
 
 const data = [
   {
@@ -48,11 +49,12 @@ const data = [
   },
 ]
 
-const columns = [
+const columns: TableColumn[] = [
   {
     title: 'Name',
     index: 'name',
     key: 'name',
+    render: (data) => <Text>{data}</Text>,
   },
   {
     title: 'Age',
@@ -111,7 +113,7 @@ export const Demo: React.FC = () => {
             <Item icon="bx-log-out" label="Logout" />
           </Sider>
           <Content>
-            <Table striped hoverable columns={columns} data={data} />
+            <Table className="w-full" striped hoverable columns={columns} data={data} />
           </Content>
         </RowLayout>
         <Card>

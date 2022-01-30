@@ -516,7 +516,7 @@ export const DefaultTheme = {
         tr: 'bg-white dark:bg-gray-800',
         trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
         horizontalDividers: 'border-b dark:border-gray-700',
-        td: 'py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white',
+        td: 'py-4 px-6 whitespace-nowrap',
       },
       options: {
         hoverable: 'hover:bg-gray-200 dark:hover:bg-gray-700',
