@@ -48,6 +48,18 @@ export const DefaultTheme = {
     right: 'text-right',
     justify: 'text-justify',
   },
+  width: {
+    40: 'w-40',
+    44: 'w-44',
+    48: 'w-48',
+    52: 'w-52',
+    56: 'w-56',
+    60: 'w-60',
+    64: 'w-64',
+    72: 'w-72',
+    80: 'w-80',
+    96: 'w-96',
+  },
   component: {
     button: {
       style: 'inline-block focus:ring-2 text-center shadow-md hover:shadow-lg',
@@ -511,6 +523,15 @@ export const DefaultTheme = {
       },
       default: {
         hoverable: false,
+      },
+    },
+    sider: {
+      style: 'flex flex-col pr-6 pl-3 overflow-hidden',
+      options: {
+        rounded: 'rounded-r-xl',
+      },
+      default: {
+        rounded: false,
       },
     },
   },

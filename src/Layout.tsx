@@ -33,21 +33,21 @@ export const Content: FC<ContentProps> = (props) => {
 interface SiderProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   rounded?: boolean
-  border?: boolean
-  width?: string
-  bg?: Color
+  width?: number | false
 }
 
 export const Sider: FC<SiderProps> = (props) => {
-  const { children, className, rounded, bg, width, ...other } = props
-  // const { theme } = useTheme()
+  const { children, className, rounded, width, ...other } = props
+  const { theme } = useTheme()
 
   return (
     <div
-      className={`flex flex-col w-56 bg-white rounded-r-xl overflow-hidden ${className || ''}`}
+      className={`${theme.component.sider.style} ${optionProps(theme, props, 'sider', 'rounded')} ${
+        width ? theme.width[width] : ''
+      } ${className || ''}`}
       {...other}
     >
-      <div className="py-4">{children}</div>
+      {children}
     </div>
   )
 }
