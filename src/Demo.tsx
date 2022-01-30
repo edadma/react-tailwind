@@ -66,7 +66,7 @@ const columns = [
   },
 ]
 
-const Segment: FC<{ icon: string; label: string; count?: number }> = ({ icon, label, count }) => (
+const Item: FC<{ icon: string; label: string; count?: number }> = ({ icon, label, count }) => (
   <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 dark:hover:text-gray-500">
     <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
       <i className={`bx ${icon}`} />
@@ -99,21 +99,16 @@ export const Demo: React.FC = () => {
               </span>{' '}
               Compose
             </Button>
-            <Segment icon="bxs-inbox" label="Inbox" />
-            <Segment icon="bxs-star" label="Starred" />
-            <Segment icon="bxs-chevrons-right" label="Important" />
-            <Segment icon="bxs-file-blank" label="Drafts" />
-            <Segment icon="bxs-info-circle" label="Spam" />
-            <Segment icon="bxs-trash" label="Bin" />
-            <Segment icon="bxs-send" label="Sent" count={5} />
-            <Segment icon="bxs-time-five" label="Scheduled" />
-            <Segment icon="bxs-envelope" label="All Mail" />
-            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
-              <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
-                <i className="bx bx-log-out"></i>
-              </span>
-              <span className="text-sm font-medium">Logout</span>
-            </Text>
+            <Item icon="bxs-inbox" label="Inbox" />
+            <Item icon="bxs-star" label="Starred" />
+            <Item icon="bxs-chevrons-right" label="Important" />
+            <Item icon="bxs-file-blank" label="Drafts" />
+            <Item icon="bxs-info-circle" label="Spam" />
+            <Item icon="bxs-trash" label="Bin" />
+            <Item icon="bxs-send" label="Sent" count={5} />
+            <Item icon="bxs-time-five" label="Scheduled" />
+            <Item icon="bxs-envelope" label="All Mail" />
+            <Item icon="bx-log-out" label="Logout" />
           </Sider>
           <Content>
             <Table striped hoverable columns={columns} data={data} />
