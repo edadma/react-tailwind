@@ -8,7 +8,7 @@ export interface TableColumn {
   title: React.ReactNode
   index: string
   key?: string
-  render?: TableCellRenderer // should 'index' be the property name of 'data'
+  render?: TableCellRenderer // todo: should 'index' be the property name of 'data'?
 }
 
 interface TableProps
