@@ -82,64 +82,43 @@ export const Demo: React.FC = () => {
             <div className="flex items-center justify-center h-20">
               <h1 className="text-3xl uppercase text-indigo-500">Logo</h1>
             </div>
-            <a
-              href="#"
-              className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
-            >
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-home"></i>
               </span>
               <span className="text-sm font-medium">Dashboard</span>
-            </a>
-            <a
-              href="#"
-              className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
-            >
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-music"></i>
               </span>
               <span className="text-sm font-medium">Music</span>
-            </a>
-            <a
-              href="#"
-              className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
-            >
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-drink"></i>
               </span>
               <span className="text-sm font-medium">Drink</span>
-            </a>
-            <a
-              href="#"
-              className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
-            >
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-shopping-bag"></i>
               </span>
               <span className="text-sm font-medium">Shopping</span>
-            </a>
-            <a
-              href="#"
-              className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
-            >
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-chat"></i>
               </span>
               <span className="text-sm font-medium">Chat</span>
-            </a>
-            <a
-              href="#"
-              className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
-            >
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-user"></i>
               </span>
               <span className="text-sm font-medium">Profile</span>
-            </a>
-            <a
-              href="#"
-              className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
-            >
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-bell"></i>
               </span>
@@ -147,16 +126,13 @@ export const Demo: React.FC = () => {
               <span className="ml-auto text-sm bg-red-100 rounded-full px-3 py-px text-red-500">
                 5
               </span>
-            </a>
-            <a
-              href="#"
-              className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
-            >
+            </Text>
+            <Text className="py-1.5 flex flex-row items-center hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 dark:hover:text-gray-500">
               <span className="inline-flex items-center justify-center mr-2 text-lg text-gray-400">
                 <i className="bx bx-log-out"></i>
               </span>
               <span className="text-sm font-medium">Logout</span>
-            </a>
+            </Text>
           </Sider>
           <Content>
             <Text>asdf</Text>
