@@ -9,13 +9,91 @@ import { Text } from './Text'
 
 const data = [
   {
-    key: '1',
     name: 'Mike',
     age: 32,
     address: '10 Downing Street',
   },
   {
-    key: '2',
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+  {
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+  {
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+  {
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+  {
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+  {
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+  {
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+  {
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+  {
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
     name: 'John',
     age: 42,
     address: '20 Downing Street',
@@ -82,9 +160,103 @@ export const Email: React.FC = () => {
               <Item icon="bxs-envelope" label="All Mail" />
               <Item icon="bx-log-out" label="Logout" />
             </Sider>
-            <Content>
-              <Table className="w-full" striped hoverable columns={columns} data={data} />
-            </Content>
+            <table className="flex w-full h-[calc(100vh-48px)]">
+              <tbody className="bg-grey-light overflow-y-scroll w-full">
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+                <tr className="flex w-full mb-4">
+                  <td className="p-4 w-1/4">Dogs</td>
+                  <td className="p-4 w-1/4">Cats</td>
+                  <td className="p-4 w-1/4">Birds</td>
+                  <td className="p-4 w-1/4">Fish</td>
+                </tr>
+              </tbody>
+            </table>
+            {/*<div className="">*/}
+            {/*  <Table*/}
+            {/*    className="w-full overflow-y-auto"*/}
+            {/*    striped*/}
+            {/*    hoverable*/}
+            {/*    columns={columns}*/}
+            {/*    data={data}*/}
+            {/*  />*/}
+            {/*</div>*/}
           </RowLayout>
         </ColLayout>
       </ModeProvider>

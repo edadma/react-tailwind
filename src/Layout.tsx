@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
-import { colorClass, optionProps, padClass, useTheme } from './ThemeProvider'
-import { Color } from './types'
+import { optionProps, useTheme } from './ThemeProvider'
 
 interface RowLayoutProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
