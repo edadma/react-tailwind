@@ -10,7 +10,7 @@ export const RowLayout: FC<RowLayoutProps> = (props) => {
   // const { theme } = useTheme()
 
   return (
-    <div className="min-h-screen flex flex-row" {...other}>
+    <div className="min-w-screen flex flex-row" {...other}>
       {children}
     </div>
   )

@@ -2,10 +2,11 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import { StrictMode } from 'react'
 import { Demo } from './Demo'
+import { Email } from './Email'
 
 ReactDOM.render(
   <StrictMode>
-    <Demo />
+    <Email />
   </StrictMode>,
   document.getElementById('root')
 )
