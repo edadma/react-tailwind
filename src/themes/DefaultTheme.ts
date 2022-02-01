@@ -510,6 +510,7 @@ export const DefaultTheme = {
         th: 'py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400',
         tr: 'bg-white dark:bg-gray-800',
         trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
+        tbody: '',
         horizontalDividers: 'border-b dark:border-gray-700',
         td: 'py-4 px-6 whitespace-nowrap',
       },

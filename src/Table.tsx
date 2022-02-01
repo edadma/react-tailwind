@@ -3,14 +3,15 @@ import { optionProps, useTheme } from './ThemeProvider'
 import { Text } from './Text'
 import { Align } from './types'
 
-export type TableCellRenderer = (data: any, record?: any, index?: string) => ReactNode
+export type TableCellRenderer = (data: any, record?: any, index?: string) => ReactNode // todo: should 'index' be the property name of 'data'?
 
 export interface TableColumn {
   title: React.ReactNode
   index: string
   key?: string
   align?: Align
-  render?: TableCellRenderer // todo: should 'index' be the property name of 'data'?
+  render?: TableCellRenderer
+  classes?: string
 }
 
 interface TableProps
@@ -20,33 +21,53 @@ interface TableProps
   bordered?: boolean
   striped?: boolean
   hoverable?: boolean
+  noHeader?: boolean
+  thead?: string
+  tbody?: string
+  trHead?: string
+  trBody?: string
 }
 
 const DEFAULT_CELL_RENDERER: TableCellRenderer = (data) => <Text>{data}</Text>
 
 export const Table: FC<TableProps> = (props) => {
-  const { className, columns, data, bordered, striped, hoverable, ...other } = props
+  const {
+    className,
+    columns,
+    data,
+    bordered,
+    striped,
+    hoverable,
+    noHeader,
+    thead,
+    tbody,
+    trHead,
+    trBody,
+    ...other
+  } = props
   const { theme } = useTheme()
 
   return (
     <table className={`${theme.component.table.style.table} ${className || ''}`} {...other}>
-      <thead className={theme.component.table.style.thead}>
-        <tr>
-          {columns.map(({ title, index, key }, ind) => (
-            <th
-              scope="col"
-              className={theme.component.table.style.th}
-              key={key || index.toString()}
-            >
-              {title}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
+      {!noHeader && (
+        <thead className={`${theme.component.table.style.thead} ${thead || ''}`}>
+          <tr className={trHead || ''}>
+            {columns.map(({ title, index, key }, ind) => (
+              <th
+                scope="col"
+                className={theme.component.table.style.th}
+                key={key || index.toString()}
+              >
+                {title}
+              </th>
+            ))}
+          </tr>
+        </thead>
+      )}
+      <tbody className={`${theme.component.table.style.tbody} ${tbody || ''}`}>
         {data.map((record, row) => (
           <tr
-            className={`${optionProps(
+            className={`${trBody || ''} ${optionProps(
               theme,
               props,
               'table',
@@ -59,8 +80,11 @@ export const Table: FC<TableProps> = (props) => {
             } ${row < data.length - 1 ? theme.component.table.style.horizontalDividers : ''}`}
             key={record.key || row.toString()}
           >
-            {columns.map(({ index, key }, col) => (
-              <td className={theme.component.table.style.td} key={key || col.toString()}>
+            {columns.map(({ index, key, classes }, col) => (
+              <td
+                className={`${classes || ''} ${theme.component.table.style.td}`}
+                key={key || col.toString()}
+              >
                 {(columns[col].render ? columns[col].render! : DEFAULT_CELL_RENDERER)(
                   record[index],
                   record,
