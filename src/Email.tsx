@@ -132,7 +132,7 @@ const Item: FC<{ icon: string; label: string; count?: number }> = ({ icon, label
     </span>
     <span className="text-sm font-medium">{label}</span>
     {count && (
-      <span className="ml-auto text-sm bg-red-100 rounded-full px-3 py-px text-red-500">
+      <span className="ml-auto text-sm bg-neutral-700 rounded-full px-2 py-0.5 text-neutral-300">
         {count}
       </span>
     )}
@@ -156,13 +156,12 @@ export const Email: React.FC = () => {
                 Compose
               </Button>
               <Item icon="bxs-inbox" label="Inbox" />
+              <Item icon="bx-mail-send" label="Unread" />
               <Item icon="bxs-star" label="Starred" />
-              <Item icon="bxs-chevrons-right" label="Important" />
               <Item icon="bxs-file-blank" label="Drafts" />
-              <Item icon="bxs-info-circle" label="Spam" />
-              <Item icon="bxs-trash" label="Bin" />
+              <Item icon="bx-block" label="Spam" />
+              <Item icon="bxs-trash" label="Trash" />
               <Item icon="bxs-send" label="Sent" count={5} />
-              <Item icon="bxs-time-five" label="Scheduled" />
               <Item icon="bxs-envelope" label="All Mail" />
               <Item icon="bx-log-out" label="Logout" />
             </Sider>
@@ -172,6 +171,7 @@ export const Email: React.FC = () => {
               trHead="flex w-full"
               tbody="w-full overflow-y-auto flex flex-col h-[calc(100vh-88px)]"
               trBody="flex w-full"
+              // header={false}
               striped
               hoverable
               columns={columns}

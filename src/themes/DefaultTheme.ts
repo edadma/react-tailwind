@@ -505,9 +505,9 @@ export const DefaultTheme = {
     },
     table: {
       style: {
-        table: 'overflow-hidden rounded-lg shadow-md',
+        table: 'overflow-hidden',
         thead: 'bg-gray-100 dark:bg-gray-700',
-        th: 'py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400',
+        th: 'py-3 px-6 tracking-wider text-left uppercase',
         tr: 'bg-white dark:bg-gray-800',
         trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
         tbody: '',
@@ -516,9 +516,13 @@ export const DefaultTheme = {
       },
       options: {
         hoverable: 'hover:bg-gray-200 dark:hover:bg-gray-700',
+        rounded: 'rounded-lg',
+        shadow: 'shadow-md',
       },
       default: {
         hoverable: false,
+        rounded: true,
+        shadow: true,
       },
     },
     sider: {

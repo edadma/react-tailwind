@@ -20,6 +20,8 @@ interface TableProps
   columns: TableColumn[]
   data: any[]
   bordered?: boolean
+  rounded?: boolean
+  shadow?: boolean
   striped?: boolean
   hoverable?: boolean
   header?: boolean
@@ -27,6 +29,7 @@ interface TableProps
   tbody?: string
   trHead?: string
   trBody?: string
+  color?: string
 }
 
 const DEFAULT_CELL_RENDERER: TableCellRenderer = (data) => <Text>{data}</Text>
@@ -37,6 +40,8 @@ export const Table: FC<TableProps> = (props) => {
     columns,
     data,
     bordered,
+    rounded,
+    shadow,
     striped,
     hoverable,
     header = true,
@@ -44,12 +49,22 @@ export const Table: FC<TableProps> = (props) => {
     tbody,
     trHead,
     trBody,
+    color,
     ...other
   } = props
   const { theme } = useTheme()
 
   return (
-    <table className={`${theme.component.table.style.table} ${className || ''}`} {...other}>
+    <table
+      className={`${theme.component.table.style.table} ${optionProps(
+        theme,
+        props,
+        'table',
+        'rounded',
+        'shadow'
+      )} ${className || ''}`}
+      {...other}
+    >
       {header && (
         <thead className={`${theme.component.table.style.thead} ${thead || ''}`}>
           <tr className={trHead || ''}>
@@ -59,7 +74,7 @@ export const Table: FC<TableProps> = (props) => {
                 className={`${theme.component.table.style.th} ${th || ''}`}
                 key={key || index.toString()}
               >
-                {title}
+                {typeof title === 'string' ? <Text size="xs">{title}</Text> : title}
               </th>
             ))}
           </tr>
@@ -72,9 +87,7 @@ export const Table: FC<TableProps> = (props) => {
               theme,
               props,
               'table',
-              // 'rounded',
               // 'border',
-              // 'shadow',
               'hoverable'
             )} ${
               striped ? theme.component.table.style.trStriped : theme.component.table.style.tr
