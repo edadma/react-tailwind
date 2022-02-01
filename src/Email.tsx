@@ -106,18 +106,22 @@ const columns: TableColumn[] = [
     index: 'name',
     key: 'name',
     render: (data) => <Text>{data}</Text>,
-    classes: 'w-0',
+    th: 'w-0',
+    td: 'w-0',
   },
   {
     title: 'Age',
     index: 'age',
     key: 'age',
-    classes: 'w-0',
+    th: 'w-1/3',
+    td: 'w-1/3',
   },
   {
     title: 'Address',
     index: 'address',
     key: 'address',
+    th: 'w-1/3',
+    td: 'w-1/3',
   },
 ]
 
@@ -163,10 +167,11 @@ export const Email: React.FC = () => {
               <Item icon="bx-log-out" label="Logout" />
             </Sider>
             <Table
-              className="w-full overflow-y-auto flex h-[calc(100vh-48px)]"
-              tbody="w-full"
-              trBody="flex"
-              noHeader
+              className="w-full"
+              thead="flex w-full"
+              trHead="flex w-full"
+              tbody="w-full overflow-y-auto flex flex-col h-[calc(100vh-88px)]"
+              trBody="flex w-full"
               striped
               hoverable
               columns={columns}

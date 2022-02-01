@@ -11,7 +11,8 @@ export interface TableColumn {
   key?: string
   align?: Align
   render?: TableCellRenderer
-  classes?: string
+  th?: string
+  td?: string
 }
 
 interface TableProps
@@ -21,7 +22,7 @@ interface TableProps
   bordered?: boolean
   striped?: boolean
   hoverable?: boolean
-  noHeader?: boolean
+  header?: boolean
   thead?: string
   tbody?: string
   trHead?: string
@@ -38,7 +39,7 @@ export const Table: FC<TableProps> = (props) => {
     bordered,
     striped,
     hoverable,
-    noHeader,
+    header = true,
     thead,
     tbody,
     trHead,
@@ -49,13 +50,13 @@ export const Table: FC<TableProps> = (props) => {
 
   return (
     <table className={`${theme.component.table.style.table} ${className || ''}`} {...other}>
-      {!noHeader && (
+      {header && (
         <thead className={`${theme.component.table.style.thead} ${thead || ''}`}>
           <tr className={trHead || ''}>
-            {columns.map(({ title, index, key }, ind) => (
+            {columns.map(({ title, index, key, th }, ind) => (
               <th
                 scope="col"
-                className={theme.component.table.style.th}
+                className={`${theme.component.table.style.th} ${th || ''}`}
                 key={key || index.toString()}
               >
                 {title}
@@ -80,9 +81,9 @@ export const Table: FC<TableProps> = (props) => {
             } ${row < data.length - 1 ? theme.component.table.style.horizontalDividers : ''}`}
             key={record.key || row.toString()}
           >
-            {columns.map(({ index, key, classes }, col) => (
+            {columns.map(({ index, key, td }, col) => (
               <td
-                className={`${classes || ''} ${theme.component.table.style.td}`}
+                className={`${td || ''} ${theme.component.table.style.td}`}
                 key={key || col.toString()}
               >
                 {(columns[col].render ? columns[col].render! : DEFAULT_CELL_RENDERER)(
