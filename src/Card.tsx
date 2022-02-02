@@ -1,6 +1,6 @@
 import React from 'react'
 import { colorClass, optionProps, padClass, useTheme } from './ThemeProvider'
-import { Color } from './types'
+import { Color, Pad } from './types'
 
 interface CardProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -9,7 +9,7 @@ interface CardProps
   shadow?: boolean
   fit?: boolean
   bg?: Color
-  pad?: number
+  pad?: Pad
 }
 
 export const Card: React.FC<CardProps> = (props) => {

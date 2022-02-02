@@ -187,7 +187,6 @@ export const DefaultTheme = {
         error: {
           div: 'bg-red-200 dark:bg-red-300',
         },
-        none: { div: '' },
       },
       options: {
         rounded: 'rounded-lg',
@@ -264,7 +263,6 @@ export const DefaultTheme = {
         success: { div: 'bg-green-200 dark:bg-green-300' },
         warning: { div: 'bg-yellow-200 dark:bg-yellow-300' },
         error: { div: 'bg-red-200 dark:bg-red-300' },
-        none: { div: '' },
       },
       default: {
         cols: 12,
@@ -506,16 +504,68 @@ export const DefaultTheme = {
     table: {
       style: {
         table: 'overflow-hidden',
-        thead: 'bg-gray-100 dark:bg-gray-700',
-        th: 'py-3 px-6 tracking-wider text-left uppercase',
-        tr: 'bg-white dark:bg-gray-800',
-        trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
+        thead: '',
+        th: 'px-6 tracking-wider text-left uppercase',
         tbody: '',
-        horizontalDividers: 'border-b dark:border-gray-700',
-        td: 'py-4 px-6 whitespace-nowrap',
+        tr: '',
+        trStriped: '',
+        horizontalDividers: 'border-b',
+        td: 'px-6 whitespace-nowrap',
+      },
+      color: {
+        primary: {
+          thead: 'bg-gray-100 dark:bg-gray-700',
+          tr: 'bg-white dark:bg-gray-800',
+          trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
+          hover: 'hover:bg-gray-200 dark:hover:bg-gray-700',
+          horizontalDividers: 'border-gray-300 dark:border-gray-700',
+        },
+        secondary: {
+          thead: 'bg-blue-100 dark:bg-blue-700',
+          tr: 'bg-white dark:bg-blue-800',
+          trStriped: 'odd:bg-white even:bg-blue-50 odd:dark:bg-blue-800 even:dark:bg-blue-900',
+          hover: 'hover:bg-blue-200 dark:hover:bg-blue-700',
+          horizontalDividers: 'border-blue-300 dark:border-blue-700',
+        },
+        regular: {
+          thead: 'bg-gray-100 dark:bg-gray-700/50',
+          tr: 'bg-white dark:bg-gray-800',
+          trStriped:
+            'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800/50 even:dark:bg-gray-900/50',
+          hover: 'hover:bg-gray-200 dark:hover:bg-gray-700',
+          horizontalDividers: 'border-gray-300 dark:border-gray-700/50',
+        },
+        info: {
+          thead: 'bg-blue-100 dark:bg-blue-700/50',
+          tr: 'bg-white dark:bg-blue-800',
+          trStriped:
+            'odd:bg-white even:bg-blue-50 odd:dark:bg-blue-800/50 even:dark:bg-blue-900/50',
+          hover: 'hover:bg-blue-200 dark:hover:bg-blue-700',
+          horizontalDividers: 'border-blue-300 dark:border-blue-700/50',
+        },
+        success: {
+          thead: 'bg-gray-100 dark:bg-gray-700',
+          tr: 'bg-white dark:bg-gray-800',
+          trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
+          hover: 'hover:bg-gray-200 dark:hover:bg-gray-700',
+          horizontalDividers: 'border-gray-300 dark:border-gray-700',
+        },
+        warning: {
+          thead: 'bg-gray-100 dark:bg-gray-700',
+          tr: 'bg-white dark:bg-gray-800',
+          trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
+          hover: 'hover:bg-gray-200 dark:hover:bg-gray-700',
+          horizontalDividers: 'border-gray-300 dark:border-gray-700',
+        },
+        error: {
+          thead: 'bg-gray-100 dark:bg-gray-700',
+          tr: 'bg-white dark:bg-gray-800',
+          trStriped: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-900',
+          hover: 'hover:bg-gray-200 dark:hover:bg-gray-700',
+          horizontalDividers: 'border-gray-300 dark:border-gray-700',
+        },
       },
       options: {
-        hoverable: 'hover:bg-gray-200 dark:hover:bg-gray-700',
         rounded: 'rounded-lg',
         shadow: 'shadow-md',
       },
@@ -523,6 +573,9 @@ export const DefaultTheme = {
         hoverable: false,
         rounded: true,
         shadow: true,
+        color: 'regular',
+        padHead: 3,
+        padBody: 4,
       },
     },
     sider: {

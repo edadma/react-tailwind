@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Align, Color, Size, Weight } from './types'
+import { Align, Color, Pad, Size, Weight } from './types'
 import { DefaultTheme } from './themes/DefaultTheme'
 
 export const optionProps = (theme: any, props: any, component: string, ...options: string[]) => {
@@ -16,15 +16,15 @@ export const optionProps = (theme: any, props: any, component: string, ...option
   return options
     .map((option) => {
       const style = theme.component[component].options[option]
-      const selected =
-        extensibleProps[option] !== undefined
-          ? extensibleProps[option]
-          : theme.component[component].default[option]
+      const selected = optionProp(theme, extensibleProps, component, option)
 
       return Array.isArray(style) ? style[selected ? 0 : 1] : selected ? style : ''
     })
     .join(' ')
 }
+
+export const optionProp = (theme: any, props: any, component: string, option: string) =>
+  props[option] !== undefined ? props[option] : theme.component[component].default[option]
 
 export const SET_THEME: SetTheme = {
   theme: DefaultTheme,
@@ -48,8 +48,17 @@ export const ThemeProvider: React.FC<{ value?: any }> = ({ children, value }) =>
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>
 }
 
-export const colorClass = (theme: any, component: string, color: Color | undefined, elem: string) =>
-  theme.component[component].color[color || theme.component[component].default.color][elem]
+export const colorClass = (
+  theme: any,
+  component: string,
+  color: Color | undefined,
+  elem: string,
+  none?: string
+) => {
+  const c = color || theme.component[component].default.color
+
+  return c === 'none' ? none || '' : theme.component[component].color[c][elem]
+}
 
 export const sizeClass = (theme: any, component: string, size: Size | undefined, elem: string) =>
   theme.size[size || theme.component[component].default.size][elem]
@@ -86,5 +95,13 @@ const padClasses: any = {
   15: 'p-15',
 }
 
-export const padClass = (theme: any, component: string, pad: number | undefined) =>
-  padClasses[pad || theme.component[component].default.pad] // todo: it should be possible for 'pad' to be null as well as undefined, where null means no padding class; and it should be possible for default.pad to be null as well with the same meaning
+export const padClass = (
+  theme: any,
+  component: string,
+  pad: Pad | undefined,
+  property?: string
+) => {
+  const p = pad !== undefined ? pad : theme.component[component].default[property || 'pad']
+
+  return padClasses[p || ''] // p could be null
+}

@@ -171,9 +171,11 @@ export const Email: React.FC = () => {
               trHead="flex w-full"
               tbody="w-full overflow-y-auto flex flex-col h-[calc(100vh-88px)]"
               trBody="flex w-full"
-              // header={false}
+              header={false}
+              padBody={1}
               striped
               hoverable
+              color="none"
               columns={columns}
               data={data}
             />
