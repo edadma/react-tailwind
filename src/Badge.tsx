@@ -4,7 +4,7 @@ import { Color, Size, Weight } from './types'
 
 interface BadgeProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
-  role?: Color
+  color?: Color
   size?: Size
   weight?: Weight
   rounded?: boolean
@@ -12,15 +12,15 @@ interface BadgeProps
 }
 
 export const Badge: React.FC<BadgeProps> = (props) => {
-  const { children, className, role, size, weight, rounded, border, ...other } = props
+  const { children, className, color, size, weight, rounded, border, ...other } = props
   const { theme } = useTheme()
 
   return (
     <span
-      className={`${colorClass(theme, 'badge', role, 'span')} ${colorClass(
+      className={`${colorClass(theme, 'badge', color, 'span')} ${colorClass(
         theme,
         'badge',
-        role,
+        color,
         'border'
       )} ${sizeClass(theme, 'badge', size, 'text')} ${optionProps(
         theme,

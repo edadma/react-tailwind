@@ -24,11 +24,6 @@ import {
   Between,
   Table,
   Pagination,
-  Content,
-  RowLayout,
-  ColLayout,
-  Sider,
-  Navbar,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -72,7 +67,7 @@ const columns: TableColumn[] = [
   },
 ]
 
-export const Demo: React.FC = () => {
+export const Demo: FC = () => {
   const [form1, setForm1] = useState()
   const [form2, setForm2] = useState()
   const [form3, setForm3] = useState()
@@ -89,9 +84,10 @@ export const Demo: React.FC = () => {
           </Space>
         </Card>
         <Card>
-          <Grid cols={4}>
+          <Grid cols={5}>
             <Table striped hoverable columns={columns} data={data} />
             <Table columns={columns} data={data} />
+            <Table color="info" striped hoverable columns={columns} data={data} />
           </Grid>
         </Card>
         <Card>
@@ -137,7 +133,7 @@ export const Demo: React.FC = () => {
                 />
                 <Between>
                   <Checkbox name="remember">Remember me</Checkbox>
-                  <Link href="#" role="info">
+                  <Link href="#" color="info">
                     Forgot password?
                   </Link>
                 </Between>
@@ -190,7 +186,7 @@ export const Demo: React.FC = () => {
                   label="Your email"
                   placeholder="name@company.com"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
                 <Input
@@ -199,7 +195,7 @@ export const Demo: React.FC = () => {
                   label="Your desired password"
                   placeholder="••••••••"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
                 <Input
@@ -208,14 +204,14 @@ export const Demo: React.FC = () => {
                   label="Confirm your password"
                   placeholder="••••••••"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
-                <Checkbox name="agree" role="info">
+                <Checkbox name="agree" color="info">
                   <Text>I agree to the</Text>&nbsp;
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>
-                <Button type="submit" role="info" pill className="w-full">
+                <Button type="submit" color="info" pill className="w-full">
                   Register
                 </Button>
               </Form>
@@ -264,7 +260,7 @@ export const Demo: React.FC = () => {
                   label="Your email"
                   placeholder="name@company.com"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
                 <Input
@@ -273,7 +269,7 @@ export const Demo: React.FC = () => {
                   label="Your desired password"
                   placeholder="••••••••"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
                 <Input
@@ -282,15 +278,15 @@ export const Demo: React.FC = () => {
                   label="Confirm your password"
                   placeholder="••••••••"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
                 <Checkbox name="agree">
                   <Text>I agree to the</Text>&nbsp;
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>
-                <Button type="submit" role="info" pill className="w-full">
-                  Login
+                <Button type="submit" color="info" pill className="w-full">
+                  Register
                 </Button>
               </Form>
               <Card className="mt-5">
@@ -338,7 +334,7 @@ export const Demo: React.FC = () => {
                   label="Your email"
                   placeholder="name@company.com"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
                 <Input
@@ -347,7 +343,7 @@ export const Demo: React.FC = () => {
                   label="Your desired password"
                   placeholder="••••••••"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
                 <Input
@@ -356,15 +352,15 @@ export const Demo: React.FC = () => {
                   label="Confirm your password"
                   placeholder="••••••••"
                   pill
-                  role="info"
+                  color="info"
                   className="w-full"
                 />
                 <Checkbox name="agree">
                   <Text>I agree to the</Text>&nbsp;
                   <Link href="#">terms and conditions</Link>
                 </Checkbox>
-                <Button type="submit" role="info" pill className="w-full">
-                  Login
+                <Button type="submit" color="info" pill className="w-full">
+                  Register
                 </Button>
               </Form>
               <Card className="mt-5">
@@ -388,7 +384,7 @@ export const Demo: React.FC = () => {
         <Card>
           <Grid cols={5}>
             <Elem>
-              <Tabs type="tab" role="regular">
+              <Tabs type="tab" color="regular">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -402,7 +398,7 @@ export const Demo: React.FC = () => {
               </Tabs>
             </Elem>
             <Elem>
-              <Tabs type="tab" role="info">
+              <Tabs type="tab" color="info">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -416,7 +412,7 @@ export const Demo: React.FC = () => {
               </Tabs>
             </Elem>
             <Elem>
-              <Tabs type="tab" role="success">
+              <Tabs type="tab" color="success">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -430,7 +426,7 @@ export const Demo: React.FC = () => {
               </Tabs>
             </Elem>
             <Elem>
-              <Tabs type="tab" role="warning">
+              <Tabs type="tab" color="warning">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -444,81 +440,7 @@ export const Demo: React.FC = () => {
               </Tabs>
             </Elem>
             <Elem>
-              <Tabs type="tab" role="error">
-                <Tab label="One">
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                </Tab>
-                <Tab label="Two">
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                </Tab>
-              </Tabs>
-            </Elem>
-          </Grid>
-        </Card>
-        <Card>
-          <Grid cols={5}>
-            <Elem>
-              <Tabs type="underline" role="regular">
-                <Tab label="One">
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                </Tab>
-                <Tab label="Two">
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                </Tab>
-              </Tabs>
-            </Elem>
-            <Elem>
-              <Tabs type="underline" role="info">
-                <Tab label="One">
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                </Tab>
-                <Tab label="Two">
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                </Tab>
-              </Tabs>
-            </Elem>
-            <Elem>
-              <Tabs type="underline" role="success">
-                <Tab label="One">
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                </Tab>
-                <Tab label="Two">
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                </Tab>
-              </Tabs>
-            </Elem>
-            <Elem>
-              <Tabs type="underline" role="warning">
-                <Tab label="One">
-                  <Card>
-                    <Text>One</Text>
-                  </Card>
-                </Tab>
-                <Tab label="Two">
-                  <Card>
-                    <Text>Two</Text>
-                  </Card>
-                </Tab>
-              </Tabs>
-            </Elem>
-            <Elem>
-              <Tabs type="underline" role="error">
+              <Tabs type="tab" color="error">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -536,7 +458,7 @@ export const Demo: React.FC = () => {
         <Card>
           <Grid cols={5}>
             <Elem>
-              <Tabs type="pill" role="regular">
+              <Tabs type="underline" color="regular">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -550,7 +472,7 @@ export const Demo: React.FC = () => {
               </Tabs>
             </Elem>
             <Elem>
-              <Tabs type="pill" role="info">
+              <Tabs type="underline" color="info">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -564,7 +486,7 @@ export const Demo: React.FC = () => {
               </Tabs>
             </Elem>
             <Elem>
-              <Tabs type="pill" role="success">
+              <Tabs type="underline" color="success">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -578,7 +500,7 @@ export const Demo: React.FC = () => {
               </Tabs>
             </Elem>
             <Elem>
-              <Tabs type="pill" role="warning">
+              <Tabs type="underline" color="warning">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -592,7 +514,81 @@ export const Demo: React.FC = () => {
               </Tabs>
             </Elem>
             <Elem>
-              <Tabs type="pill" role="error">
+              <Tabs type="underline" color="error">
+                <Tab label="One">
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                </Tab>
+                <Tab label="Two">
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                </Tab>
+              </Tabs>
+            </Elem>
+          </Grid>
+        </Card>
+        <Card>
+          <Grid cols={5}>
+            <Elem>
+              <Tabs type="pill" color="regular">
+                <Tab label="One">
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                </Tab>
+                <Tab label="Two">
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                </Tab>
+              </Tabs>
+            </Elem>
+            <Elem>
+              <Tabs type="pill" color="info">
+                <Tab label="One">
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                </Tab>
+                <Tab label="Two">
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                </Tab>
+              </Tabs>
+            </Elem>
+            <Elem>
+              <Tabs type="pill" color="success">
+                <Tab label="One">
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                </Tab>
+                <Tab label="Two">
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                </Tab>
+              </Tabs>
+            </Elem>
+            <Elem>
+              <Tabs type="pill" color="warning">
+                <Tab label="One">
+                  <Card>
+                    <Text>One</Text>
+                  </Card>
+                </Tab>
+                <Tab label="Two">
+                  <Card>
+                    <Text>Two</Text>
+                  </Card>
+                </Tab>
+              </Tabs>
+            </Elem>
+            <Elem>
+              <Tabs type="pill" color="error">
                 <Tab label="One">
                   <Card>
                     <Text>One</Text>
@@ -610,21 +606,21 @@ export const Demo: React.FC = () => {
         <Card>
           <Grid cols={5}>
             <Button>regular</Button>
-            <Button role="info">info</Button>
-            <Button role="success">success</Button>
-            <Button role="warning">warning</Button>
-            <Button role="error">error</Button>
+            <Button color="info">info</Button>
+            <Button color="success">success</Button>
+            <Button color="warning">warning</Button>
+            <Button color="error">error</Button>
             <Button outlined>regular</Button>
-            <Button outlined role="info">
+            <Button outlined color="info">
               info
             </Button>
-            <Button outlined role="success">
+            <Button outlined color="success">
               success
             </Button>
-            <Button outlined role="warning">
+            <Button outlined color="warning">
               warning
             </Button>
-            <Button outlined role="error">
+            <Button outlined color="error">
               error
             </Button>
           </Grid>
@@ -632,33 +628,33 @@ export const Demo: React.FC = () => {
         <Card>
           <Grid cols={5}>
             <Progress value={45} />
-            <Progress role="info" value={45} />
-            <Progress role="success" value={45} />
-            <Progress role="warning" value={45} />
-            <Progress role="error" value={45} />
+            <Progress color="info" value={45} />
+            <Progress color="success" value={45} />
+            <Progress color="warning" value={45} />
+            <Progress color="error" value={45} />
             <Progress label value={45} />
-            <Progress label role="info" value={45} />
-            <Progress label role="success" value={45} />
-            <Progress label role="warning" value={45} />
-            <Progress label role="error" value={45} />
+            <Progress label color="info" value={45} />
+            <Progress label color="success" value={45} />
+            <Progress label color="warning" value={45} />
+            <Progress label color="error" value={45} />
           </Grid>
         </Card>
         <Card>
           <Grid cols={5}>
             <Alert>This is an alert.</Alert>
-            <Alert role="info">This is an alert.</Alert>
-            <Alert role="success">This is an alert.</Alert>
-            <Alert role="warning">This is an alert.</Alert>
-            <Alert role="error">This is an alert.</Alert>
+            <Alert color="info">This is an alert.</Alert>
+            <Alert color="success">This is an alert.</Alert>
+            <Alert color="warning">This is an alert.</Alert>
+            <Alert color="error">This is an alert.</Alert>
           </Grid>
         </Card>
         <Card>
           <Grid cols={5}>
             <Spinner />
-            <Spinner role="info" />
-            <Spinner role="success" />
-            <Spinner role="warning" />
-            <Spinner role="error" />
+            <Spinner color="info" />
+            <Spinner color="success" />
+            <Spinner color="warning" />
+            <Spinner color="error" />
           </Grid>
         </Card>
         <Card>
@@ -667,37 +663,37 @@ export const Demo: React.FC = () => {
               <Badge>Badge</Badge>
             </Elem>
             <Elem>
-              <Badge role="info">Badge</Badge>
+              <Badge color="info">Badge</Badge>
             </Elem>
             <Elem>
-              <Badge role="success">Badge</Badge>
+              <Badge color="success">Badge</Badge>
             </Elem>
             <Elem>
-              <Badge role="warning">Badge</Badge>
+              <Badge color="warning">Badge</Badge>
             </Elem>
             <Elem>
-              <Badge role="error">Badge</Badge>
+              <Badge color="error">Badge</Badge>
             </Elem>
             <Elem>
               <Badge border>Badge</Badge>
             </Elem>
             <Elem>
-              <Badge border role="info">
+              <Badge border color="info">
                 Badge
               </Badge>
             </Elem>
             <Elem>
-              <Badge border role="success">
+              <Badge border color="success">
                 Badge
               </Badge>
             </Elem>
             <Elem>
-              <Badge border role="warning">
+              <Badge border color="warning">
                 Badge
               </Badge>
             </Elem>
             <Elem>
-              <Badge border role="error">
+              <Badge border color="error">
                 Badge
               </Badge>
             </Elem>

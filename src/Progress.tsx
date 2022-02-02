@@ -4,7 +4,7 @@ import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './The
 
 interface ProgressProps {
   size?: Size
-  role?: Color
+  color?: Color
   value: number
   label?: boolean
   rounded?: boolean
@@ -15,7 +15,7 @@ export const Progress: React.FC<ProgressProps> = ({
   children,
   value,
   size,
-  role,
+  color,
   label,
   weight,
   ...other
@@ -30,12 +30,12 @@ export const Progress: React.FC<ProgressProps> = ({
       }`}
     >
       <div
-        className={`${colorClass(theme, 'progress', role, 'bg')} ${sizeClass(
+        className={`${colorClass(theme, 'progress', color, 'bg')} ${sizeClass(
           theme,
           'progress',
           size,
           'text'
-        )} ${colorClass(theme, 'progress', role, 'text')} ${weightClass(
+        )} ${colorClass(theme, 'progress', color, 'text')} ${weightClass(
           theme,
           'progress',
           weight
@@ -60,7 +60,7 @@ export const Progress: React.FC<ProgressProps> = ({
         className={`${sizeClass(theme, 'progress', size, 'height')} ${colorClass(
           theme,
           'progress',
-          role,
+          color,
           'bg'
         )} ${optionProps(theme, other, 'progress', 'rounded')}`}
         style={{ width: v }}

@@ -16,7 +16,7 @@ interface TextProps
   strikethrough?: boolean
   italic?: boolean
   family?: 'sans' | 'serif' | 'mono'
-  role?: Color
+  color?: Color
   size?: Size
   weight?: Weight
   align?: Align
@@ -26,7 +26,7 @@ export const Text: React.FC<TextProps> = (props) => {
   const {
     children,
     className,
-    role,
+    color,
     size,
     weight,
     align,
@@ -43,7 +43,7 @@ export const Text: React.FC<TextProps> = (props) => {
       className={`${alignClass(theme, 'text', align)} ${colorClass(
         theme,
         'text',
-        role,
+        color,
         'text'
       )} ${sizeClass(theme, 'text', size, 'text')} ${optionProps(
         theme,

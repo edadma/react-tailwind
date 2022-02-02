@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react'
+import React, { Children, FC, useState } from 'react'
 import { Size, Weight, Color } from './types'
 import { colorClass, sizeClass, useTheme, weightClass } from './ThemeProvider'
 import componentPropType from './util'
@@ -7,15 +7,15 @@ interface TabsProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
   size?: Size
   weight?: Weight
-  role?: Color
+  color?: Color
   type?: 'tab' | 'underline' | 'pill'
 }
 
-export const Tabs: React.FC<TabsProps> = ({
+export const Tabs: FC<TabsProps> = ({
   children,
   size,
   weight,
-  role,
+  color,
   type = 'underline',
   ...other
 }) => {
@@ -33,7 +33,7 @@ export const Tabs: React.FC<TabsProps> = ({
             index,
             size,
             weight,
-            role,
+            color: color,
             type,
           })
         )}
@@ -51,18 +51,18 @@ interface TabProps
   label: string
   size?: Size
   weight?: Weight
-  role?: Color
+  color?: Color
   type?: 'tab' | 'underline' | 'pill'
 }
 
-export const Tab: React.FC<TabProps> = ({
+export const Tab: FC<TabProps> = ({
   active,
   setActive,
   index,
   label,
   size,
   weight,
-  role,
+  color,
   type = 'underline',
   ...other
 }) => {
@@ -73,20 +73,20 @@ export const Tab: React.FC<TabProps> = ({
       className={`${theme.component.tab.style[type]} ${
         type === 'underline'
           ? active
-            ? `active ${colorClass(theme, 'tab', role, 'a')}`
+            ? `active ${colorClass(theme, 'tab', color, 'a')}`
             : 'text-gray-500 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
           : type === 'tab'
           ? active
             ? `bg-gray-200 rounded-t-lg active dark:bg-gray-700 ${colorClass(
                 theme,
                 'tab',
-                role,
+                color,
                 'a'
               )}`
             : 'text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
           : type === 'pill'
           ? active
-            ? `active ${colorClass(theme, 'tab', role, 'pill')}`
+            ? `active ${colorClass(theme, 'tab', color, 'pill')}`
             : 'text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700'
           : '' // todo: fullWidth type https://flowbite.com/docs/components/tabs/#full-width-tabs
       } ${sizeClass(theme, 'tab', size, 'text')} ${weightClass(theme, 'tab', weight)} ${

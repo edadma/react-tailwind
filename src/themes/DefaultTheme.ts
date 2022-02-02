@@ -132,14 +132,14 @@ export const DefaultTheme = {
       options: {
         rounded: 'rounded-lg',
         pill: 'rounded-full',
-        hasIcon: ['p-2.5', 'px-5 py-2.5'],
+        icon: ['p-2.5', 'px-5 py-2.5'],
         transition: 'transition ease-in-out duration-300',
       },
       exclusions: { pill: 'rounded' },
       default: {
         rounded: true,
         pill: false,
-        hasIcon: false,
+        icon: false,
         transition: true,
         weight: 'bold',
         size: 'md',

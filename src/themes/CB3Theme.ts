@@ -45,7 +45,7 @@ export const CB3Theme = {
   component: {
     button: {
       style: 'focus:ring-2 text-center mr-2 mb-2',
-      role: {
+      color: {
         primary: new ButtonColor(
           'text-cb3success-600',
           'text-cb3success-50',
@@ -130,7 +130,7 @@ export const CB3Theme = {
         transition: true,
         weight: 'bold',
         size: 'md',
-        role: 'regular',
+        color: 'regular',
       },
     },
     progress: {
@@ -138,7 +138,7 @@ export const CB3Theme = {
         bar: 'w-full bg-gray-400 dark:bg-gray-700',
         progressLabel: 'text-center p-0.5 leading-none',
       },
-      role: {
+      color: {
         primary: new ProgressColor(
           'text-cb3success-50',
           'bg-cb3success-600 dark:bg-cb3success-500'
@@ -157,7 +157,7 @@ export const CB3Theme = {
         error: new ProgressColor('text-red-50', 'bg-red-600 dark:bg-red-500'),
       },
       options: { rounded: 'rounded-full' },
-      default: { rounded: true, weight: 'bold', size: 'sm', role: 'regular' },
+      default: { rounded: true, weight: 'bold', size: 'sm', color: 'regular' },
     },
     card: {
       style: 'p-6 bg-white dark:bg-gray-800',
@@ -170,7 +170,7 @@ export const CB3Theme = {
     },
     alert: {
       style: 'p-4 mb-4',
-      role: {
+      color: {
         primary: {
           div: 'bg-cb3success-100 border-cb3success-500 text-cb3success-700 dark:text-cb3success-800 dark:bg-cb3success-200',
         },
@@ -197,7 +197,7 @@ export const CB3Theme = {
         rounded: 'rounded-lg',
         border: 'border-t-4',
       },
-      default: { rounded: true, border: true, size: 'sm', role: 'regular' },
+      default: { rounded: true, border: true, size: 'sm', color: 'regular' },
     },
   },
 }

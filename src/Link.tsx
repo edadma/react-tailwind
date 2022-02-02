@@ -9,19 +9,19 @@ interface LinkProps
   > {
   italic?: boolean
   family?: 'sans' | 'serif' | 'mono'
-  role?: Color
+  color?: Color
   size?: Size
   weight?: Weight
 }
 
 export const Link: React.FC<LinkProps> = (props) => {
-  const { children, className, href, role, size, weight, italic, ...other } = props
+  const { children, className, href, color, size, weight, italic, ...other } = props
   const { theme } = useTheme()
 
   return (
     <a
       href={href}
-      className={`${colorClass(theme, 'link', role, 'text')} ${sizeClass(
+      className={`${colorClass(theme, 'link', color, 'text')} ${sizeClass(
         theme,
         'link',
         size,

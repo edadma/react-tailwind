@@ -6,11 +6,11 @@ interface AlertProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   rounded?: boolean
   border?: boolean
-  role?: Color
+  color?: Color
   size?: Size
 }
 
-export const Alert: React.FC<AlertProps> = ({ children, role, size, ...other }) => {
+export const Alert: React.FC<AlertProps> = ({ children, color, size, ...other }) => {
   const { theme } = useTheme()
 
   return (
@@ -18,7 +18,7 @@ export const Alert: React.FC<AlertProps> = ({ children, role, size, ...other }) 
       className={`${sizeClass(theme, 'alert', size, 'text')} ${colorClass(
         theme,
         'alert',
-        role,
+        color,
         'div'
       )} ${optionProps(theme, other, 'alert', 'rounded', 'border')} ${theme.component.alert.style}`}
       {...other}

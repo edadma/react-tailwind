@@ -4,11 +4,11 @@ import { Color, Size } from './types'
 
 interface SpinnerProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  role?: Color
+  color?: Color
   size?: Size
 }
 
-export const Spinner: React.FC<SpinnerProps> = ({ children, role, size, ...other }) => {
+export const Spinner: React.FC<SpinnerProps> = ({ children, color, size, ...other }) => {
   const { theme } = useTheme()
 
   return (
@@ -17,7 +17,7 @@ export const Spinner: React.FC<SpinnerProps> = ({ children, role, size, ...other
       className={`${sizeClass(theme, 'spinner', size, 'text')} ${colorClass(
         theme,
         'spinner',
-        role,
+        color,
         'div'
       )} ${theme.component.spinner.style}`}
       {...other}

@@ -10,9 +10,9 @@ interface ButtonProps
   outlined?: boolean
   rounded?: boolean
   pill?: boolean
-  hasIcon?: boolean
+  icon?: boolean
   transition?: boolean
-  role?: Color
+  color?: Color
   size?: Size
   weight?: Weight
 }
@@ -21,45 +21,44 @@ export const Button: FC<ButtonProps> = (props) => {
   const {
     children,
     className,
-    role,
+    color,
     outlined,
     rounded,
     pill,
     size,
     weight,
-    hasIcon,
+    icon,
     transition,
     ...other
   } = props
   const { theme } = useTheme()
-  const roundedOpt = pill ? false : rounded
 
   return (
     <button
       type="button"
       className={
         (outlined
-          ? `${colorClass(theme, 'button', role, 'outlinedBorder')} ${colorClass(
+          ? `${colorClass(theme, 'button', color, 'outlinedBorder')} ${colorClass(
               theme,
               'button',
-              role,
+              color,
               'outlinedText'
-            )} ${colorClass(theme, 'button', role, 'outlinedHoverBg')} ${colorClass(
+            )} ${colorClass(theme, 'button', color, 'outlinedHoverBg')} ${colorClass(
               theme,
               'button',
-              role,
+              color,
               'outlinedHoverText'
             )}`
-          : `${colorClass(theme, 'button', role, 'filledBg')} ${colorClass(
+          : `${colorClass(theme, 'button', color, 'filledBg')} ${colorClass(
               theme,
               'button',
-              role,
+              color,
               'filledText'
-            )} ${colorClass(theme, 'button', role, 'filledHoverBg')}`) +
+            )} ${colorClass(theme, 'button', color, 'filledHoverBg')}`) +
         ` ${sizeClass(theme, 'button', size, 'text')} ${colorClass(
           theme,
           'button',
-          role,
+          color,
           'focusRing'
         )} ${optionProps(
           theme,
@@ -67,7 +66,7 @@ export const Button: FC<ButtonProps> = (props) => {
           'button',
           'rounded',
           'pill',
-          'hasIcon',
+          'icon',
           'transition'
         )} ${weightClass(theme, 'button', weight)} ${theme.component.button.style} ${
           className || ''

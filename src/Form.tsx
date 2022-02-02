@@ -35,7 +35,7 @@ interface InputProps
   rounded?: boolean
   pill?: boolean
   border?: boolean
-  role?: Color
+  color?: Color
   inputSize?: Size
   weight?: Weight
   label?: string
@@ -50,7 +50,7 @@ export const Input: FC<InputProps> = (props) => {
     rounded,
     pill,
     border,
-    role,
+    color,
     inputSize,
     weight,
     label,
@@ -79,7 +79,7 @@ export const Input: FC<InputProps> = (props) => {
         className={`${colorClass(
           theme,
           'input',
-          formik.touched[other.name!] && formik.errors[other.name!] ? 'error' : role,
+          formik.touched[other.name!] && formik.errors[other.name!] ? 'error' : color,
           'input'
         )} ${optionProps(theme, props, 'input', 'rounded', 'pill', 'border')} ${sizeClass(
           theme,
@@ -99,7 +99,7 @@ export const Input: FC<InputProps> = (props) => {
           <div className="transition-transform">{renderError(formik.errors[other.name!])}</div>
         ) : (
           <div>
-            <Text role="error">{formik.errors[other.name!]}</Text>
+            <Text color="error">{formik.errors[other.name!]}</Text>
           </div>
         ))}
     </div>
@@ -109,10 +109,10 @@ export const Input: FC<InputProps> = (props) => {
 interface CheckboxProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   name: string
-  role?: Color
+  color?: Color
 }
 
-export const Checkbox: FC<CheckboxProps> = ({ children, className, name, role }) => {
+export const Checkbox: FC<CheckboxProps> = ({ children, className, name, color }) => {
   const formik = useForm()
   const { theme } = useTheme()
   const id = _.uniqueId('checkbox-')
@@ -131,7 +131,7 @@ export const Checkbox: FC<CheckboxProps> = ({ children, className, name, role })
           className={`${theme.component.checkbox.style.input} ${colorClass(
             theme,
             'checkbox',
-            role,
+            color,
             'checkbox'
           )} ${className || ''}`}
         />
