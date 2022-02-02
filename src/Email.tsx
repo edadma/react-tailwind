@@ -173,9 +173,9 @@ export const Email: React.FC = () => {
               trBody="flex w-full"
               header={false}
               padBody={1}
-              striped
-              hoverable
               color="none"
+              rounded={false}
+              hoverable
               columns={columns}
               data={data}
             />

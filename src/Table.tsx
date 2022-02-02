@@ -111,7 +111,15 @@ export const Table: FC<TableProps> = (props) => {
                 : ''
             } ${
               striped ? theme.component.table.style.trStriped : theme.component.table.style.tr
-            } ${colorClass(theme, 'table', color, striped ? 'trStriped' : 'tr')} ${
+            } ${colorClass(
+              theme,
+              'table',
+              color,
+              striped ? 'trStriped' : 'tr',
+              striped
+                ? 'odd:bg-none even:bg-gray-50 odd:dark:bg-gray-800/50 even:dark:bg-neutral-800'
+                : ''
+            )} ${
               row < data.length - 1
                 ? `${theme.component.table.style.horizontalDividers} ${colorClass(
                     theme,
