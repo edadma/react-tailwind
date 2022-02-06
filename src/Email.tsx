@@ -6,6 +6,7 @@ import { Table, TableColumn } from './Table'
 import { ThemeProvider } from './ThemeProvider'
 import { ModeProvider } from './ModeProvider'
 import { Text } from './Text'
+import { NavLink } from './NavLink'
 
 const data = [
   {
@@ -144,7 +145,9 @@ export const Email: React.FC = () => {
     <ThemeProvider>
       <ModeProvider>
         <ColLayout>
-          <Navbar />
+          <Navbar>
+            <NavLink to="/">Home</NavLink>
+          </Navbar>
           <RowLayout>
             <Sider width={56}>
               <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />

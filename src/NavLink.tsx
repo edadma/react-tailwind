@@ -9,7 +9,6 @@ interface NavLinkProps extends Omit<NavLinkRouterProps, 'className'> {
 export const NavLink: FC<NavLinkProps> = (props) => {
   const { children, className, ...other } = props
   const { theme } = useTheme()
-  console.log(theme.component.navlink)
 
   return (
     <NavLinkRouter

@@ -1,15 +1,5 @@
 import React, { FC } from 'react'
-import {
-  ThemeProvider,
-  ModeProvider,
-  Card,
-  Text,
-  Navbar,
-  ColLayout,
-  Content,
-  RowLayout,
-  Sider,
-} from './index'
+import { ThemeProvider, ModeProvider, Card, Text, Navbar, ColLayout, NavLink } from './index'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 export const NavbarDemo: FC = () => (
@@ -17,8 +7,10 @@ export const NavbarDemo: FC = () => (
     <ModeProvider>
       <BrowserRouter>
         <ColLayout>
-          <Navbar />
-
+          <Navbar>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+          </Navbar>
           <Card>
             <Routes>
               <Route path="/" element={<Text>/ route</Text>} />
