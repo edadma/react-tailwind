@@ -1,15 +1,15 @@
-import ReactDOM from 'react-dom'
-import './index.css'
-import { StrictMode } from 'react'
-import { Demo } from './Demo'
-import { Email } from './Email'
-
-ReactDOM.render(
-  <StrictMode>
-    <Demo />
-  </StrictMode>,
-  document.getElementById('root')
-)
+// import ReactDOM from 'react-dom'
+// import './index.css'
+// import { StrictMode } from 'react'
+// import { Demo } from './Demo'
+// import { Email } from './Email'
+//
+// ReactDOM.render(
+//   <StrictMode>
+//     <Demo />
+//   </StrictMode>,
+//   document.getElementById('root')
+// )
 
 export { Button } from './Button'
 export { Progress } from './Progress'
