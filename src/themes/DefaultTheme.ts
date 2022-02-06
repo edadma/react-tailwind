@@ -1,20 +1,3 @@
-class ButtonColor {
-  constructor(
-    public outlinedText: string,
-    public filledText: string,
-    public filledBg: string,
-    public outlinedHoverBg: string,
-    public filledHoverBg: string,
-    public focusRing: string,
-    public outlinedBorder: string,
-    public outlinedHoverText: string
-  ) {}
-}
-
-class ProgressColor {
-  constructor(public text: string, public bg: string) {}
-}
-
 export const DefaultTheme = {
   name: 'Default Theme',
   description: 'Basic theme with support for both light and dark modes',
@@ -58,76 +41,48 @@ export const DefaultTheme = {
     button: {
       style: 'inline-block focus:ring-2 text-center shadow-md hover:shadow-lg',
       color: {
-        primary: new ButtonColor(
-          'text-green-600',
-          'text-green-50',
-          'bg-green-600 dark:bg-green-500',
-          'hover:bg-green-600',
-          'hover:bg-green-800 dark:hover:bg-green-700',
-          'focus:ring-green-300 dark:focus:ring-green-800',
-          'border border-green-500',
-          'hover:text-green-50'
-        ),
-        secondary: new ButtonColor(
-          'text-blue-600',
-          'text-blue-50',
-          'bg-blue-600 dark:bg-blue-500',
-          'hover:bg-blue-600',
-          'hover:bg-blue-800 dark:hover:bg-blue-700',
-          'focus:ring-blue-300 dark:focus:ring-blue-800',
-          'border border-blue-500',
-          'hover:text-blue-50'
-        ),
-        regular: new ButtonColor(
-          'text-gray-600',
-          'text-gray-50',
-          'bg-gray-600 dark:bg-gray-500',
-          'hover:bg-gray-600',
-          'hover:bg-gray-800 dark:hover:bg-gray-700',
-          'focus:ring-gray-300 dark:focus:ring-gray-800',
-          'border border-gray-500',
-          'hover:text-gray-50'
-        ),
-        info: new ButtonColor(
-          'text-blue-600',
-          'text-blue-50',
-          'bg-blue-600 dark:bg-blue-500',
-          'hover:bg-blue-600',
-          'hover:bg-blue-800 dark:hover:bg-blue-700',
-          'focus:ring-blue-300 dark:focus:ring-blue-800',
-          'border border-blue-500',
-          'hover:text-blue-50'
-        ),
-        success: new ButtonColor(
-          'text-green-600',
-          'text-green-50',
-          'bg-green-600 dark:bg-green-500',
-          'hover:bg-green-600',
-          'hover:bg-green-800 dark:hover:bg-green-700',
-          'focus:ring-green-300 dark:focus:ring-green-800',
-          'border border-green-500',
-          'hover:text-green-50'
-        ),
-        warning: new ButtonColor(
-          'text-yellow-600',
-          'text-yellow-50',
-          'bg-yellow-600 dark:bg-yellow-500',
-          'hover:bg-yellow-600',
-          'hover:bg-yellow-800 dark:hover:bg-yellow-700',
-          'focus:ring-yellow-300 dark:focus:ring-yellow-800',
-          'border border-yellow-500',
-          'hover:text-yellow-50'
-        ),
-        error: new ButtonColor(
-          'text-red-600',
-          'text-red-50',
-          'bg-red-600 dark:bg-red-500',
-          'hover:bg-red-600',
-          'hover:bg-red-800 dark:hover:bg-red-700',
-          'focus:ring-red-300 dark:focus:ring-red-800',
-          'border border-red-500',
-          'hover:text-red-50'
-        ),
+        primary: {
+          outlined: 'text-green-600 hover:bg-green-600 border border-green-500 hover:text-green-50',
+          filled:
+            'text-green-50 bg-green-600 dark:bg-green-500 hover:bg-green-800 dark:hover:bg-green-700',
+          focus: 'focus:ring-green-300 dark:focus:ring-green-800',
+        },
+        secondary: {
+          outlined: 'text-blue-600 hover:bg-blue-600 border border-blue-500 hover:text-blue-50',
+          filled:
+            'text-blue-50 bg-blue-600 dark:bg-blue-500 hover:bg-blue-800 dark:hover:bg-blue-700',
+          focus: 'focus:ring-blue-300 dark:focus:ring-blue-800',
+        },
+        regular: {
+          outlined: 'text-gray-600 hover:bg-gray-600 border border-gray-500 hover:text-gray-50',
+          filled:
+            'text-gray-50 bg-gray-600 dark:bg-gray-500 hover:bg-gray-800 dark:hover:bg-gray-700',
+          focus: 'focus:ring-gray-300 dark:focus:ring-gray-800',
+        },
+        info: {
+          outlined: 'text-blue-600 hover:bg-blue-600 border border-blue-500 ',
+          filled:
+            'text-blue-50 bg-blue-600 dark:bg-blue-500 hover:bg-blue-800 dark:hover:bg-blue-700',
+          focus: 'focus:ring-blue-300 dark:focus:ring-blue-800',
+        },
+        success: {
+          outlined: 'text-green-600 hover:bg-green-600 border border-green-500 hover:text-green-50',
+          filled:
+            'text-green-50 bg-green-600 dark:bg-green-500 hover:bg-green-800 dark:hover:bg-green-700',
+          focus: 'focus:ring-green-300 dark:focus:ring-green-800',
+        },
+        warning: {
+          outlined:
+            'text-yellow-600 hover:bg-yellow-600 border border-yellow-500 hover:text-yellow-50',
+          filled:
+            'text-yellow-50 bg-yellow-600 dark:bg-yellow-500 hover:bg-yellow-800 dark:hover:bg-yellow-700',
+          focus: 'focus:ring-yellow-300 dark:focus:ring-yellow-800',
+        },
+        error: {
+          outlined: 'text-red-600 hover:bg-red-600 border border-red-500 hover:text-red-50',
+          filled: 'text-red-50 bg-red-600 dark:bg-red-500 hover:bg-red-800 dark:hover:bg-red-700',
+          focus: 'focus:ring-red-300 dark:focus:ring-red-800',
+        },
       },
       options: {
         rounded: 'rounded-lg',
@@ -152,13 +107,13 @@ export const DefaultTheme = {
         progressLabel: 'text-center p-0.5 leading-none',
       },
       color: {
-        primary: new ProgressColor('text-green-50', 'bg-green-600 dark:bg-green-500'),
-        secondary: new ProgressColor('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
-        regular: new ProgressColor('text-gray-50', 'bg-gray-600 dark:bg-gray-500'),
-        info: new ProgressColor('text-blue-50', 'bg-blue-600 dark:bg-blue-500'),
-        success: new ProgressColor('text-green-50', 'bg-green-600 dark:bg-green-500'),
-        warning: new ProgressColor('text-yellow-50', 'bg-yellow-600 dark:bg-yellow-500'),
-        error: new ProgressColor('text-red-50', 'bg-red-600 dark:bg-red-500'),
+        primary: { text: 'text-green-50', bg: 'bg-green-600 dark:bg-green-500' },
+        secondary: { text: 'text-blue-50', bg: 'bg-blue-600 dark:bg-blue-500' },
+        regular: { text: 'text-gray-50', bg: 'bg-gray-600 dark:bg-gray-500' },
+        info: { text: 'text-blue-50', bg: 'bg-blue-600 dark:bg-blue-500' },
+        success: { text: 'text-green-50', bg: 'bg-green-600 dark:bg-green-500' },
+        warning: { text: 'text-yellow-50', bg: 'bg-yellow-600 dark:bg-yellow-500' },
+        error: { text: 'text-red-50', bg: 'bg-red-600 dark:bg-red-500' },
       },
       options: { rounded: 'rounded-full' },
       default: { rounded: true, weight: 'bold', size: 'sm', color: 'regular' },

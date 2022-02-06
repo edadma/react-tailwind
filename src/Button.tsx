@@ -36,42 +36,27 @@ export const Button: FC<ButtonProps> = (props) => {
   return (
     <button
       type="button"
-      className={
-        (outlined
-          ? `${colorClass(theme, 'button', color, 'outlinedBorder')} ${colorClass(
-              theme,
-              'button',
-              color,
-              'outlinedText'
-            )} ${colorClass(theme, 'button', color, 'outlinedHoverBg')} ${colorClass(
-              theme,
-              'button',
-              color,
-              'outlinedHoverText'
-            )}`
-          : `${colorClass(theme, 'button', color, 'filledBg')} ${colorClass(
-              theme,
-              'button',
-              color,
-              'filledText'
-            )} ${colorClass(theme, 'button', color, 'filledHoverBg')}`) +
-        ` ${sizeClass(theme, 'button', size, 'text')} ${colorClass(
-          theme,
-          'button',
-          color,
-          'focusRing'
-        )} ${optionProps(
-          theme,
-          props,
-          'button',
-          'rounded',
-          'pill',
-          'icon',
-          'transition'
-        )} ${weightClass(theme, 'button', weight)} ${theme.component.button.style} ${
-          className || ''
-        }`
-      }
+      className={`${colorClass(
+        theme,
+        'button',
+        color,
+        outlined ? 'outlined' : 'filled'
+      )} ${sizeClass(theme, 'button', size, 'text')} ${colorClass(
+        theme,
+        'button',
+        color,
+        'focus'
+      )} ${optionProps(
+        theme,
+        props,
+        'button',
+        'rounded',
+        'pill',
+        'icon',
+        'transition'
+      )} ${weightClass(theme, 'button', weight)} ${theme.component.button.style} ${
+        className || ''
+      }`}
       {...other}
     >
       {children}
