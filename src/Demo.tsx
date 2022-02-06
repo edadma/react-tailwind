@@ -19,7 +19,7 @@ import {
   Input,
   Form,
   Checkbox,
-  Link,
+  A,
   Center,
   Between,
   Table,
@@ -133,9 +133,9 @@ export const Demo: FC = () => {
                 />
                 <Between>
                   <Checkbox name="remember">Remember me</Checkbox>
-                  <Link href="#" color="info">
+                  <A href="#" color="info">
                     Forgot password?
-                  </Link>
+                  </A>
                 </Between>
                 <Center>
                   <Button type="submit">Login</Button>
@@ -209,7 +209,7 @@ export const Demo: FC = () => {
                 />
                 <Checkbox name="agree" color="info">
                   <Text>I agree to the</Text>&nbsp;
-                  <Link href="#">terms and conditions</Link>
+                  <A href="#">terms and conditions</A>
                 </Checkbox>
                 <Button type="submit" color="info" pill className="w-full">
                   Register
@@ -283,7 +283,7 @@ export const Demo: FC = () => {
                 />
                 <Checkbox name="agree">
                   <Text>I agree to the</Text>&nbsp;
-                  <Link href="#">terms and conditions</Link>
+                  <A href="#">terms and conditions</A>
                 </Checkbox>
                 <Button type="submit" color="info" pill className="w-full">
                   Register
@@ -357,7 +357,7 @@ export const Demo: FC = () => {
                 />
                 <Checkbox name="agree">
                   <Text>I agree to the</Text>&nbsp;
-                  <Link href="#">terms and conditions</Link>
+                  <A href="#">terms and conditions</A>
                 </Checkbox>
                 <Button type="submit" color="info" pill className="w-full">
                   Register
