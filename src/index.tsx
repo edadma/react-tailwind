@@ -4,11 +4,11 @@ import { StrictMode } from 'react'
 import { Demo } from './Demo'
 import { EmailDemo } from './EmailDemo'
 import { LayoutDemo } from './LayoutDemo'
-import { ToastDemo } from './ToastDemo'
+import { NotifyDemo } from './NotifyDemo'
 
 ReactDOM.render(
   <StrictMode>
-    <ToastDemo />
+    <NotifyDemo />
   </StrictMode>,
   document.getElementById('root')
 )
