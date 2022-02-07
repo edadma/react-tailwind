@@ -613,5 +613,12 @@ export const DefaultTheme = {
         inactive: 'text-gray-700 dark:text-gray-400',
       },
     },
+    navlinkitem: {
+      style: {
+        navlink: 'block py-2.5 px-4 transition duration-200 hover:bg-blue-700 hover:text-white',
+        active: 'text-white dark:text-white bg-blue-700 dark:bg-blue-700',
+        inactive: 'text-gray-700 dark:text-gray-400',
+      },
+    },
   },
 }

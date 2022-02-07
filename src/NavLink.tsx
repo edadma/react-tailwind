@@ -23,3 +23,23 @@ export const NavLink: FC<NavLinkProps> = (props) => {
     </NavLinkRouter>
   )
 }
+
+export const NavLinkItem: FC<NavLinkProps> = (props) => {
+  const { children, className, ...other } = props
+  const { theme } = useTheme()
+
+  return (
+    <NavLinkRouter
+      className={({ isActive }) =>
+        `${theme.component.navlinkitem.style.navlink} ${
+          isActive
+            ? theme.component.navlinkitem.style.active
+            : theme.component.navlinkitem.style.inactive
+        } ${className || ''}`
+      }
+      {...other}
+    >
+      {children}
+    </NavLinkRouter>
+  )
+}
