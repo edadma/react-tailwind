@@ -28,8 +28,8 @@ export const LayoutDemo: FC = () => (
           <RowLayout>
             <Sider>
               <NavLinkItem to="/page1">asdfasdf</NavLinkItem>
-              <NavLinkItem to="/page2">asdfasdf</NavLinkItem>
-              <NavLinkItem to="/page3">asdfasdf</NavLinkItem>
+              <NavLinkItem to="/page2">asdf</NavLinkItem>
+              <NavLinkItem to="/page3">asdf</NavLinkItem>
             </Sider>
             <Content>
               <Routes>
