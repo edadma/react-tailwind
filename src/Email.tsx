@@ -146,7 +146,7 @@ export const Email: React.FC = () => {
       <ModeProvider>
         <ColLayout>
           <Navbar>
-            <NavLink to="/">Home</NavLink>
+            <Text>Home</Text>
           </Navbar>
           <RowLayout>
             <Sider width={56}>
