@@ -140,7 +140,7 @@ const Item: FC<{ icon: string; label: string; count?: number }> = ({ icon, label
   </Text>
 )
 
-export const Email: React.FC = () => {
+export const EmailDemo: React.FC = () => {
   return (
     <ThemeProvider>
       <ModeProvider>

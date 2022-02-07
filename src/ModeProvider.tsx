@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { useTheme } from './ThemeProvider'
+import { Toaster } from 'react-hot-toast'
 
 export type ModeType = 'light' | 'dark'
 
@@ -36,7 +37,10 @@ export const ModeProvider: React.FC<{ value?: ModeType }> = ({ children, value }
 
   return (
     <ModeContext.Provider value={{ mode, setMode }}>
-      {children}
+      <>
+        <Toaster position="top-right" reverseOrder={true} />
+        {children}
+      </>
       {/*<div className={`${mode === 'light' ? '' : 'dark'}`}>{children}</div>*/}
     </ModeContext.Provider>
   )

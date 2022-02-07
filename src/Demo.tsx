@@ -8,7 +8,7 @@ import {
   Alert,
   Grid,
   Spinner,
-  Badge,
+  Tag,
   Elem,
   Tabs,
   Tab,
@@ -660,42 +660,42 @@ export const Demo: FC = () => {
         <Card>
           <Grid cols={5}>
             <Elem>
-              <Badge>Badge</Badge>
+              <Tag>Tag</Tag>
             </Elem>
             <Elem>
-              <Badge color="info">Badge</Badge>
+              <Tag color="info">Tag</Tag>
             </Elem>
             <Elem>
-              <Badge color="success">Badge</Badge>
+              <Tag color="success">Tag</Tag>
             </Elem>
             <Elem>
-              <Badge color="warning">Badge</Badge>
+              <Tag color="warning">Tag</Tag>
             </Elem>
             <Elem>
-              <Badge color="error">Badge</Badge>
+              <Tag color="error">Tag</Tag>
             </Elem>
             <Elem>
-              <Badge border>Badge</Badge>
+              <Tag border>Tag</Tag>
             </Elem>
             <Elem>
-              <Badge border color="info">
-                Badge
-              </Badge>
+              <Tag border color="info">
+                Tag
+              </Tag>
             </Elem>
             <Elem>
-              <Badge border color="success">
-                Badge
-              </Badge>
+              <Tag border color="success">
+                Tag
+              </Tag>
             </Elem>
             <Elem>
-              <Badge border color="warning">
-                Badge
-              </Badge>
+              <Tag border color="warning">
+                Tag
+              </Tag>
             </Elem>
             <Elem>
-              <Badge border color="error">
-                Badge
-              </Badge>
+              <Tag border color="error">
+                Tag
+              </Tag>
             </Elem>
           </Grid>
         </Card>

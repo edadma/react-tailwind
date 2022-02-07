@@ -1,16 +1,17 @@
-// import ReactDOM from 'react-dom'
-// import './index.css'
-// import { StrictMode } from 'react'
-// import { Demo } from './Demo'
-// import { Email } from './Email'
-// import { LayoutDemo } from './LayoutDemo'
-//
-// ReactDOM.render(
-//   <StrictMode>
-//     <LayoutDemo />
-//   </StrictMode>,
-//   document.getElementById('root')
-// )
+import ReactDOM from 'react-dom'
+import './index.css'
+import { StrictMode } from 'react'
+import { Demo } from './Demo'
+import { EmailDemo } from './EmailDemo'
+import { LayoutDemo } from './LayoutDemo'
+import { ToastDemo } from './ToastDemo'
+
+ReactDOM.render(
+  <StrictMode>
+    <ToastDemo />
+  </StrictMode>,
+  document.getElementById('root')
+)
 
 export { Button } from './Button'
 export { Progress } from './Progress'
@@ -36,3 +37,4 @@ export { Content, RowLayout, ColLayout, Sider } from './Layout'
 export { Navbar } from './Navbar'
 export { Link } from './Link'
 export { NavLink, NavLinkItem } from './NavLink'
+export { Tag } from './Tag'
