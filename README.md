@@ -1,6 +1,6 @@
 # Getting Started with `react-tailwind`
 
-Install packages:
+Install required packages, and initialize Tailwind CSS:
 
 ```shell
 npm i @edadma/react-tailwind
@@ -8,7 +8,7 @@ npm i -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-Edit `tailwind.config.js` so that Tailwind CSS will work:
+Edit `./src/tailwind.config.js` so that Tailwind CSS will work:
 
 ```javascript
 module.exports = {
@@ -29,10 +29,10 @@ Create `./src/index.css`, the only 3 lines of CSS you will need:
 @tailwind utilities;
 ```
 
-Start using **react-tailwind** to build your app:
+Start using `react-tailwind` to build your app:
 
 ```typescript jsx
-import React, { FC } from 'react'
+import { FC } from 'react'
 import {
   ThemeProvider,
   Card,

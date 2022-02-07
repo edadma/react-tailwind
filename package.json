@@ -1,6 +1,6 @@
 {
   "name": "@edadma/react-tailwind",
-  "version": "0.1.0-pre.17",
+  "version": "0.1.0-pre.18",
   "description": "React.js components library styled using with Tailwind CSS",
   "types": "dist/index.d.ts",
   "files": [
@@ -13,9 +13,11 @@
   "dependencies": {
     "draft-js": "^0.11.7",
     "formik": "^2.2.9",
+    "i18next": "^21.6.11",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-i18next": "^11.15.3",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
