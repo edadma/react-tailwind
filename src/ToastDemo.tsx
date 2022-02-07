@@ -8,7 +8,7 @@ export const ToastDemo: FC = () => {
       <Button
         onClick={() =>
           notify({
-            type: 'success',
+            type: 'warning',
             message: 'asdf',
             description: 'asdfasdf dsa df df fd fdas df dfs fdsa fsda fsda afsd da as fsdea',
           })

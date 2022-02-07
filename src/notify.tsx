@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import toast from 'react-hot-toast'
-import { Checkmark, Dismiss } from './Icons'
+import { Checkmark, Cross, Warning } from './Icons'
 
 interface NotifyParam {
   type?: 'success' | 'error' | 'warning'
@@ -18,8 +18,18 @@ export const notify = ({ type, message, description, duration }: NotifyParam) =>
       >
         <div className="flex">
           {type === 'success' && (
-            <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+            <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg text-green-500 bg-green-100 dark:bg-green-700 dark:text-green-200">
               <Checkmark />
+            </div>
+          )}
+          {type === 'error' && (
+            <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg text-red-500 bg-red-100 dark:bg-red-700 dark:text-red-200">
+              <Cross />
+            </div>
+          )}
+          {type === 'warning' && (
+            <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg text-yellow-500 bg-yellow-100 dark:bg-yellow-600 dark:text-yellow-200">
+              <Warning />
             </div>
           )}
           <div className="ml-3 ">
@@ -32,7 +42,7 @@ export const notify = ({ type, message, description, duration }: NotifyParam) =>
             onClick={() => toast.dismiss(t.id)}
           >
             <span className="sr-only">Close</span>
-            <Dismiss />
+            <Cross />
           </button>
         </div>
       </div>
