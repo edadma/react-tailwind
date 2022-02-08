@@ -476,7 +476,7 @@ export const DefaultTheme = {
       color: {
         primary: {
           input:
-            'border-green-300 text-green-900 accent-green-500 focus:ring-2 focus:ring-green-500 focus:border-green- hover:border-green-500 dark:focus:ring-green-500 dark:border-green-600 dark:hover:border-green-400 dark:placeholder-green-400 dark:text-green-100',
+            'border-green-300 text-green-900 accent-green-500 focus:ring-2 focus:ring-green-500 focus:border-green-500 hover:border-green-500 dark:focus:ring-green-500 dark:border-green-600 dark:hover:border-green-400 dark:placeholder-green-400 dark:text-green-100',
         },
         secondary: {
           input:
