@@ -1,15 +1,16 @@
 import { FC } from 'react'
 import { Button } from './Button'
-import { ModeProvider, notify } from './index'
+import { ModeProvider, ModeSwitcher, notify } from './index'
 
 export const NotifyDemo: FC = () => {
   return (
     <ModeProvider>
+      <ModeSwitcher />{' '}
       <Button
         onClick={() =>
           notify({
             type: 'success',
-            message: 'Title',
+            title: 'Title',
             description: 'Description blah blah blah blah blah blah blah blah blah',
           })
         }

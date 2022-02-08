@@ -4,12 +4,12 @@ import { Checkmark, Cross, Warning } from './Icons'
 
 interface NotifyParam {
   type?: 'success' | 'error' | 'warning'
-  message: ReactNode
+  title?: ReactNode
   description?: ReactNode
   duration?: number
 }
 
-export const notify = ({ type, message, description, duration }: NotifyParam) =>
+export const notify = ({ type, title, description, duration }: NotifyParam) =>
   toast.custom(
     (t) => (
       <div
@@ -33,8 +33,8 @@ export const notify = ({ type, message, description, duration }: NotifyParam) =>
             </div>
           )}
           <div className="ml-3 ">
-            <span className="text-sm font-semibold text-gray-900 dark:text-white">{message}</span>
-            <div className="mb-2 text-sm font-normal">{description}</div>
+            <span className="text-sm font-semibold text-gray-900 dark:text-white">{title}</span>
+            <div className="text-sm font-normal">{description}</div>
           </div>
           <button
             type="button"
