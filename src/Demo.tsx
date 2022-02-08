@@ -96,18 +96,6 @@ export const Demo: FC = () => {
           </Grid>
         </Card>
         <Card>
-          <label
-            htmlFor="toggle-example"
-            className="flex relative items-center mb-4 cursor-pointer"
-          >
-            <input type="checkbox" id="toggle-example" className="sr-only" />
-            <div className="w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600"></div>
-            <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-              Toggle me
-            </span>
-          </label>
-        </Card>
-        <Card>
           <Grid cols={4}>
             <Elem className="max-w-sm">
               <Text italic className="mb-10">
@@ -236,69 +224,32 @@ export const Demo: FC = () => {
             </Elem>
             <Elem className="max-w-sm">
               <Text italic className="mb-10">
-                Form with strong password strength checking and extra styling on the inputs.
+                Message form.
               </Text>
               <Form
                 init={{
-                  initialValues: { email: '', password: '', passwordConfirm: '', agree: false },
+                  initialValues: { message: '' },
                   validationSchema: yup.object({
-                    email: yup
-                      .string()
-                      .required('Email is required.')
-                      .email('Must be a valid email.'),
-                    password: yup
-                      .string()
-                      .required('Password is required.')
-                      .min(8, 'Password must be at least 8 characters.')
-                      .matches(
-                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])/,
-                        'Password must contain at least: one uppercase, one lowercase, one number, and one special character'
-                      ),
-                    passwordConfirm: yup
-                      .string()
-                      .required('Confirmed password is required.')
-                      .min(8, 'Confirmed password must be at least 8 characters.')
-                      .matches(
-                        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])/,
-                        'Confirmed password must contain at least: one uppercase, one lowercase, one number, and one special character'
-                      )
-                      .oneOf([yup.ref('password')], 'Passwords do not match'),
+                    message: yup.string().required('Message is empty.'),
                   }),
                   onSubmit: setForm3,
                 }}
               >
-                <Input
-                  name="email"
-                  label="Your email"
-                  placeholder="name@company.com"
-                  pill
-                  color="info"
-                  className="w-full"
+                <label
+                  htmlFor="message"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                >
+                  Your message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Leave a comment..."
                 />
-                <Input
-                  type="password"
-                  name="password"
-                  label="Your desired password"
-                  placeholder="••••••••"
-                  pill
-                  color="info"
-                  className="w-full"
-                />
-                <Input
-                  type="password"
-                  name="passwordConfirm"
-                  label="Confirm your password"
-                  placeholder="••••••••"
-                  pill
-                  color="info"
-                  className="w-full"
-                />
-                <Checkbox name="agree">
-                  <Text>I agree to the</Text>&nbsp;
-                  <A href="#">terms and conditions</A>
-                </Checkbox>
                 <Button type="submit" color="info" pill className="w-full">
-                  Register
+                  Send
                 </Button>
               </Form>
               <Card className="mt-5">
