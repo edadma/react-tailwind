@@ -2,14 +2,17 @@ import { ReactNode } from 'react'
 import toast from 'react-hot-toast'
 import { Checkmark, Cross, Warning } from './Icons'
 
-interface NotifyParam {
+export const notify = ({
+  type,
+  title,
+  description,
+  duration,
+}: {
   type?: 'success' | 'error' | 'warning'
   title?: ReactNode
   description?: ReactNode
   duration?: number
-}
-
-export const notify = ({ type, title, description, duration }: NotifyParam) =>
+}) =>
   toast.custom(
     (t) => (
       <div

@@ -8,7 +8,7 @@ import { NotifyDemo } from './NotifyDemo'
 
 ReactDOM.render(
   <StrictMode>
-    <NotifyDemo />
+    <Demo />
   </StrictMode>,
   document.getElementById('root')
 )
