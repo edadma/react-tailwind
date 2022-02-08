@@ -13,7 +13,7 @@ export const notify = ({ type, title, description, duration }: NotifyParam) =>
   toast.custom(
     (t) => (
       <div
-        className="items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white dark:text-gray-400 dark:bg-gray-800"
+        className="items-center w-full max-w-xs p-4 mb-4 text-gray-600 bg-gray-300 dark:text-gray-400 dark:bg-gray-800"
         role="alert"
       >
         <div className="flex">
