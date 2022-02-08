@@ -508,7 +508,7 @@ export const DefaultTheme = {
       style: {
         div1: 'flex items-start',
         div2: 'flex items-center h-5',
-        input: 'w-4 h-4 bg-gray-500 rounded border focus:ring-3',
+        input: 'w-4 h-4 rounded border focus:ring-3',
         div3: 'ml-3 text-sm',
         label: 'font-medium text-gray-900 dark:text-gray-300',
       },
@@ -518,31 +518,31 @@ export const DefaultTheme = {
       color: {
         primary: {
           checkbox:
-            'border-green-300 accent-green-500 focus:ring-green-300 dark:accent-green-500 dark:bg-green-700 dark:border-green-600 dark:focus:accent-green-600 dark:ring-offset-green-800',
+            'bg-gray-500 border-green-300 accent-green-500 focus:ring-green-300 dark:accent-green-500 dark:bg-gray-700 dark:border-green-600 dark:focus:accent-green-600 dark:ring-offset-green-800',
         },
         secondary: {
           checkbox:
-            'border-blue-300 accent-blue-500 focus:ring-blue-300 dark:accent-blue-500 dark:bg-blue-700 dark:border-blue-600 dark:focus:accent-blue-600 dark:ring-offset-blue-800',
+            'bg-gray-500 border-blue-300 accent-blue-500 focus:ring-blue-300 dark:accent-blue-500 dark:bg-gray-700 dark:border-blue-600 dark:focus:accent-blue-600 dark:ring-offset-blue-800',
         },
         regular: {
           checkbox:
-            'border-gray-300 accent-gray-500 focus:ring-gray-300 dark:accent-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:accent-gray-600 dark:ring-offset-gray-800',
+            'bg-gray-500 border-gray-300 accent-gray-500 focus:ring-gray-300 dark:accent-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:focus:accent-gray-600 dark:ring-offset-gray-800',
         },
         info: {
           checkbox:
-            'border-blue-300 accent-blue-500 focus:ring-blue-300 dark:accent-blue-500 dark:bg-blue-700 dark:border-blue-600 dark:focus:accent-blue-600 dark:ring-offset-blue-800',
+            'bg-gray-500 border-blue-300 accent-blue-500 focus:ring-blue-300 dark:accent-blue-500 dark:bg-gray-700 dark:border-blue-600 dark:focus:accent-blue-600 dark:ring-offset-blue-800',
         },
         success: {
           checkbox:
-            'border-green-300 accent-green-500 focus:ring-green-300 dark:accent-green-500 dark:bg-green-700 dark:border-green-600 dark:focus:accent-green-600 dark:ring-offset-green-800',
+            'bg-gray-500 border-green-300 accent-green-500 focus:ring-green-300 dark:accent-green-500 dark:bg-gray-700 dark:border-green-600 dark:focus:accent-green-600 dark:ring-offset-green-800',
         },
         warning: {
           checkbox:
-            'border-yellow-300 accent-yellow-500 focus:ring-yellow-300 dark:accent-yellow-500 dark:bg-yellow-700 dark:border-yellow-600 dark:focus:accent-yellow-600 dark:ring-offset-yellow-800',
+            'bg-gray-500 order-yellow-300 accent-yellow-500 focus:ring-yellow-300 dark:accent-yellow-500 dark:bg-gray-700 dark:border-yellow-600 dark:focus:accent-yellow-600 dark:ring-offset-yellow-800',
         },
         error: {
           checkbox:
-            'border-red-300 accent-red-500 focus:ring-red-300 dark:accent-red-500 dark:bg-red-700 dark:border-red-600 dark:focus:accent-red-600 dark:ring-offset-red-800',
+            'bg-gray-500 border-red-300 accent-red-500 focus:ring-red-300 dark:accent-red-500 dark:bg-gray-700 dark:border-red-600 dark:focus:accent-red-600 dark:ring-offset-red-800',
         },
       },
     },

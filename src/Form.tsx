@@ -106,6 +106,85 @@ export const Input: FC<InputProps> = (props) => {
   )
 }
 
+interface TextareaProps
+  extends React.DetailedHTMLProps<
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  > {
+  rounded?: boolean
+  pill?: boolean
+  border?: boolean
+  color?: Color
+  inputSize?: Size
+  weight?: Weight
+  label?: string
+  renderError?: (error: string) => ReactNode
+  placeholder?: string
+}
+
+export const Textarea: FC<TextareaProps> = (props) => {
+  const {
+    children,
+    className,
+    rounded,
+    pill,
+    border,
+    color,
+    inputSize,
+    weight,
+    label,
+    renderError,
+    ...other
+  } = props
+  const { theme } = useTheme()
+  const formik = useForm()
+  const id = _.uniqueId('textarea-')
+
+  return (
+    <div>
+      {label && (
+        <label
+          htmlFor={id}
+          className="block mb-2 text-sm font-medium text-gray-800 dark:text-gray-300"
+        >
+          {label}
+        </label>
+      )}
+      <textarea
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values[other.name!]}
+        id={id}
+        className={`${colorClass(
+          theme,
+          'input',
+          formik.touched[other.name!] && formik.errors[other.name!] ? 'error' : color,
+          'input'
+        )} ${optionProps(theme, props, 'input', 'rounded', 'pill', 'border')} ${sizeClass(
+          theme,
+          'input',
+          inputSize,
+          'text'
+        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style} ${
+          className || ''
+        }`}
+        {...other}
+      >
+        {children}
+      </textarea>
+      {formik.touched[other.name!] &&
+        formik.errors[other.name!] &&
+        (renderError ? (
+          <div className="transition-transform">{renderError(formik.errors[other.name!])}</div>
+        ) : (
+          <div>
+            <Text color="error">{formik.errors[other.name!]}</Text>
+          </div>
+        ))}
+    </div>
+  )
+}
+
 interface CheckboxProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   name: string
