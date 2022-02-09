@@ -5,10 +5,11 @@ import { Demo } from './Demo'
 import { EmailDemo } from './EmailDemo'
 import { LayoutDemo } from './LayoutDemo'
 import { NotifyDemo } from './NotifyDemo'
+import { FixedDemo } from './FixedDemo'
 
 ReactDOM.render(
   <StrictMode>
-    <Demo />
+    <FixedDemo />
   </StrictMode>,
   document.getElementById('root')
 )
@@ -39,3 +40,4 @@ export { Link } from './Link'
 export { NavLink, NavLinkItem } from './NavLink'
 export { Tag } from './Tag'
 export { notify } from './notify'
+export { Fixed } from './Fixed'
