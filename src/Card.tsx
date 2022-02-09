@@ -1,6 +1,6 @@
 import React from 'react'
-import { colorClass, optionProps, padClass, useTheme } from './ThemeProvider'
-import { Color, Pad } from './types'
+import { optionProps, padClass, useTheme } from './ThemeProvider'
+import { Pad } from './types'
 
 interface CardProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -8,13 +8,12 @@ interface CardProps
   border?: boolean
   shadow?: boolean
   fit?: boolean
-  bg?: Color
   pad?: Pad
 }
 
 export const Card: React.FC<CardProps> = (props) => {
-  const { children, className, rounded, border, shadow, fit, bg, pad, ...other } = props
-  const { theme } = useTheme()
+  const { children, className, rounded, border, shadow, fit, pad, ...other } = props
+  const { theme, background } = useTheme()
 
   return (
     <div
@@ -26,9 +25,9 @@ export const Card: React.FC<CardProps> = (props) => {
         'border',
         'shadow',
         'fit'
-      )} ${colorClass(theme, 'card', bg, 'div')} ${padClass(theme, 'card', pad)} ${
-        theme.component.card.style
-      } ${className || ''}`}
+      )} ${background} ${padClass(theme, 'card', pad)} ${theme.component.card.style} ${
+        className || ''
+      }`}
       {...other}
     >
       {children}

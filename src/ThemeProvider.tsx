@@ -40,7 +40,11 @@ export interface SetTheme {
 
 export const ThemeContext = React.createContext(SET_THEME)
 
-export const useTheme = () => useContext(ThemeContext)
+export const useTheme = () => {
+  const { theme, setTheme } = useContext(ThemeContext)
+
+  return { theme, setTheme, background: `${theme.background.light} ${theme.background.dark}` }
+}
 
 export const ThemeProvider: React.FC<{ value?: any }> = ({ children, value }) => {
   const [theme, setTheme] = useState(value || DefaultTheme)

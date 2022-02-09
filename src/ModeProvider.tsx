@@ -25,7 +25,6 @@ export const useMode = () => useContext(ModeContext)
 export const ModeProvider: React.FC<{ value?: ModeType }> = ({ children, value }) => {
   const [mode, setMode] = useState(value || DEFAULT_MODE) // dark mode by default
   const { theme } = useTheme()
-
   const html = document.querySelector('html')
 
   if (mode === 'dark') html?.classList.add('dark')
@@ -33,7 +32,8 @@ export const ModeProvider: React.FC<{ value?: ModeType }> = ({ children, value }
 
   const body = document.querySelector('body')
 
-  body?.classList.add(theme.dark)
+  body?.classList.add(theme.background.light)
+  body?.classList.add(theme.background.dark)
 
   return (
     <ModeContext.Provider value={{ mode, setMode }}>

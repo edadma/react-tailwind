@@ -1,9 +1,11 @@
 import { FC, useState } from 'react'
 import { Button } from './Button'
 import { Card, Fixed, ModeProvider, ModeSwitcher, Text } from './index'
+import { useTheme } from './ThemeProvider'
 
 export const FixedDemo: FC = () => {
   const [visible, setVisible] = useState(false)
+  const { theme } = useTheme()
 
   return (
     <ModeProvider>

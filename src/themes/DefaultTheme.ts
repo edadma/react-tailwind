@@ -1,7 +1,7 @@
 export const DefaultTheme = {
   name: 'Default Theme',
   description: 'Basic theme with support for both light and dark modes',
-  dark: 'dark:bg-neutral-800',
+  background: { dark: 'dark:bg-neutral-800', light: 'bg-neutral-200' },
   size: {
     xs: { text: 'text-xs', height: 'h-4' },
     sm: { text: 'text-sm', height: 'h-4' },
@@ -208,7 +208,7 @@ export const DefaultTheme = {
       },
       options: {
         rounded: 'rounded-lg',
-        border: 'border border-gray-200 dark:border-gray-700',
+        border: 'border border-gray-300 dark:border-gray-700',
         shadow: 'shadow-md',
         fit: 'max-w-fit',
       },
