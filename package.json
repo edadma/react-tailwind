@@ -1,6 +1,6 @@
 {
   "name": "@edadma/react-tailwind",
-  "version": "0.1.0-pre.23",
+  "version": "0.1.0-pre.25",
   "description": "React.js components library styled using with Tailwind CSS",
   "types": "dist/index.d.ts",
   "files": [
@@ -55,6 +55,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@types/draft-js": "^0.11.9",
     "@types/jest": "^27.4.0",
     "@types/lodash": "^4.14.178",
     "@types/node": "^16.11.19",
