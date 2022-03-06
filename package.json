@@ -1,7 +1,7 @@
 {
   "name": "@edadma/react-tailwind",
-  "version": "0.1.0-pre.25",
-  "description": "React.js components library styled using with Tailwind CSS",
+  "version": "0.1.0-pre.30",
+  "description": "React.js UI library with support for Tailwind CSS",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepublish": "tsc"
+    "prepublishOnly": "tsc"
   },
   "eslintConfig": {
     "extends": [
