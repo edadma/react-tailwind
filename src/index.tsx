@@ -7,25 +7,12 @@
 // import { NotifyDemo } from './NotifyDemo'
 // import { FixedDemo } from './FixedDemo'
 // import { DraftJsDemo } from './DraftJsDemo'
-// import { ThemeProvider } from './ThemeProvider'
-// import { ModeProvider } from './ModeProvider'
-// import { Button } from './Button'
-// import { ModeSwitcher } from './ModeSwitcher'
-// import { Card } from './Card'
+// import TestApp from './TestApp'
 // import { FaPlay } from 'react-icons/fa'
 //
 // ReactDOM.render(
 //   <StrictMode>
-//     <ThemeProvider>
-//       <ModeProvider>
-//         <Card border={false}>
-//           <ModeSwitcher />{' '}
-//           <Button>
-//             <FaPlay className="inline" /> Run
-//           </Button>
-//         </Card>
-//       </ModeProvider>
-//     </ThemeProvider>
+//     <NotifyDemo />
 //   </StrictMode>,
 //   document.getElementById('root')
 // )
@@ -42,7 +29,7 @@ export { ThemeProvider } from './ThemeProvider'
 export { Badge } from './Badge'
 export { Spinner } from './Spinner'
 export { Tabs, Tab } from './Tabs'
-export { Form, Input, Textarea, Checkbox } from './Form'
+export { Form, Input, TextArea, Checkbox } from './Form'
 export { Breadcrumbs, Breadcrumb, BreadcrumbLink } from './Breadcrumbs'
 export { Space } from './Space'
 export { A } from './A'

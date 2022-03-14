@@ -1,5 +1,12 @@
 import React from 'react'
-import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
+import {
+  colorClass,
+  familyClass,
+  optionProps,
+  sizeClass,
+  useTheme,
+  weightClass,
+} from './ThemeProvider'
 import { Color, Size, Weight } from './types'
 
 interface AProps
@@ -15,7 +22,7 @@ interface AProps
 }
 
 export const A: React.FC<AProps> = (props) => {
-  const { children, className, href, color, size, weight, italic, ...other } = props
+  const { children, className, href, color, size, weight, italic, family, ...other } = props
   const { theme } = useTheme()
 
   return (
@@ -26,9 +33,11 @@ export const A: React.FC<AProps> = (props) => {
         'a',
         size,
         'text'
-      )} ${optionProps(theme, props, 'a', 'italic')} ${weightClass(theme, 'a', weight)} ${
-        theme.component.a.style
-      } ${className || ''}`}
+      )} ${optionProps(theme, props, 'a', 'italic')} ${weightClass(
+        theme,
+        'a',
+        weight
+      )} ${familyClass(theme, 'a', family)} ${theme.component.a.style} ${className || ''}`}
       {...other}
     >
       {children}

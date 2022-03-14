@@ -29,7 +29,7 @@ Edit `./src/index.css`, the only 3 lines of CSS you will ever need:
 @tailwind utilities;
 ```
 
-Edit `./src/App.tsx` and start using `react-tailwind` to build your app:
+Edit `./src/TestApp.tsx` and start using `react-tailwind` to build your app:
 
 ```typescript jsx
 import { FC } from 'react'
@@ -42,7 +42,7 @@ import {
   Text,
 } from '@edadma/react-tailwind'
 
-const App: FC = () => (
+const TestApp: FC = () => (
   <ThemeProvider>
     <ModeProvider>
       <Card border={false}>
@@ -54,5 +54,5 @@ const App: FC = () => (
   </ThemeProvider>
 )
 
-export default App
+export default TestApp
 ```

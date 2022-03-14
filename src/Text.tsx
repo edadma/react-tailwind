@@ -2,6 +2,7 @@ import React from 'react'
 import {
   alignClass,
   colorClass,
+  familyClass,
   optionProps,
   sizeClass,
   useTheme,
@@ -34,6 +35,7 @@ export const Text: React.FC<TextProps> = (props) => {
     overline,
     strikethrough,
     italic,
+    family,
     ...other
   } = props
   const { theme } = useTheme()
@@ -53,7 +55,9 @@ export const Text: React.FC<TextProps> = (props) => {
         'overline',
         'strikethrough',
         'italic'
-      )} ${weightClass(theme, 'text', weight)} ${theme.component.text.style} ${className || ''}`}
+      )} ${weightClass(theme, 'text', weight)} ${familyClass(theme, 'text', family)} ${
+        theme.component.text.style
+      } ${className || ''}`}
       {...other}
     >
       {children}

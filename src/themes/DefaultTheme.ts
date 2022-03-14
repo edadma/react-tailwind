@@ -269,6 +269,7 @@ export const DefaultTheme = {
         color: 'regular',
         align: 'left',
         weight: 'medium',
+        family: 'sans',
       },
     },
     grid: {
@@ -456,10 +457,13 @@ export const DefaultTheme = {
       },
     },
     form: {
-      style: 'space-y-6',
+      style: 'space-y-2',
     },
     input: {
-      style: 'bg-gray-50 p-2.5 dark:bg-gray-700 transition',
+      style: {
+        input: 'bg-gray-50 p-2.5 dark:bg-gray-700 transition',
+        label: 'block mb-2 text-sm font-medium text-gray-800 dark:text-gray-300',
+      },
       options: {
         rounded: 'rounded-lg',
         pill: 'rounded-full',
@@ -566,6 +570,7 @@ export const DefaultTheme = {
         color: 'info',
         align: 'left',
         weight: 'medium',
+        family: 'sans',
       },
     },
     table: {

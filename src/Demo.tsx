@@ -24,7 +24,7 @@ import {
   Between,
   Table,
   Pagination,
-  Textarea,
+  TextArea,
 } from './index'
 import { ThemeProvider } from './ThemeProvider'
 import { DefaultTheme } from './themes/DefaultTheme'
@@ -236,7 +236,7 @@ export const Demo: FC = () => {
                   onSubmit: setForm3,
                 }}
               >
-                <Textarea
+                <TextArea
                   name="message"
                   rows={4}
                   label="Your message"

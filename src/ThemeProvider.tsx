@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
-import { Align, Color, Pad, Size, Weight } from './types'
+import { Align, Color, Family, Pad, Size, Weight } from './types'
 import { DefaultTheme } from './themes/DefaultTheme'
+import { Toaster } from 'react-hot-toast'
 
 export const optionProps = (theme: any, props: any, component: string, ...options: string[]) => {
   const extensibleProps: any = {}
@@ -49,7 +50,12 @@ export const useTheme = () => {
 export const ThemeProvider: React.FC<{ value?: any }> = ({ children, value }) => {
   const [theme, setTheme] = useState(value || DefaultTheme)
 
-  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <Toaster position="top-right" reverseOrder={true} />
+      {children}
+    </ThemeContext.Provider>
+  )
 }
 
 export const colorClass = (
@@ -76,6 +82,16 @@ const alignClasses: any = {
 
 export const alignClass = (theme: any, component: string, align: Align | undefined) =>
   alignClasses[align || theme.component[component].default.align]
+
+const familyClasses: any = {
+  mono: 'font-mono',
+  sans: 'font-sans',
+  serif: 'font-serif',
+  justify: 'text-justify',
+}
+
+export const familyClass = (theme: any, component: string, family: Family | undefined) =>
+  familyClasses[family || theme.component[component].default.align]
 
 export const weightClass = (theme: any, component: string, weight: Weight | undefined) =>
   theme.weight[weight || theme.component[component].default.weight]
