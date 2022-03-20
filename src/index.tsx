@@ -12,7 +12,7 @@
 //
 // ReactDOM.render(
 //   <StrictMode>
-//     <NotifyDemo />
+//     <TestApp />
 //   </StrictMode>,
 //   document.getElementById('root')
 // )
@@ -44,3 +44,4 @@ export { NavLink, NavLinkItem } from './NavLink'
 export { Tag } from './Tag'
 export { notify } from './notify'
 export { Fixed } from './Fixed'
+export { Select } from './Select'

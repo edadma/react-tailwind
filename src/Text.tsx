@@ -8,7 +8,7 @@ import {
   useTheme,
   weightClass,
 } from './ThemeProvider'
-import { Align, Color, Size, Weight } from './types'
+import { Align, Color, Family, Size, Weight } from './types'
 
 interface TextProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
@@ -16,7 +16,7 @@ interface TextProps
   overline?: boolean
   strikethrough?: boolean
   italic?: boolean
-  family?: 'sans' | 'serif' | 'mono'
+  family?: Family
   color?: Color
   size?: Size
   weight?: Weight

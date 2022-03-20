@@ -87,7 +87,6 @@ const familyClasses: any = {
   mono: 'font-mono',
   sans: 'font-sans',
   serif: 'font-serif',
-  justify: 'text-justify',
 }
 
 export const familyClass = (theme: any, component: string, family: Family | undefined) =>
