@@ -42,7 +42,7 @@ import {
   Text,
 } from '@edadma/react-tailwind'
 
-const TestApp: FC = () => (
+const App: FC = () => (
   <ThemeProvider>
     <ModeProvider>
       <Card border={false}>
@@ -54,5 +54,5 @@ const TestApp: FC = () => (
   </ThemeProvider>
 )
 
-export default TestApp
+export default App
 ```
