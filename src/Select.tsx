@@ -4,9 +4,12 @@ import { Color, Size, Weight } from './types'
 import { Text } from './Text'
 
 interface SelectProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
+  extends React.DetailedHTMLProps<
+    React.SelectHTMLAttributes<HTMLSelectElement>,
+    HTMLSelectElement
+  > {
   color?: Color
-  size?: Size
+  textSize?: Size
   weight?: Weight
   rounded?: boolean
   pill?: boolean
@@ -16,13 +19,47 @@ interface SelectProps
   options: { label: string; value: any }[]
 }
 
-export const Select: React.FC<SelectProps> = ({ label, value, options, onChange }) => {
+export const Select: React.FC<SelectProps> = (props) => {
+  const {
+    className,
+    color,
+    rounded,
+    pill,
+    textSize,
+    weight,
+    label,
+    value,
+    options,
+    onChange,
+    ...other
+  } = props
+
   const { theme } = useTheme()
 
   return (
     <label>
       {typeof label === 'string' ? <Text>{label}</Text> : label}{' '}
-      <select className="text-amber-300 bg-teal-500 rounded-full" value={value} onChange={onChange}>
+      <select
+        className={`${colorClass(theme, 'select', color)} ${sizeClass(
+          theme,
+          'select',
+          textSize,
+          'text'
+        )} ${colorClass(theme, 'select', color, 'focus')} ${optionProps(
+          theme,
+          props,
+          'select',
+          'rounded',
+          'pill',
+          'icon',
+          'transition'
+        )} ${weightClass(theme, 'select', weight)} ${theme.component.select.style} ${
+          className || ''
+        }`}
+        {...other}
+        value={value}
+        onChange={onChange}
+      >
         {options.map((option) => (
           <option value={option.value}>{option.label}</option>
         ))}
