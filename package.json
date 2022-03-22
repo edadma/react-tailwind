@@ -1,6 +1,6 @@
 {
   "name": "@edadma/react-tailwind",
-  "version": "0.1.0-pre.33",
+  "version": "0.1.0-pre.34",
   "description": "React.js UI library with support for Tailwind CSS",
   "types": "dist/index.d.ts",
   "files": [

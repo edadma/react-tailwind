@@ -9,6 +9,7 @@ interface SelectProps
     HTMLSelectElement
   > {
   color?: Color
+  outlined?: boolean
   textSize?: Size
   weight?: Weight
   rounded?: boolean
@@ -16,6 +17,7 @@ interface SelectProps
   border?: boolean
   label?: ReactNode
   value: any
+  transition?: boolean
   options: { label: string; value: any }[]
 }
 
@@ -23,10 +25,12 @@ export const Select: React.FC<SelectProps> = (props) => {
   const {
     className,
     color,
+    outlined,
     rounded,
     pill,
     textSize,
     weight,
+    transition,
     label,
     value,
     options,
@@ -40,18 +44,17 @@ export const Select: React.FC<SelectProps> = (props) => {
     <label>
       {typeof label === 'string' ? <Text>{label}</Text> : label}{' '}
       <select
-        className={`${colorClass(theme, 'select', color)} ${sizeClass(
+        className={`${colorClass(
           theme,
           'select',
-          textSize,
-          'text'
-        )} ${colorClass(theme, 'select', color, 'focus')} ${optionProps(
+          color,
+          outlined ? 'outlined' : 'filled'
+        )} ${sizeClass(theme, 'select', textSize, 'text')} ${optionProps(
           theme,
           props,
           'select',
           'rounded',
           'pill',
-          'icon',
           'transition'
         )} ${weightClass(theme, 'select', weight)} ${theme.component.select.style} ${
           className || ''
