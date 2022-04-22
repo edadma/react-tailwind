@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { FC, ReactNode, useContext } from 'react'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 import { Color, Size, Weight } from './types'
 import { Text } from './Text'
@@ -21,7 +21,9 @@ interface SelectProps
   options: { label: string; value: any }[]
 }
 
-export const Select: React.FC<SelectProps> = (props) => {
+const SelectContext = React.createContext<any>(null)
+
+export const Select: FC<SelectProps> = (props) => {
   const {
     className,
     color,
@@ -69,4 +71,18 @@ export const Select: React.FC<SelectProps> = (props) => {
       </select>
     </label>
   )
+}
+
+interface OptionProps {
+  className?: string
+  disabled?: boolean
+  value: ReactNode
+}
+
+export const Option: FC<OptionProps> = (props) => {
+  const { className, disabled, value, ...other } = props
+  const select = useContext(SelectContext)
+  const { theme } = useTheme()
+
+  return null
 }

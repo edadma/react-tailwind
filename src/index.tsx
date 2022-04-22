@@ -1,21 +1,21 @@
-// import ReactDOM from 'react-dom'
-// import './index.css'
-// import { StrictMode } from 'react'
-// import { Demo } from './Demo'
-// import { EmailDemo } from './EmailDemo'
-// import { LayoutDemo } from './LayoutDemo'
-// import { NotifyDemo } from './NotifyDemo'
-// import { FixedDemo } from './FixedDemo'
-// import { DraftJsDemo } from './DraftJsDemo'
-// import TestApp from './TestApp'
-// import { FaPlay } from 'react-icons/fa'
-//
-// ReactDOM.render(
-//   <StrictMode>
-//     <TestApp />
-//   </StrictMode>,
-//   document.getElementById('root')
-// )
+import ReactDOM from 'react-dom'
+import './index.css'
+import { StrictMode } from 'react'
+import { Demo } from './Demo'
+import { EmailDemo } from './EmailDemo'
+import { LayoutDemo } from './LayoutDemo'
+import { NotifyDemo } from './NotifyDemo'
+import { FixedDemo } from './FixedDemo'
+import { DraftJsDemo } from './DraftJsDemo'
+import TestApp from './TestApp'
+import { FaPlay } from 'react-icons/fa'
+
+ReactDOM.render(
+  <StrictMode>
+    <TestApp />
+  </StrictMode>,
+  document.getElementById('root')
+)
 
 export { Button } from './Button'
 export { Progress } from './Progress'
