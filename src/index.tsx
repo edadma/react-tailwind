@@ -6,11 +6,10 @@ import { EmailDemo } from './EmailDemo'
 import { LayoutDemo } from './LayoutDemo'
 import { NotifyDemo } from './NotifyDemo'
 import { FixedDemo } from './FixedDemo'
-import { DraftJsDemo } from './DraftJsDemo'
+// import { DraftJsDemo } from './DraftJsDemo'
 
 ReactDOM.render(
   <StrictMode>
-    <DraftJsDemo />
   </StrictMode>,
   document.getElementById('root')
 )

@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.4.0",
-    "draft-js": "^0.11.7",
     "formik": "^2.2.9",
     "i18next": "^21.6.11",
     "lodash": "^4.17.21",
@@ -52,10 +51,6 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/draft-js": "^0.11.9",
     "@types/jest": "^27.4.0",
     "@types/lodash": "^4.14.178",
     "@types/node": "^16.11.19",
