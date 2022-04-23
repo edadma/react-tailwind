@@ -2,12 +2,13 @@ import React from 'react'
 import {
   alignClass,
   colorClass,
+  familyClass,
   optionProps,
   sizeClass,
   useTheme,
   weightClass,
 } from './ThemeProvider'
-import { Align, Color, Size, Weight } from './types'
+import { Align, Color, Family, Size, Weight } from './types'
 
 interface TextProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
@@ -15,7 +16,7 @@ interface TextProps
   overline?: boolean
   strikethrough?: boolean
   italic?: boolean
-  family?: 'sans' | 'serif' | 'mono'
+  family?: Family
   color?: Color
   size?: Size
   weight?: Weight
@@ -34,6 +35,7 @@ export const Text: React.FC<TextProps> = (props) => {
     overline,
     strikethrough,
     italic,
+    family,
     ...other
   } = props
   const { theme } = useTheme()
@@ -53,7 +55,9 @@ export const Text: React.FC<TextProps> = (props) => {
         'overline',
         'strikethrough',
         'italic'
-      )} ${weightClass(theme, 'text', weight)} ${theme.component.text.style} ${className || ''}`}
+      )} ${weightClass(theme, 'text', weight)} ${familyClass(theme, 'text', family)} ${
+        theme.component.text.style
+      } ${className || ''}`}
       {...other}
     >
       {children}

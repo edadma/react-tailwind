@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react'
 import { Button } from './Button'
-import { Card, Fixed, Form, ModeProvider, ModeSwitcher, Table, Text, Textarea } from './index'
+import { Card, Fixed, Form, ModeProvider, ModeSwitcher, Table, Text, TextArea } from './index'
 import { useTheme } from './ThemeProvider'
 import * as yup from 'yup'
 import { TableColumn } from './Table'
@@ -213,7 +213,7 @@ export const FixedDemo: FC = () => {
               onSubmit: handleForm,
             }}
           >
-            <Textarea
+            <TextArea
               name="message"
               rows={4}
               label="Your message"

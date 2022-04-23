@@ -60,14 +60,15 @@ export const Input: FC<InputProps> = (props) => {
   const { theme } = useTheme()
   const formik = useForm()
   const id = _.uniqueId('input-')
+  const error = formik.touched[other.name!] && formik.errors[other.name!]
+  const fadein = `transition-opacity duration-300 opacity-100 ease-in ${
+    !error ? 'invisible opacity-0' : ''
+  }`
 
   return (
     <div>
       {label && (
-        <label
-          htmlFor={id}
-          className="block mb-2 text-sm font-medium text-gray-800 dark:text-gray-300"
-        >
+        <label htmlFor={id} className={theme.component.input.style.label}>
           {label}
         </label>
       )}
@@ -86,22 +87,22 @@ export const Input: FC<InputProps> = (props) => {
           'input',
           inputSize,
           'text'
-        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style} ${
+        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style.input} ${
           className || ''
         }`}
         {...other}
       >
         {children}
       </input>
-      {formik.touched[other.name!] &&
-        formik.errors[other.name!] &&
-        (renderError ? (
-          <div className="transition-transform">{renderError(formik.errors[other.name!])}</div>
-        ) : (
-          <div>
-            <Text color="error">{formik.errors[other.name!]}</Text>
-          </div>
-        ))}
+      {renderError ? (
+        <div className={fadein}>{renderError(formik.errors[other.name!])}</div>
+      ) : (
+        <div className={fadein}>
+          <Text hidden={!formik.touched[other.name!] || !formik.errors[other.name!]} color="error">
+            {formik.errors[other.name!]}
+          </Text>
+        </div>
+      )}
     </div>
   )
 }
@@ -122,7 +123,7 @@ interface TextareaProps
   placeholder?: string
 }
 
-export const Textarea: FC<TextareaProps> = (props) => {
+export const TextArea: FC<TextareaProps> = (props) => {
   const {
     children,
     className,
@@ -139,14 +140,15 @@ export const Textarea: FC<TextareaProps> = (props) => {
   const { theme } = useTheme()
   const formik = useForm()
   const id = _.uniqueId('textarea-')
+  const error = formik.touched[other.name!] && formik.errors[other.name!]
+  const fadein = `transition-opacity duration-300 opacity-100 ease-in ${
+    !error ? 'invisible opacity-0' : ''
+  }`
 
   return (
     <div>
       {label && (
-        <label
-          htmlFor={id}
-          className="block mb-2 text-sm font-medium text-gray-800 dark:text-gray-300"
-        >
+        <label htmlFor={id} className={theme.component.input.style.label}>
           {label}
         </label>
       )}
@@ -165,22 +167,22 @@ export const Textarea: FC<TextareaProps> = (props) => {
           'input',
           inputSize,
           'text'
-        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style} ${
+        )} ${weightClass(theme, 'input', weight)} ${theme.component.input.style.input} ${
           className || ''
         }`}
         {...other}
       >
         {children}
       </textarea>
-      {formik.touched[other.name!] &&
-        formik.errors[other.name!] &&
-        (renderError ? (
-          <div className="transition-transform">{renderError(formik.errors[other.name!])}</div>
-        ) : (
-          <div>
-            <Text color="error">{formik.errors[other.name!]}</Text>
-          </div>
-        ))}
+      {renderError ? (
+        <div className={fadein}>{renderError(formik.errors[other.name!])}</div>
+      ) : (
+        <div className={fadein}>
+          <Text hidden={!formik.touched[other.name!] || !formik.errors[other.name!]} color="error">
+            {formik.errors[other.name!]}
+          </Text>
+        </div>
+      )}
     </div>
   )
 }

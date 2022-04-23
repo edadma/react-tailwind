@@ -269,6 +269,7 @@ export const DefaultTheme = {
         color: 'regular',
         align: 'left',
         weight: 'medium',
+        family: 'sans',
       },
     },
     grid: {
@@ -456,10 +457,13 @@ export const DefaultTheme = {
       },
     },
     form: {
-      style: 'space-y-6',
+      style: 'space-y-2',
     },
     input: {
-      style: 'bg-gray-50 p-2.5 dark:bg-gray-700 transition',
+      style: {
+        input: 'bg-gray-50 p-2.5 dark:bg-gray-700 transition',
+        label: 'block mb-2 text-sm font-medium text-gray-800 dark:text-gray-300',
+      },
       options: {
         rounded: 'rounded-lg',
         pill: 'rounded-full',
@@ -566,6 +570,7 @@ export const DefaultTheme = {
         color: 'info',
         align: 'left',
         weight: 'medium',
+        family: 'sans',
       },
     },
     table: {
@@ -667,6 +672,67 @@ export const DefaultTheme = {
         navlink: 'block py-2.5 px-4 transition duration-200 hover:bg-blue-700 hover:text-white',
         active: 'text-white dark:text-white bg-blue-700 dark:bg-blue-700',
         inactive: 'text-gray-700 dark:text-gray-400',
+      },
+    },
+    select: {
+      style: 'inline-block focus:ring-2 text-center shadow-md hover:shadow-lg',
+      color: {
+        primary: {
+          outlined: 'text-green-600 hover:bg-green-600 border border-green-500 hover:text-green-50',
+          filled:
+            'text-green-50 bg-green-600 dark:bg-green-500 hover:bg-green-800 dark:hover:bg-green-700',
+          focus: 'focus:ring-green-300 dark:focus:ring-green-800',
+        },
+        secondary: {
+          outlined: 'text-blue-600 hover:bg-blue-600 border border-blue-500 hover:text-blue-50',
+          filled:
+            'text-blue-50 bg-blue-600 dark:bg-blue-500 hover:bg-blue-800 dark:hover:bg-blue-700',
+          focus: 'focus:ring-blue-300 dark:focus:ring-blue-800',
+        },
+        regular: {
+          outlined: 'text-gray-600 hover:bg-gray-600 border border-gray-500 hover:text-gray-50',
+          filled:
+            'text-gray-50 bg-gray-600 dark:bg-gray-500 hover:bg-gray-800 dark:hover:bg-gray-700',
+          focus: 'focus:ring-gray-300 dark:focus:ring-gray-800',
+        },
+        info: {
+          outlined: 'text-blue-600 hover:bg-blue-600 border border-blue-500 ',
+          filled:
+            'text-blue-50 bg-blue-600 dark:bg-blue-500 hover:bg-blue-800 dark:hover:bg-blue-700',
+          focus: 'focus:ring-blue-300 dark:focus:ring-blue-800',
+        },
+        success: {
+          outlined: 'text-green-600 hover:bg-green-600 border border-green-500 hover:text-green-50',
+          filled:
+            'text-green-50 bg-green-600 dark:bg-green-500 hover:bg-green-800 dark:hover:bg-green-700',
+          focus: 'focus:ring-green-300 dark:focus:ring-green-800',
+        },
+        warning: {
+          outlined:
+            'text-yellow-600 hover:bg-yellow-600 border border-yellow-500 hover:text-yellow-50',
+          filled:
+            'text-yellow-50 bg-yellow-600 dark:bg-yellow-500 hover:bg-yellow-800 dark:hover:bg-yellow-700',
+          focus: 'focus:ring-yellow-300 dark:focus:ring-yellow-800',
+        },
+        error: {
+          outlined: 'text-red-600 hover:bg-red-600 border border-red-500 hover:text-red-50',
+          filled: 'text-red-50 bg-red-600 dark:bg-red-500 hover:bg-red-800 dark:hover:bg-red-700',
+          focus: 'focus:ring-red-300 dark:focus:ring-red-800',
+        },
+      },
+      options: {
+        rounded: 'rounded-lg',
+        pill: 'rounded-full',
+        transition: 'transition ease-in-out duration-300',
+      },
+      exclusions: { pill: 'rounded' },
+      default: {
+        rounded: true,
+        pill: false,
+        transition: true,
+        weight: 'bold',
+        size: 'md',
+        color: 'regular',
       },
     },
   },

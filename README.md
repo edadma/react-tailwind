@@ -21,7 +21,7 @@ module.exports = {
 }
 ```
 
-Create `./src/index.css`, the only 3 lines of CSS you will need: 
+Edit `./src/index.css`, the only 3 lines of CSS you will ever need: 
 
 ```css
 @tailwind base;
@@ -29,7 +29,7 @@ Create `./src/index.css`, the only 3 lines of CSS you will need:
 @tailwind utilities;
 ```
 
-Start using `react-tailwind` to build your app:
+Edit `./src/TestApp.tsx` and start using `react-tailwind` to build your app:
 
 ```typescript jsx
 import { FC } from 'react'

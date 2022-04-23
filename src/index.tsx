@@ -7,9 +7,12 @@ import { LayoutDemo } from './LayoutDemo'
 import { NotifyDemo } from './NotifyDemo'
 import { FixedDemo } from './FixedDemo'
 // import { DraftJsDemo } from './DraftJsDemo'
+import TestApp from './TestApp'
+import { FaPlay } from 'react-icons/fa'
 
 ReactDOM.render(
   <StrictMode>
+    <TestApp />
   </StrictMode>,
   document.getElementById('root')
 )
@@ -26,7 +29,7 @@ export { ThemeProvider } from './ThemeProvider'
 export { Badge } from './Badge'
 export { Spinner } from './Spinner'
 export { Tabs, Tab } from './Tabs'
-export { Form, Input, Textarea, Checkbox } from './Form'
+export { Form, Input, TextArea, Checkbox } from './Form'
 export { Breadcrumbs, Breadcrumb, BreadcrumbLink } from './Breadcrumbs'
 export { Space } from './Space'
 export { A } from './A'
@@ -41,3 +44,4 @@ export { NavLink, NavLinkItem } from './NavLink'
 export { Tag } from './Tag'
 export { notify } from './notify'
 export { Fixed } from './Fixed'
+export { Select } from './Select'

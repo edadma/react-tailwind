@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { useTheme } from './ThemeProvider'
+// import { useTheme } from './ThemeProvider'
 
 interface PaginationProps {
   current?: number
@@ -12,7 +12,7 @@ interface PaginationProps {
 
 export const Pagination: FC<PaginationProps> = (props) => {
   const { current = 1, pageSize = 50, total, prev = 'Prev', next = 'Next', onChange } = props
-  const { theme } = useTheme()
+  // const { theme } = useTheme()
   const [page, setPage] = useState(current)
 
   function handleChange(n: number) {
