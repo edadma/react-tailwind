@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import './index.css'
 import { StrictMode } from 'react'
 import { Demo } from './Demo'
@@ -10,11 +10,10 @@ import { DraftJsDemo } from './DraftJsDemo'
 import TestApp from './TestApp'
 import { FaPlay } from 'react-icons/fa'
 
-ReactDOM.render(
+createRoot(document.getElementById('app')!).render(
   <StrictMode>
-    <TestApp />
-  </StrictMode>,
-  document.getElementById('root')
+    <Demo />
+  </StrictMode>
 )
 
 export { Button } from './Button'

@@ -1,7 +1,6 @@
 import React, { Children, ReactNode } from 'react'
 import { useTheme } from './ThemeProvider'
 import { Next } from './Icons'
-import componentPropType from './util'
 import { Link } from './Link'
 
 interface BreadcrumbsProps
@@ -35,6 +34,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 }
 
 interface BreadcrumbProps {
+  children: ReactNode
   href?: string
   isLast?: boolean
 }
@@ -52,6 +52,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ children, href, isLast }
 }
 
 interface BreadcrumbLinkProps {
+  children: ReactNode
   to?: string
   isLast?: boolean
 }

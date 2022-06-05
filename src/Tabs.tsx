@@ -1,7 +1,6 @@
 import React, { Children, FC, useState } from 'react'
 import { Size, Weight, Color } from './types'
 import { colorClass, sizeClass, useTheme, weightClass } from './ThemeProvider'
-import componentPropType from './util'
 
 interface TabsProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
@@ -97,8 +96,4 @@ export const Tab: FC<TabProps> = ({
       {label}
     </li>
   )
-}
-
-Tabs.propTypes = {
-  children: componentPropType(Tab),
 }

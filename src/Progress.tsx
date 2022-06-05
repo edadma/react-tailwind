@@ -1,8 +1,9 @@
-import React from 'react'
+import { FC, ReactNode } from 'react'
 import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 
 interface ProgressProps {
+  children?: ReactNode
   size?: Size
   color?: Color
   value: number
@@ -11,7 +12,7 @@ interface ProgressProps {
   weight?: Weight
 }
 
-export const Progress: React.FC<ProgressProps> = ({
+export const Progress: FC<ProgressProps> = ({
   children,
   value,
   size,

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 interface SpaceProps {
+  children: ReactNode
   direction?: 'x' | 'y'
   space?: number
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { FC, ReactNode, useContext, useState } from 'react'
 import { useTheme } from './ThemeProvider'
 
 export type ModeType = 'light' | 'dark'
@@ -21,7 +21,10 @@ export const ModeContext = React.createContext(SET_MODE)
 
 export const useMode = () => useContext(ModeContext)
 
-export const ModeProvider: React.FC<{ value?: ModeType }> = ({ children, value }) => {
+export const ModeProvider: FC<{ children: ReactNode; value?: ModeType }> = ({
+  children,
+  value,
+}) => {
   const [mode, setMode] = useState(value || DEFAULT_MODE) // dark mode by default
   const { theme } = useTheme()
   const html = document.querySelector('html')

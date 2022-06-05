@@ -1,9 +1,8 @@
-import React, { FC, ReactNode, useContext } from 'react'
+import React, { FC, ReactNode, useContext, useId } from 'react'
 import { Color, Size, Weight } from './types'
 import { colorClass, optionProps, sizeClass, useTheme, weightClass } from './ThemeProvider'
 import { useFormik } from 'formik'
 import { Text } from './Text'
-import _ from 'lodash'
 
 const FormContext = React.createContext<any>(null)
 
@@ -59,7 +58,7 @@ export const Input: FC<InputProps> = (props) => {
   } = props
   const { theme } = useTheme()
   const formik = useForm()
-  const id = _.uniqueId('input-')
+  const id = useId()
   const error = formik.touched[other.name!] && formik.errors[other.name!]
   const fadein = `transition-opacity duration-300 opacity-100 ease-in ${
     !error ? 'invisible opacity-0' : ''
@@ -139,7 +138,7 @@ export const TextArea: FC<TextareaProps> = (props) => {
   } = props
   const { theme } = useTheme()
   const formik = useForm()
-  const id = _.uniqueId('textarea-')
+  const id = useId()
   const error = formik.touched[other.name!] && formik.errors[other.name!]
   const fadein = `transition-opacity duration-300 opacity-100 ease-in ${
     !error ? 'invisible opacity-0' : ''
@@ -196,7 +195,7 @@ interface CheckboxProps
 export const Checkbox: FC<CheckboxProps> = ({ children, className, name, color }) => {
   const formik = useForm()
   const { theme } = useTheme()
-  const id = _.uniqueId('checkbox-')
+  const id = useId()
 
   return (
     <div className={theme.component.checkbox.style.div1}>

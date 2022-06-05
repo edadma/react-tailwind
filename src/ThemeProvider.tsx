@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { ReactNode, useContext, useState } from 'react'
 import { Align, Color, Family, Pad, Size, Weight } from './types'
 import { DefaultTheme } from './themes/DefaultTheme'
 import { Toaster } from 'react-hot-toast'
@@ -47,7 +47,10 @@ export const useTheme = () => {
   return { theme, setTheme, background: `${theme.background.light} ${theme.background.dark}` }
 }
 
-export const ThemeProvider: React.FC<{ value?: any }> = ({ children, value }) => {
+export const ThemeProvider: React.FC<{ children: ReactNode; value?: any }> = ({
+  children,
+  value,
+}) => {
   const [theme, setTheme] = useState(value || DefaultTheme)
 
   return (
