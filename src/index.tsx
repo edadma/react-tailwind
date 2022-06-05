@@ -6,7 +6,7 @@ import { EmailDemo } from './EmailDemo'
 import { LayoutDemo } from './LayoutDemo'
 import { NotifyDemo } from './NotifyDemo'
 import { FixedDemo } from './FixedDemo'
-import { DraftJsDemo } from './DraftJsDemo'
+// import { DraftJsDemo } from './DraftJsDemo'
 import TestApp from './TestApp'
 import { FaPlay } from 'react-icons/fa'
 
