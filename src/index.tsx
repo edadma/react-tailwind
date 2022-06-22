@@ -1,20 +1,20 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import { StrictMode } from 'react'
-import { Demo } from './Demo'
-import { EmailDemo } from './EmailDemo'
-import { LayoutDemo } from './LayoutDemo'
-import { NotifyDemo } from './NotifyDemo'
-import { FixedDemo } from './FixedDemo'
-// import { DraftJsDemo } from './DraftJsDemo'
-import TestApp from './TestApp'
-import { FaPlay } from 'react-icons/fa'
-
-createRoot(document.getElementById('app')!).render(
-  <StrictMode>
-    <Demo />
-  </StrictMode>
-)
+// import { createRoot } from 'react-dom/client'
+// import './index.css'
+// import { StrictMode } from 'react'
+// import { Demo } from './Demo'
+// import { EmailDemo } from './EmailDemo'
+// import { LayoutDemo } from './LayoutDemo'
+// import { NotifyDemo } from './NotifyDemo'
+// import { FixedDemo } from './FixedDemo'
+// // import { DraftJsDemo } from './DraftJsDemo'
+// import TestApp from './TestApp'
+// import { FaPlay } from 'react-icons/fa'
+//
+// createRoot(document.getElementById('app')!).render(
+//   <StrictMode>
+//     <Demo />
+//   </StrictMode>
+// )
 
 export { Button } from './Button'
 export { Progress } from './Progress'
