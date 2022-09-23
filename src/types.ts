@@ -17,7 +17,6 @@ export type Color =
   | 'primary'
   | 'secondary'
   | 'regular'
-  | 'accent'
   | 'info'
   | 'success'
   | 'warning'
