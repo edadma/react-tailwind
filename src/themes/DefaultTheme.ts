@@ -244,7 +244,7 @@ export const DefaultTheme = {
       default: { rounded: true, border: true, size: 'sm', color: 'regular' },
     },
     text: {
-      style: 'inline-flex items-center',
+      style: '' /*'inline-flex items-center'*/,
       color: {
         primary: { text: 'text-green-800 dark:text-green-300' },
         secondary: { text: 'text-blue-800 dark:text-blue-300' },
@@ -265,7 +265,7 @@ export const DefaultTheme = {
         overline: false,
         strikethrough: false,
         italic: false,
-        size: 'sm',
+        size: 'md',
         color: 'regular',
         align: 'left',
         weight: 'medium',
