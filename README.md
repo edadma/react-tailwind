@@ -8,7 +8,7 @@ npm i -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-Edit `./src/tailwind.config.js` so that Tailwind CSS will work:
+Edit `./tailwind.config.js` so that Tailwind CSS will work:
 
 ```javascript
 module.exports = {
@@ -29,7 +29,7 @@ Edit `./src/index.css`, the only 3 lines of CSS you will ever need:
 @tailwind utilities;
 ```
 
-Edit `./src/TestApp.tsx` and start using `react-tailwind` to build your app:
+Edit `./src/App.tsx` and start using `react-tailwind` to build your app:
 
 ```typescript jsx
 import { FC } from 'react'
