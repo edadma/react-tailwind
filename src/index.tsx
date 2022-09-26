@@ -9,10 +9,14 @@
 // // import { DraftJsDemo } from './DraftJsDemo'
 // import TestApp from './TestApp'
 // import { FaPlay } from 'react-icons/fa'
+// import { Statistic } from './Statistic'
+// import { Card } from './Card'
 //
 // createRoot(document.getElementById('app')!).render(
 //   <StrictMode>
-//     <Demo />
+//     <Card>
+//       <Statistic tooltip="asdfasdf" label="label" value={123} />
+//     </Card>
 //   </StrictMode>
 // )
 
