@@ -185,25 +185,25 @@ export const DefaultTheme = {
       style: 'block',
       color: {
         primary: {
-          div: 'bg-green-200 dark:bg-green-300',
+          div: 'bg-green-500 dark:bg-green-900',
         },
         secondary: {
-          div: 'bg-blue-200 dark:bg-blue-300',
+          div: 'bg-blue-500 dark:bg-blue-900',
         },
         regular: {
-          div: 'bg-gray-200 dark:bg-gray-300',
+          div: 'bg-neutral-100 dark:bg-neutral-700',
         },
         info: {
-          div: 'bg-blue-200 dark:bg-blue-300',
+          div: 'bg-blue-500 dark:bg-blue-900',
         },
         success: {
-          div: 'bg-green-200 dark:bg-green-300',
+          div: 'bg-green-500 dark:bg-green-900',
         },
         warning: {
-          div: 'bg-yellow-200 dark:bg-yellow-300',
+          div: 'bg-yellow-500 dark:bg-yellow-900',
         },
         error: {
-          div: 'bg-red-200 dark:bg-red-300',
+          div: 'bg-red-500 dark:bg-red-900',
         },
       },
       options: {
