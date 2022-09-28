@@ -14,7 +14,8 @@
 //
 // createRoot(document.getElementById('app')!).render(
 //   <StrictMode>
-//     <Card className="w-1/2">
+//     <Card className="pt-20 w-1/2">
+//       <Statistic tooltip="asdfasdf" label="label" value={123} />
 //       <Statistic tooltip="asdfasdf" label="label" value={123} />
 //     </Card>
 //   </StrictMode>
