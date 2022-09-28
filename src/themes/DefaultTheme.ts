@@ -212,7 +212,7 @@ export const DefaultTheme = {
         shadow: 'shadow-md',
         fit: 'max-w-fit',
       },
-      default: { rounded: false, border: false, shadow: false, fit: false, color: 'none', pad: 4 },
+      default: { rounded: false, border: false, shadow: false, fit: false, color: 'none', pad: 3 },
     },
     alert: {
       style: 'p-4 mb-4',

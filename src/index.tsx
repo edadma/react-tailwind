@@ -14,7 +14,7 @@
 //
 // createRoot(document.getElementById('app')!).render(
 //   <StrictMode>
-//     <Card>
+//     <Card className="w-1/2">
 //       <Statistic tooltip="asdfasdf" label="label" value={123} />
 //     </Card>
 //   </StrictMode>
