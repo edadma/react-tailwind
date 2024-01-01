@@ -79,7 +79,7 @@ export const Input: FC<InputProps> = (props) => {
         className={`${colorClass(
           theme,
           'input',
-          formik.touched[other.name!] && formik.errors[other.name!] ? 'error' : color,
+          error ? 'error' : color,
           'input'
         )} ${optionProps(theme, props, 'input', 'rounded', 'pill', 'border')} ${sizeClass(
           theme,
@@ -97,7 +97,7 @@ export const Input: FC<InputProps> = (props) => {
         <div className={fadein}>{renderError(formik.errors[other.name!])}</div>
       ) : (
         <div className={fadein}>
-          <Text hidden={!formik.touched[other.name!] || !formik.errors[other.name!]} color="error">
+          <Text hidden={!error} color="error">
             {formik.errors[other.name!]}
           </Text>
         </div>
